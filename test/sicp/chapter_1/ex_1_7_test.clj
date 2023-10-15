@@ -1,6 +1,6 @@
 (ns sicp.chapter-1.ex-1-7-test
-  (:require [clojure.test :refer :all])
-  (:require [sicp.chapter-1.ex-1-7 :refer [sqrt-iter sqrt-iter-v2]]))
+  (:require [clojure.test :refer :all]
+            [sicp.chapter-1.ex-1-7 :refer [sqrt-iter sqrt-iter-v2]]))
 
 (deftest sqrt-iter-test
   ; 1.0
