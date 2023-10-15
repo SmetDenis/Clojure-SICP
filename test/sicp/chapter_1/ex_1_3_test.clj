@@ -6,5 +6,4 @@
   (is (= 2 (sum-larger-numbers-square 1 1 1)))
   (is (= 13 (sum-larger-numbers-square 1 2 3)))
   (is (= 13 (sum-larger-numbers-square 3 2 1)))
-  (is (= 18 (sum-larger-numbers-square 3 3 4)))
-  )
+  (is (= 18 (sum-larger-numbers-square 3 3 4))))

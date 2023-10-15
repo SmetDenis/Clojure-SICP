@@ -18,7 +18,7 @@ jobs:
         run: bash <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
 
       - name: Run tests
-        run: bb lint:cs
+        run: bb lint:cs:check
 
       - name: Run tests
         run: bb test
