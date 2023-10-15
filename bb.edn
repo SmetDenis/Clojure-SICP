@@ -1,0 +1,8 @@
+{:tasks
+ {test          (shell "clj -X:test")
+  lint          (do
+                  (run 'lint:cs)
+                  (run 'lint:kondo))
+  lint:cs       (shell "cljfmt fix")
+  lint:cs:check (shell "cljfmt check")
+  lint:kondo    (shell "clj-kondo --lint src:dev")}}
