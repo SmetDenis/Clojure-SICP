@@ -11,11 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Install Babashka
-        run: bash <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
+      - name: Prepare java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '8'
+
+      - name: Install clojure tools
+        uses: DeLaGuardo/setup-clojure@12.1
+        with:
+          bb: 'latest'
+          cljfmt: 'latest'
 
       - name: Run tests
         run: bb lint:cs:check
