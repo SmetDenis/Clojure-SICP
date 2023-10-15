@@ -8,7 +8,6 @@
 ; Write a procedure that computes f by means of a recursive process.
 ; Write a procedure that computes f by means of an iterative process.
 
-
 (defn f [n]                                                 ; Recursive process
   (cond (< n 3) n
         :else (+ (f (- n 1))
