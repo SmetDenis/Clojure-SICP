@@ -1,6 +1,6 @@
 (ns sicp.chapter-1.ex-1-8-test
-  (:require [clojure.test :refer :all])
-  (:require [sicp.chapter-1.ex-1-8 :refer [cube-root-iter]]))
+  (:require [clojure.test :refer :all]
+            [sicp.chapter-1.ex-1-8 :refer [cube-root-iter]]))
 
 (deftest cube-root-iter-test
   ; 1.0
