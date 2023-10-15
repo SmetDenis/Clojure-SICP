@@ -1,5 +1,5 @@
 {:tasks
- {test          (shell "clj -X:test")
+ {test          (shell "clojure -X:test")
   lint          (do
                   (run 'lint:cs)
                   (run 'lint:kondo))
