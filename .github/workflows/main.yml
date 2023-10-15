@@ -14,21 +14,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Prepare java
+      - name: Prepare Java
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
           java-version: '8'
 
-      - name: Install clojure tools
+      - name: Install Clojure tools
         uses: DeLaGuardo/setup-clojure@12.1
         with:
           cli: 'latest'
           bb: 'latest'
           cljfmt: 'latest'
 
-      - name: Run tests
+      - name: Codestyle
         run: bb lint:cs:check
 
-      - name: Run tests
+      - name: Unit tests
         run: bb test
