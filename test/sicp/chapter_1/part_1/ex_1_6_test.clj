@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part_1.ex-1-6-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-1.part_1.ex-1-6 :refer [sqrt-iter sqrt-iter-new-if]]))
 
 (deftest sqrt-iter-test
@@ -12,5 +12,5 @@
   ; Arguments are not until whole statement is comprised only of primitive operations.
   (try
     (is (= 6 (sqrt-iter-new-if 6 36)))
-    (catch Exception e
+    (catch Exception _
       (is true))))

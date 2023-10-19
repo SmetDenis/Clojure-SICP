@@ -1,4 +1,3 @@
-{:split-keypairs-over-multiple-lines? true
- :sort-ns-references?                 true
- :indentation?                        false
- :paths                               ["src" "dev" "test"]}
+{:indentation?        false
+ :paths               ["src" "test"]
+ :sort-ns-references? true}

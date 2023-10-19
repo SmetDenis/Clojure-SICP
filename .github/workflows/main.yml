@@ -26,9 +26,10 @@ jobs:
           cli: 'latest'
           bb: 'latest'
           cljfmt: 'latest'
+          clj-kondo: 'latest'
 
       - name: Codestyle
-        run: bb lint:cs:check
+        run: bb lint
 
       - name: Unit tests
         run: bb test

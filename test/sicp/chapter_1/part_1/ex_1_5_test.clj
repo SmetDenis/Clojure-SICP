@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part_1.ex-1-5-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-1.part_1.ex-1-5 :refer [test_1_5 p]]))
 
 (deftest test_1_5-test
