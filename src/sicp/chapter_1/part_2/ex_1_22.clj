@@ -33,9 +33,9 @@
 (defn find-primes
   [from to]
   (cond (>= from to) (do
-                       (println "finish")
+                       ; (println "finish")
                        from)
         (even? from) (find-primes (+ from 1) to)            ; Just skip to the next odd
         :else (do
-                (println from)
+                ; (println from)
                 (find-primes (+ from 2) to))))              ; Takes only odds

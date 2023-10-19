@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part_2.ex-1-16-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-1.part_2.ex-1-16 :refer [expt]]))
 
 (deftest expt-test

@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part_1.ex-1-4-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-1.part_1.ex-1-4 :refer [a-plus-abs-b]]))
 
 (deftest a-plus-abs-b-test

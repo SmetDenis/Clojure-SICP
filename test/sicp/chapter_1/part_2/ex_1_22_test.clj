@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part_2.ex-1-22-test
-  (:require [clojure.test :refer :all])
+  (:require [clojure.test :refer [deftest is]])
   (:require [sicp.chapter-1.part_2.ex-1-22 :refer [find-primes]]))
 
 (deftest find-primes-test

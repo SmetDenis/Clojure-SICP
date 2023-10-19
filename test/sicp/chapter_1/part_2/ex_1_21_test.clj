@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part_2.ex-1-21-test
-  (:require [clojure.test :refer :all])
+  (:require [clojure.test :refer [deftest is]])
   (:require [sicp.chapter-1.part_2.ex-1-21 :refer [smallest-divisor]]))
 
 (deftest smallest-divisor-test
