@@ -1,6 +1,6 @@
 (ns sicp.chapter-1.part_2.ex-1-21-test
-  (:require [clojure.test :refer [deftest is]])
-  (:require [sicp.chapter-1.part_2.ex-1-21 :refer [smallest-divisor]]))
+  (:require [clojure.test :refer [deftest is]]
+            [sicp.chapter-1.part_2.ex-1-21 :refer [smallest-divisor]]))
 
 (deftest smallest-divisor-test
   (is (= 199 (smallest-divisor 199)))

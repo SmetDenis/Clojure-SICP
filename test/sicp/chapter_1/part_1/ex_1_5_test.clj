@@ -1,6 +1,6 @@
 (ns sicp.chapter-1.part_1.ex-1-5-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part_1.ex-1-5 :refer [test_1_5 p]]))
+            [sicp.chapter-1.part_1.ex-1-5 :refer [p test_1_5]]))
 
 (deftest test_1_5-test
   ; Normal: Operand "p" will not be evaluated until it's needed by some primitive operation. So result is 0.
