@@ -33,13 +33,13 @@
 (defn sqrt-iter
   [guess x]
   (if (good-enough? guess x)
-          guess
-          (sqrt-iter (improve guess x) x)))
+    guess
+    (sqrt-iter (improve guess x) x)))
 
 (defn sqrt-iter-new-if
   [guess x]
   (new-if (good-enough? guess x)
-    guess
-    (sqrt-iter (improve guess x) x)))
+          guess
+          (sqrt-iter (improve guess x) x)))
 
 ; What happens when Alyssa attempts to use this to compute square roots? Explain.
