@@ -31,11 +31,11 @@
 ; to the number of steps required for the computation?
 
 (defn find-primes
-  [from to]
+  [from to print-log]
   (cond (>= from to) (do
-                       ; (println "finish")
+                       (when print-log (println "finish"))
                        from)
-        (even? from) (find-primes (+ from 1) to)            ; Just skip to the next odd
+        (even? from) (find-primes (+ from 1) to print-log)  ; Just skip to the next odd
         :else (do
-                ; (println from)
-                (find-primes (+ from 2) to))))              ; Takes only odds
+                (when print-log (println from))
+                (find-primes (+ from 2) to print-log))))    ; Takes only odds
