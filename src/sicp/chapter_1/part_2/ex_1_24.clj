@@ -9,6 +9,9 @@
 ;
 ; Can you explain any discrepancy you find?
 
+; TODO: Improve benchmarking
+; TODO: Improve add transparent solution
+
 (defn expmod [base exp m]
   (mod (Math/pow base exp) m))
 
