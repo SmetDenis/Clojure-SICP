@@ -42,6 +42,4 @@
 
 (defn gcd
   [a b]
-  (if (= b 0)
-    a
-    (gcd b (rem a b))))
+  (if (zero? b) a (recur b (mod a b))))

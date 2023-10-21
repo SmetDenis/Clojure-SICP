@@ -1,7 +1,8 @@
 (ns sicp.chapter-1.part-3.book-1-3
   (:require [sicp.misc :as m]))
 
-(comment "1.3.1")                                           ; Procedures as Arguments ----------------------------------
+(comment "1.3.1")
+; Procedures as Arguments --------------------------------------------------------------------------
 
 (defn sum-integers
   [a b]
@@ -48,7 +49,8 @@
   (letfn [(add-dx [x] (+ x dx))]
     (* (sum-terms f (+ a (/ dx 2)) add-dx b) dx)))
 
-(comment "1.3.2")                                           ; Constructing Procedures Using Lambda ---------------------
+(comment "1.3.2")
+; Constructing Procedures Using Lambda -------------------------------------------------------------
 
 (defn pi-sum-lamda
   [a b]
@@ -74,7 +76,8 @@
        (* y b)
        (* a b))))
 
-(comment "1.3.3")                                           ; Procedures as General Methods ----------------------------
+(comment "1.3.2")
+; Procedures as General Methods --------------------------------------------------------------------
 
 (defn search
   [f neg-point pos-point]
