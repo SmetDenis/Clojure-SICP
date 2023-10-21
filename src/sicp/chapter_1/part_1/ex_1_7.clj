@@ -1,4 +1,5 @@
-(ns sicp.chapter-1.part_1.ex-1-7)
+(ns sicp.chapter-1.part_1.ex-1-7
+  (:require [sicp.chapter-1.part-1.book-1-1 :as book]))
 
 ; Exercise 1.7
 ; The `good-enough?` test used in computing square roots will not be very effective
@@ -14,30 +15,11 @@
 
 ; Does this work better for small and large numbers?
 
-(defn average [a b]
-  (/ (+ a b) 2))
-
-(defn improve [guess x]
-  (average guess (/ x guess)))
-
-(defn square [x]
-  (* x x))
-
-(defn good-enough? [guess x]
-  (< (abs (- (square guess) x)) 0.001))
-
-(defn sqrt-iter
-  [guess x]
-  (if
-    (good-enough? guess x)
-    guess
-    (sqrt-iter (improve guess x) x)))
-
 ; Imporovments
 (defn good-enough-v2? [guess1 guess2]
   (< (abs (- guess1 guess2)) 0.001))
 
 (defn sqrt-iter-v2 [guess x]
-  (if (good-enough-v2? guess (improve guess x))
+  (if (good-enough-v2? guess (book/improve guess x))
     guess
-    (sqrt-iter-v2 (improve guess x) x)))
+    (sqrt-iter-v2 (book/improve guess x) x)))
