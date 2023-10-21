@@ -19,6 +19,5 @@
         :else (+ (change amount (- type-of-coins 1))
                  (change (- amount (first-denomination type-of-coins)) type-of-coins))))
 
-(defn money-change
-  [amount]
+(defn money-change [amount]
   (change amount 5))

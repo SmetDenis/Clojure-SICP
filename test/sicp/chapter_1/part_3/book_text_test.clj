@@ -1,6 +1,6 @@
 (ns sicp.chapter-1.part-3.book-text-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.book-text :as book]
+            [sicp.chapter-1.part-3.book-1-3 :as book]
             [sicp.misc :refer [cube]]))
 
 (comment "1.3.1")                                           ; Procedures as Arguments ----------------------------------

@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part-3.ex-1-29
-  (:require [sicp.chapter-1.part-3.book-text :refer [sum-terms]]))
+  (:require [sicp.chapter-1.part-3.book-1-3 :refer [sum-terms]]))
 
 ; Exercise 1.29
 ; Simpson’s Rule is a more accurate method of numerical integration than the method illustrated above.

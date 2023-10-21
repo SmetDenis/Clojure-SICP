@@ -13,6 +13,5 @@
         (divides? test-divisor number) test-divisor
         :else (find-divisor number (+ test-divisor 1))))
 
-(defn smallest-divisor
-  [n]
+(defn smallest-divisor [n]
   (find-divisor n 2))

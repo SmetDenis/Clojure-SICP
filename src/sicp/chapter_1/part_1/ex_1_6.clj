@@ -15,16 +15,13 @@
 (new-if (= 1 1) 0 5)                                        ; 0
 
 ; Delighted, Alyssa uses new-if to rewrite the square-root program:
-(defn square
-  [x]
+(defn square [x]
   (* x x))
 
-(defn good-enough?
-  [guess x]
+(defn good-enough? [guess x]
   (< (abs (- (square guess) x)) 0.001))
 
-(defn average
-  [a b]
+(defn average [a b]
   (/ (+ a b) 2))
 
 (defn improve [guess x]

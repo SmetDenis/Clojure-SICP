@@ -1,6 +1,6 @@
 (ns sicp.chapter-1.part-3.ex-1-29-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.book-text :refer [integral]]
+            [sicp.chapter-1.part-3.book-1-3 :refer [integral]]
             [sicp.chapter-1.part-3.ex-1-29 :refer [integral-simpson]]
             [sicp.misc :refer [cube]]))
 

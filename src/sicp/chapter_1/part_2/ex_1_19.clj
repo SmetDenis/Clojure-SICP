@@ -33,8 +33,7 @@
                         q
                         (- count 1))))
 
-(defn fib
-  [n]
+(defn fib [n]
   (fib-iter 1 0 0 1 n))
 
 ; Solution
