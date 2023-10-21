@@ -44,7 +44,7 @@
   (is (= 3 (product-of-primes 4)))                          ; (* 1 3)
   (is (= 24 (product-of-primes 5)))                         ; (* 1 2 3 4)
   (is (= 5 (product-of-primes 6)))                          ; (* 1 5)
-  (is (= 720 (product-of-primes 7)))                    ; (* 1 2 3 4 5 6)
+  (is (= 720 (product-of-primes 7)))                        ; (* 1 2 3 4 5 6)
   (is (= 105 (product-of-primes 8)))                        ; (* 1 3 5 7)
   (is (= 2240 (product-of-primes 9)))                       ; (* 1 2 4 5 7 8)
   (is (= 189 (product-of-primes 10))))                      ; (* 1 3 7 9)
