@@ -14,8 +14,7 @@
   [a b]
   (if (> a b)
     0
-    (+ a
-       (sum-integers (+ a 1) b))))
+    (+ a (sum-integers (+ a 1) b))))
 
 (defn sum-cubes
   [a b]
@@ -38,16 +37,13 @@
     (+ (term a)
        (sum-terms term (next a) next b))))
 
-(defn sum-integers-2
-  [a b]
+(defn sum-integers-2 [a b]
   (sum-terms identity a inc b))
 
-(defn sum-cubes-2
-  [a b]
+(defn sum-cubes-2 [a b]
   (sum-terms m/cube a inc b))
 
-(defn pi-sum-2
-  [a b]
+(defn pi-sum-2 [a b]
   (sum-terms #(/ 1.0 (* % (+ % 2))) a #(+ % 4) b))
 
 (defn integral
@@ -60,12 +56,10 @@
 ; Exercises:
 ; * 1.34
 
-(defn pi-sum-lamda
-  [a b]
+(defn pi-sum-lamda [a b]
   (sum-terms #(/ 1.0 (* % (+ % 2))) a #(+ % 4) b))
 
-(defn integral-lamda
-  [f a b dx]
+(defn integral-lamda [f a b dx]
   (* (sum-terms f (+ a (/ dx 2.0)) #(+ % dx) b) dx))
 
 (defn f-1
