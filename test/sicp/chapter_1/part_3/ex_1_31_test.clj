@@ -22,4 +22,3 @@
   (is (= pi_manual (pi-iter 8)))
   (is (= 3.1400238186005973 (pi-iter 1000)))
   (is (= 3.141278572846975 (pi-iter 5000))))                ; (pi 5000) is imposible in clojure at this moment
-
