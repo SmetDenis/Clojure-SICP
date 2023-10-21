@@ -1,4 +1,5 @@
-(ns sicp.chapter-1.part_1.ex-1-6)
+(ns sicp.chapter-1.part_1.ex-1-6
+  (:require [sicp.chapter-1.part-1.book-1-1 :as book]))
 
 ; Exercise 1.6
 ; Alyssa P. Hacker doesn’t see why if needs to be provided as a special form.
@@ -15,28 +16,12 @@
 (new-if (= 1 1) 0 5)                                        ; 0
 
 ; Delighted, Alyssa uses new-if to rewrite the square-root program:
-(defn square [x]
-  (* x x))
-
-(defn good-enough? [guess x]
-  (< (abs (- (square guess) x)) 0.001))
-
-(defn average [a b]
-  (/ (+ a b) 2))
-
-(defn improve [guess x]
-  (average guess (/ x guess)))
-
-(defn sqrt-iter
-  [guess x]
-  (if (good-enough? guess x)
-    guess
-    (sqrt-iter (improve guess x) x)))
 
 (defn sqrt-iter-new-if
   [guess x]
-  (new-if (good-enough? guess x)
+  (new-if (book/good-enough? guess x)
           guess
-          (sqrt-iter (improve guess x) x)))
+          (book/sqrt-iter (book/improve guess x) x)))
 
 ; What happens when Alyssa attempts to use this to compute square roots? Explain.
+; TODO Explain.
