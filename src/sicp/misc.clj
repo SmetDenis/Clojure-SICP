@@ -26,3 +26,16 @@
 (defn prime?
   [n]
   (= n (smallest-divisor n)))
+
+(defn close-enough?
+  ([x y] (< (abs (- x y)) 0.001))
+  ([x y tolerance] (< (abs (- x y)) tolerance)))
+
+(defn average [a b]
+  (/ (+ a b) 2))
+
+(defn positive? [x]
+  (> x 0))
+
+(defn negative? [x]
+  (< x 0))
