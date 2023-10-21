@@ -41,3 +41,13 @@
   (is (= false (m/negative? 0)))
   (is (= false (m/negative? 1)))
   (is (= true (m/negative? -1))))
+
+(deftest gcd-test
+  (is (= 8 (m/gcd 56 48)))
+  (is (= 1 (m/gcd 101 103)))
+  (is (= 12 (m/gcd 36 48)))
+  (is (= 5 (m/gcd 5 0)))
+  (is (= 5 (m/gcd 0 5)))
+  (is (= 0 (m/gcd 0 0)))
+  (is (= 21 (m/gcd 21 21)))
+  (is (= 1 (m/gcd 17 19))))

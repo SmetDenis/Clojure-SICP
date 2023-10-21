@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part-2.ex-1-25
-  (:require [sicp.misc :refer [square]]))
+  (:require [sicp.misc :as m]))
 
 ; Exercise 1.25
 ; Alyssa P. Hacker complains that we went to a lot of extra work in writing expmod
@@ -13,7 +13,7 @@
 (defn fast-expt
   [b n]
   (cond (= n 0) 1
-        (even? n) (square (fast-expt b (/ n 2)))
+        (even? n) (m/square (fast-expt b (/ n 2)))
         :else (* b (fast-expt b (- n 1)))))
 
 (defn expmod-alyssa
@@ -24,5 +24,5 @@
   [base exp m]
   (cond (= exp 0) 1
         (even? exp)
-        (rem (square (expmod base (/ exp 2) m)) m)
+        (rem (m/square (expmod base (/ exp 2) m)) m)
         :else (rem (* base (expmod base (- exp 1) m)) m)))
