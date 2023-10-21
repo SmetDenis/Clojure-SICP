@@ -3,6 +3,12 @@
 
 (comment "1.3.1")
 ; Procedures as Arguments --------------------------------------------------------------------------
+; Exercises:
+; * 1.29
+; * 1.30
+; * 1.31
+; * 1.32
+; * 1.33
 
 (defn sum-integers
   [a b]
@@ -51,6 +57,8 @@
 
 (comment "1.3.2")
 ; Constructing Procedures Using Lambda -------------------------------------------------------------
+; Exercises:
+; * 1.34
 
 (defn pi-sum-lamda
   [a b]
@@ -76,8 +84,14 @@
        (* y b)
        (* a b))))
 
-(comment "1.3.2")
+(comment "1.3.3")
 ; Procedures as General Methods --------------------------------------------------------------------
+; Exercises:
+; * 1.35
+; * 1.36
+; * 1.37
+; * 1.38
+; * 1.39
 
 (defn search
   [f neg-point pos-point]
