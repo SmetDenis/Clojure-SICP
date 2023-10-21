@@ -13,6 +13,8 @@ basics of computer science and software engineering.
 
 ## Table of Contents
 
+### Chapter 1
+
 * [1 Building Abstractions with Procedures](https://sarabander.github.io/sicp/html/Chapter-1.xhtml#Chapter-1)
     * [1.1 The Elements of Programming](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1) - [Code](src/sicp/chapter_1/part_1/book_1_1.clj)
         * [1.1.1 Expressions](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e1)
@@ -69,6 +71,9 @@ basics of computer science and software engineering.
             * [Solution 1.34](src/sicp/chapter_1/part_3/ex_1_34.clj)
         * [1.3.3 Procedures as General Methods](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e3)
         * 1.3.4 Procedures as Returned Values
+
+### Chapter 2
+
 * 2 Building Abstractions with Data
     * 2.1 Introduction to Data Abstraction
         * 2.1.1 Example: Arithmetic Operations for Rational Numbers
@@ -93,6 +98,9 @@ basics of computer science and software engineering.
         * 2.5.1 Generic Arithmetic Operations
         * 2.5.2 Combining Data of Different Types
         * 2.5.3 Example: Symbolic Algebra
+
+### Chapter 3
+
 * 3 Modularity, Objects, and State
     * 3.1 Assignment and Local State
         * 3.1.1 Local State Variables
@@ -118,6 +126,9 @@ basics of computer science and software engineering.
         * 3.5.3 Exploiting the Stream Paradigm
         * 3.5.4 Streams and Delayed Evaluation
         * 3.5.5 Modularity of Functional Programs and Modularity of Objects
+
+### Chapter 4
+
 * 4 Metalinguistic Abstraction
     * 4.1 The Metacircular Evaluator
         * 4.1.1 The Core of the Evaluator
@@ -148,6 +159,9 @@ basics of computer science and software engineering.
             * 4.4.4.6 Stream Operations
             * 4.4.4.7 Query Syntax Procedures
             * 4.4.4.8 Frames and Bindings
+
+### Chapter 5
+
 * 5 Computing with Register Machines
     * 5.1 Designing Register Machines
         * 5.1.1 A Language for Describing Register Machines
@@ -177,6 +191,6 @@ basics of computer science and software engineering.
         * 5.5.6 Lexical Addressing
         * 5.5.7 Interfacing Compiled Code to the Evaluator
 
-### License
+## License
 
 MIT
