@@ -3,7 +3,7 @@
             [sicp.chapter-1.part_2.ex-1-24 :refer [fast-prime? fermat-test]]))
 
 (deftest fast-prime?-test
-  (is (= 1 (fast-prime? 100 100))))
+  (is (= false (fast-prime? 100 100))))
 
 (deftest fermat-test-test
   (is (= false (fermat-test 1)))
