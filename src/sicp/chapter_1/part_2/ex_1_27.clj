@@ -29,13 +29,10 @@
     (even? exp) (rem (square (expmod base (/ exp 2) m)) m)
     :else (rem (* base (expmod base (dec exp) m)) m)))
 
-(defn fermat-test [n]
-  (defn test [a]
-    (= (expmod a n n) a))
-  (defn iter [a]
-    (if (< a n)
-      (if (test a)
-        (recur (inc a))
-        false)
-      true))
-  (iter 1))
+(defn fermat-test
+  [n]
+  (let [test (fn [a] (= (expmod a n n) a))
+        iter (fn [a] (if (< a n)
+                       (if (test a) (recur (inc a)) false)
+                       true))]
+    (iter 1)))
