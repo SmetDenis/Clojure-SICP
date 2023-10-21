@@ -54,3 +54,29 @@
   [f a b dx]
   (letfn [(add-dx [x] (+ x dx))]
     (* (sum-terms f (+ a (/ dx 2)) add-dx b) dx)))
+
+(comment "1.3.2")                                           ; Constructing Procedures Using Lambda ---------------------
+
+(defn pi-sum-lamda
+  [a b]
+  (sum-terms #(/ 1.0 (* % (+ % 2))) a #(+ % 4) b))
+
+(defn integral-lamda
+  [f a b dx]
+  (* (sum-terms f (+ a (/ dx 2.0)) #(+ % dx) b) dx))
+
+(defn f-1
+  [x y]
+  (letfn [(f-helper [a b]
+            (+ (* x (sicp.misc/square a))
+               (* y b)
+               (* a b)))]
+    (f-helper (+ 1 (* x y))
+              (- 1 y))))
+
+(defn f-2 [x y]
+  (let [a (+ 1 (* x y))
+        b (- 1 y)]
+    (+ (* x (sicp.misc/square a))
+       (* y b)
+       (* a b))))

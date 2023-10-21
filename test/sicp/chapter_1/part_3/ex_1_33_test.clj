@@ -4,11 +4,12 @@
                                                    filtered-accumulate-iter
                                                    gcd
                                                    product-of-primes
-                                                   sum-of-primes]]))
+                                                   sum-of-primes]]
+            [sicp.misc :refer [prime?]]))
 
 (deftest filtered-accumulate-test
-  (is (= 1061 (filtered-accumulate + 0 identity 1 inc 100 sicp.misc/prime?)))
-  (is (= 1061 (filtered-accumulate-iter + 0 identity 1 inc 100 sicp.misc/prime?))))
+  (is (= 1061 (filtered-accumulate + 0 identity 1 inc 100 prime?)))
+  (is (= 1061 (filtered-accumulate-iter + 0 identity 1 inc 100 prime?))))
 
 (deftest sum-of-primes-test
   (is (= (+

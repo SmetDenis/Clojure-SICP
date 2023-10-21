@@ -1,8 +1,10 @@
 (ns sicp.chapter-1.part-3.book-text-test
   (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-1.part-3.book-text :refer [integral
+                                                     integral-lamda
                                                      pi-sum
                                                      pi-sum-2
+                                                     pi-sum-lamda
                                                      sum-cubes
                                                      sum-cubes-2
                                                      sum-integers
@@ -57,3 +59,13 @@
 (deftest integral-test
   (is (= 0.24998750000000042 (integral cube 0 1 0.01)))
   (is (= 0.249999875000001 (integral cube 0 1 0.001))))
+
+(deftest pi-sum-lamda-test
+  (is (= 0.3333333333333333 (pi-sum-lamda 1 1)))
+  (is (= 0.125 (pi-sum-lamda 2 2)))
+  (is (= 0.372005772005772 (pi-sum-lamda 1 10)))
+  (is (= 3.139592655589783 (* 8 (pi-sum-lamda 1 1000)))))
+
+(deftest integral-lamda-test
+  (is (= 0.24998750000000042 (integral-lamda cube 0 1 0.01)))
+  (is (= 0.249999875000001 (integral-lamda cube 0 1 0.001))))
