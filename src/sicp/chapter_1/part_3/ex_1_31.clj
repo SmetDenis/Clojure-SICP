@@ -14,6 +14,10 @@
 ; 2. If your product procedure generates a recursive process, write one that generates an iterative process.
 ; If it generates an iterative process, write one that generates a recursive process.
 
+(defn john-wallis-term-for-pi-4
+  [x]
+  (if (even? x) (/ x (inc x)) (/ (inc x) x)))
+
 ; ---------
 ; 1.
 (defn product
@@ -29,8 +33,7 @@
 
 (defn pi
   [precision]
-  (let [term (fn [x] (if (even? x) (/ x (inc x)) (/ (inc x) x)))]
-    (* 4.0 (product term 2 inc precision))))
+  (* 4.0 (product john-wallis-term-for-pi-4 2 inc precision)))
 
 ; ---------
 ; 2.
@@ -44,5 +47,4 @@
 
 (defn pi-iter
   [precision]
-  (let [term (fn [x] (if (even? x) (/ x (inc x)) (/ (inc x) x)))]
-    (* 4.0 (product-iter term 2 inc precision))))
+  (* 4.0 (product-iter john-wallis-term-for-pi-4 2 inc precision)))
