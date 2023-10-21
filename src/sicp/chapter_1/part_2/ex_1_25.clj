@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part-2.ex-1-25
-  (:require [misc :refer [square]]))
+  (:require [sicp.misc :refer [square]]))
 
 ; Exercise 1.25
 ; Alyssa P. Hacker complains that we went to a lot of extra work in writing expmod
