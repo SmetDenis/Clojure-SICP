@@ -22,29 +22,19 @@ Jay Sussman on basics of computer science and software engineering.
         * [1.1.3](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e3) Evaluating Combinations
         * [1.1.4](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e4) Compound Procedures
         * [1.1.5](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e5) The Substitution Model for Procedure Application
-        * [1.1.6](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e6) Conditional Expressions and Predicates
-            * Solutions: [1.1](src/sicp/chapter_1/part_1/ex_1_1.clj), [1.2](src/sicp/chapter_1/part_1/ex_1_2.clj), [1.3](src/sicp/chapter_1/part_1/ex_1_3.clj), [1.4](src/sicp/chapter_1/part_1/ex_1_4.clj), [1.5](src/sicp/chapter_1/part_1/ex_1_5.clj)
-        * [1.1.7](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e7) Example: Square Roots by Newton’s Method
-            * Solutions: [1.6](src/sicp/chapter_1/part_1/ex_1_6.clj), [1.7](src/sicp/chapter_1/part_1/ex_1_7.clj), [1.8](src/sicp/chapter_1/part_1/ex_1_8.clj)
+        * [1.1.6](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e6) Conditional Expressions and Predicates - Solutions: [1.1](src/sicp/chapter_1/part_1/ex_1_1.clj), [1.2](src/sicp/chapter_1/part_1/ex_1_2.clj), [1.3](src/sicp/chapter_1/part_1/ex_1_3.clj), [1.4](src/sicp/chapter_1/part_1/ex_1_4.clj), [1.5](src/sicp/chapter_1/part_1/ex_1_5.clj)
+        * [1.1.7](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e7) Example: Square Roots by Newton’s Method - Solutions: [1.6](src/sicp/chapter_1/part_1/ex_1_6.clj), [1.7](src/sicp/chapter_1/part_1/ex_1_7.clj), [1.8](src/sicp/chapter_1/part_1/ex_1_8.clj)
         * [1.1.8](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e8) Procedures as Black-Box Abstractions
     * [1.2](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2) Procedures and the Processes They Generate - [CODE](src/sicp/chapter_1/part_2/book_1_2.clj)
-        * [1.2.1](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e1) Linear Recursion and Iteration
-            * Solutions: [1.9](src/sicp/chapter_1/part_2/ex_1_09.clj), [1.10](src/sicp/chapter_1/part_2/ex_1_10.clj)
-        * [1.2.2](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e2) Tree Recursion
-            * Solutions: [1.11](src/sicp/chapter_1/part_2/ex_1_11.clj), [1.12](src/sicp/chapter_1/part_2/ex_1_12.clj), [1.13](src/sicp/chapter_1/part_2/ex_1_13.clj)
-        * [1.2.3](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e3) Orders of Growth
-            * Solutions: [1.14](src/sicp/chapter_1/part_2/ex_1_14.clj), [1.15](src/sicp/chapter_1/part_2/ex_1_15.clj)
-        * [1.2.4](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e4) Exponentiation
-            * Solutions: [1.16](src/sicp/chapter_1/part_2/ex_1_16.clj), [1.17](src/sicp/chapter_1/part_2/ex_1_17.clj), [1.18](src/sicp/chapter_1/part_2/ex_1_18.clj), [1.19](src/sicp/chapter_1/part_2/ex_1_19.clj)
-        * [1.2.5](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e4) Greatest Common Divisorsx
-            * Solutions: [1.20](src/sicp/chapter_1/part_2/ex_1_20.clj)
-        * [1.2.6](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e6) Example: Testing for Primality
-            * Solutions: [1.21](src/sicp/chapter_1/part_2/ex_1_21.clj), [1.22](src/sicp/chapter_1/part_2/ex_1_22.clj), [1.23](src/sicp/chapter_1/part_2/ex_1_23.clj), [1.24](src/sicp/chapter_1/part_2/ex_1_24.clj), [1.25](src/sicp/chapter_1/part_2/ex_1_25.clj), [1.26](src/sicp/chapter_1/part_2/ex_1_26.clj), [1.27](src/sicp/chapter_1/part_2/ex_1_27.clj), [1.28](src/sicp/chapter_1/part_2/ex_1_28.clj)
+        * [1.2.1](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e1) Linear Recursion and Iteration - Solutions: [1.9](src/sicp/chapter_1/part_2/ex_1_09.clj), [1.10](src/sicp/chapter_1/part_2/ex_1_10.clj)
+        * [1.2.2](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e2) Tree Recursion - Solutions: [1.11](src/sicp/chapter_1/part_2/ex_1_11.clj), [1.12](src/sicp/chapter_1/part_2/ex_1_12.clj), [1.13](src/sicp/chapter_1/part_2/ex_1_13.clj)
+        * [1.2.3](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e3) Orders of Growth - Solutions: [1.14](src/sicp/chapter_1/part_2/ex_1_14.clj), [1.15](src/sicp/chapter_1/part_2/ex_1_15.clj)
+        * [1.2.4](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e4) Exponentiation - Solutions: [1.16](src/sicp/chapter_1/part_2/ex_1_16.clj), [1.17](src/sicp/chapter_1/part_2/ex_1_17.clj), [1.18](src/sicp/chapter_1/part_2/ex_1_18.clj), [1.19](src/sicp/chapter_1/part_2/ex_1_19.clj)
+        * [1.2.5](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e4) Greatest Common Divisorsx - Solutions: [1.20](src/sicp/chapter_1/part_2/ex_1_20.clj)
+        * [1.2.6](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e6) Example: Testing for Primality - Solutions: [1.21](src/sicp/chapter_1/part_2/ex_1_21.clj), [1.22](src/sicp/chapter_1/part_2/ex_1_22.clj), [1.23](src/sicp/chapter_1/part_2/ex_1_23.clj), [1.24](src/sicp/chapter_1/part_2/ex_1_24.clj), [1.25](src/sicp/chapter_1/part_2/ex_1_25.clj), [1.26](src/sicp/chapter_1/part_2/ex_1_26.clj), [1.27](src/sicp/chapter_1/part_2/ex_1_27.clj), [1.28](src/sicp/chapter_1/part_2/ex_1_28.clj)
     * [1.3](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3) Formulating Abstractions with Higher-Order Procedures - [CODE](src/sicp/chapter_1/part_3/book_1_3.clj)
-        * [1.3.1](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e1) Procedures as Arguments
-            * Solutions: [1.29](src/sicp/chapter_1/part_3/ex_1_29.clj), [1.30](src/sicp/chapter_1/part_3/ex_1_30.clj), [1.31](src/sicp/chapter_1/part_3/ex_1_31.clj), [1.32](src/sicp/chapter_1/part_3/ex_1_32.clj), [1.33](src/sicp/chapter_1/part_3/ex_1_33.clj)
-        * [1.3.2](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e2) Constructing Procedures Using Lambda
-            * Solutions: [1.34](src/sicp/chapter_1/part_3/ex_1_34.clj)
+        * [1.3.1](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e1) Procedures as Arguments - Solutions: [1.29](src/sicp/chapter_1/part_3/ex_1_29.clj), [1.30](src/sicp/chapter_1/part_3/ex_1_30.clj), [1.31](src/sicp/chapter_1/part_3/ex_1_31.clj), [1.32](src/sicp/chapter_1/part_3/ex_1_32.clj), [1.33](src/sicp/chapter_1/part_3/ex_1_33.clj)
+        * [1.3.2](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e2) Constructing Procedures Using Lambda - Solutions: [1.34](src/sicp/chapter_1/part_3/ex_1_34.clj)
         * [1.3.3](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e3) Procedures as General Methods
         * 1.3.4 Procedures as Returned Values
 
