@@ -15,8 +15,9 @@
         (even? exp) (rem (square (expmod base (/ exp 2) m)) m)
         :else (rem (* base (expmod base (dec exp) m)) m)))
 
-; “I don’t see what difference that could make,” says Louis. “I do.” says Eva. “By writing the procedure like that,
-; you have transformed the Θ(logn) process into a Θ(n) process.” Explain.
+; “I don’t see what difference that could make,” says Louis.
+; “I do.” says Eva. “By writing the procedure like that, you have transformed the Θ(logn) process into a Θ(n) process.”
+; Explain.
 
 ; ----
 ; When you use applicative substitution, each expmod call runs twice.
