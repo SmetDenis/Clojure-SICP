@@ -1,4 +1,5 @@
-(ns sicp.chapter-1.part_2.ex-1-23)
+(ns sicp.chapter-1.part_2.ex-1-23
+  (:require [sicp.misc :as m]))
 
 ; Exercise 1.23
 ; The smallest-divisor procedure shown at the start of this section does lots of needless testing:
@@ -23,13 +24,10 @@
 (defn next-odd [x]
   (if (= x 2) 3 (+ x 2)))
 
-(defn divides? [a b]
-  (= (mod b a) 0))
-
 (defn find-divisor
   [num test-divisor]
   (cond (> (* test-divisor test-divisor) num) num
-        (divides? test-divisor num) test-divisor
+        (m/divides? test-divisor num) test-divisor
         :else (find-divisor num (next-odd test-divisor))))
 
 (defn smallest-divisor [num]

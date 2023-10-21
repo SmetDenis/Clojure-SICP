@@ -4,4 +4,5 @@
 
 (deftest expt-test
   (is (= 1 (expt 1 2)))
+  (is (= 1024 (expt 2 10)))
   (is (= 3486784401 (expt 3 20))))
