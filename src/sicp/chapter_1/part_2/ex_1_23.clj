@@ -20,12 +20,10 @@
 ; Is this expectation confirmed? If not, what is the observed ratio of the speeds of the two algorithms,
 ; and how do you explain the fact that it is different from 2?
 
-(defn next-odd
-  [x]
+(defn next-odd [x]
   (if (= x 2) 3 (+ x 2)))
 
-(defn divides?
-  [a b]
+(defn divides? [a b]
   (= (mod b a) 0))
 
 (defn find-divisor
@@ -34,10 +32,8 @@
         (divides? test-divisor num) test-divisor
         :else (find-divisor num (next-odd test-divisor))))
 
-(defn smallest-divisor
-  [num]
+(defn smallest-divisor [num]
   (find-divisor num 2))
 
-(defn prime?
-  [n]
+(defn prime? [n]
   (= n (smallest-divisor n)))

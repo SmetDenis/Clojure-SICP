@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part-3.book-text
+(ns sicp.chapter-1.part-3.book-1-3
   (:require [sicp.misc :as m]))
 
 (comment "1.3.1")                                           ; Procedures as Arguments ----------------------------------
@@ -23,13 +23,6 @@
     0
     (+ (/ 1.0 (* a (+ a 2)))
        (pi-sum (+ a 4) b))))
-
-;(defn ⟨name⟩
-;  [a b]
-;  (if (> a b)
-;    0
-;    (+ (⟨term⟩ a)
-;       (⟨name⟩ (⟨next⟩ a) b))))
 
 (defn sum-terms
   [term a next b]

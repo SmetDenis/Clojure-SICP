@@ -8,12 +8,10 @@
 
 ; These ideas are incorporated in the following procedures:
 
-(defn cube
-  [x]
+(defn cube [x]
   (* x x x))
 
-(defn p
-  [x]
+(defn p [x]
   (- (* 3 x) (* 4 (cube x))))
 
 (defn sine

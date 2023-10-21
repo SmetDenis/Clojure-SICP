@@ -1,4 +1,5 @@
-(ns sicp.chapter-1.part-3.ex-1-33)
+(ns sicp.chapter-1.part-3.ex-1-33
+  (:require [sicp.misc :as m]))
 
 ; Exercise 1.33
 ;
@@ -40,7 +41,7 @@
 ; 1. ----------
 (defn sum-of-primes
   [a b]
-  (filtered-accumulate-iter + 0 sicp.misc/square a inc b sicp.misc/prime?))
+  (filtered-accumulate-iter + 0 m/square a inc b m/prime?))
 
 ; 2. ----------
 (defn gcd

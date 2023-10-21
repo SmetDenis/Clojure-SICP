@@ -17,6 +17,5 @@
                             product
                             (+ counter 1))))
 
-(defn mult
-  [a b]
+(defn mult [a b]
   (fast-mult-v2 a b 0 0))

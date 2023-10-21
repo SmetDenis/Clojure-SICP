@@ -14,20 +14,16 @@
 
 ; Does this work better for small and large numbers?
 
-(defn average
-  [a b]
+(defn average [a b]
   (/ (+ a b) 2))
 
-(defn improve
-  [guess x]
+(defn improve [guess x]
   (average guess (/ x guess)))
 
-(defn square
-  [x]
+(defn square [x]
   (* x x))
 
-(defn good-enough?
-  [guess x]
+(defn good-enough? [guess x]
   (< (abs (- (square guess) x)) 0.001))
 
 (defn sqrt-iter
@@ -35,19 +31,13 @@
   (if
     (good-enough? guess x)
     guess
-    (do
-      ; (println guess)                                       ; Uncomment to track precision
-      (sqrt-iter (improve guess x) x))))
+    (sqrt-iter (improve guess x) x)))
 
 ; Imporovments
-(defn good-enough-v2?
-  [guess1 guess2]
+(defn good-enough-v2? [guess1 guess2]
   (< (abs (- guess1 guess2)) 0.001))
 
-(defn sqrt-iter-v2
-  [guess x]
+(defn sqrt-iter-v2 [guess x]
   (if (good-enough-v2? guess (improve guess x))
     guess
-    (do
-      ; (println guess)                                       ; Uncomment to track precision
-      (sqrt-iter-v2 (improve guess x) x))))
+    (sqrt-iter-v2 (improve guess x) x)))

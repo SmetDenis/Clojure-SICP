@@ -1,8 +1,12 @@
 {:tasks
  {test       (shell "clojure -X:test")
-  lint       (do
-               (run 'lint:check)
-               (run 'lint:kondo))
   lint:fix   (shell "cljfmt fix")
   lint:check (shell "cljfmt check")
-  lint:kondo (shell "clj-kondo --lint test --fail-level error")}}
+  lint:kondo (shell "clj-kondo --lint test src")
+  pre-push   (do
+                 (run 'lint:fix)
+                 (run 'test)
+                 (run 'lint))
+  lint       (do
+                 (run 'lint:check)
+                 (run 'lint:kondo))}}
