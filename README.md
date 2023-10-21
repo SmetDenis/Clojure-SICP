@@ -13,7 +13,7 @@ basics of computer science and software engineering.
 
 ## Table of Contents
 
-* 1 [Building Abstractions with Procedures](https://sarabander.github.io/sicp/html/Chapter-1.xhtml#Chapter-1)
+* [1 Building Abstractions with Procedures](https://sarabander.github.io/sicp/html/Chapter-1.xhtml#Chapter-1)
     * [1.1 The Elements of Programming](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1) - [Code](src/sicp/chapter_1/part_1/book_1_1.clj)
         * [1.1.1 Expressions](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e1)
         * [1.1.2 Naming and the Environment](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e2)
