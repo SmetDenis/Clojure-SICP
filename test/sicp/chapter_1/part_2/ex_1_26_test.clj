@@ -3,5 +3,4 @@
             [sicp.chapter-1.part-2.ex-1-26 :refer [expmod]]))
 
 (deftest expmod-test
-  (is (= 1 (expmod 2 0 3)))
-  )
+  (is (= 1 (expmod 2 0 3))))
