@@ -2,14 +2,13 @@
   (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-1.part-3.ex-1-33 :refer [filtered-accumulate
                                                    filtered-accumulate-iter
-                                                   gcd
                                                    product-of-primes
                                                    sum-of-primes]]
-            [sicp.misc :refer [prime?]]))
+            [sicp.misc :as m]))
 
 (deftest filtered-accumulate-test
-  (is (= 1061 (filtered-accumulate + 0 identity 1 inc 100 prime?)))
-  (is (= 1061 (filtered-accumulate-iter + 0 identity 1 inc 100 prime?))))
+  (is (= 1061 (filtered-accumulate + 0 identity 1 inc 100 m/prime?)))
+  (is (= 1061 (filtered-accumulate-iter + 0 identity 1 inc 100 m/prime?))))
 
 (deftest sum-of-primes-test
   (is (= (+
@@ -27,16 +26,6 @@
            (* 7 7)
            (* 11 11))
          (sum-of-primes 1 12))))                            ; 209
-
-(deftest gcd-test
-  (is (= 8 (gcd 56 48)))
-  (is (= 1 (gcd 101 103)))
-  (is (= 12 (gcd 36 48)))
-  (is (= 5 (gcd 5 0)))
-  (is (= 5 (gcd 0 5)))
-  (is (= 0 (gcd 0 0)))
-  (is (= 21 (gcd 21 21)))
-  (is (= 1 (gcd 17 19))))
 
 (deftest product-of-primes-test
   (is (= 1 (product-of-primes 1)))                          ; (* 1)

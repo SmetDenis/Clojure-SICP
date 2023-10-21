@@ -44,11 +44,7 @@
   (filtered-accumulate-iter + 0 m/square a inc b m/prime?))
 
 ; 2. ----------
-(defn gcd
-  [a b]
-  (if (zero? b) a (recur b (mod a b))))
-
 (defn product-of-primes
   [number]
-  (let [self-gcd? (fn [x] (= 1 (gcd x number)))]
+  (let [self-gcd? (fn [x] (= 1 (m/gcd x number)))]
     (filtered-accumulate-iter * 1 identity 1 inc number self-gcd?)))
