@@ -1,6 +1,6 @@
-(ns misc-test
+(ns sicp.misc-test
   (:require [clojure.test :refer [deftest is]]
-            [misc :refer [square]]))
+            [sicp.misc :refer [square]]))
 
 (deftest square-test
   (is (= 4 (square 2)))

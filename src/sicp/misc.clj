@@ -1,4 +1,4 @@
-(ns misc)
+(ns sicp.misc)
 
 (defn square
   [x]
