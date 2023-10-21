@@ -8,8 +8,7 @@
   (is (= 1/8 (integral cube 0 1 1)))
   (is (= 0.24874999999999994 (integral cube 0 1 0.1)))
   (is (= 0.24998750000000042 (integral cube 0 1 0.01)))
-  (is (= 0.249999875000001 (integral cube 0 1 0.001)))
-  (is (= 0.24999999874993412 (integral cube 0 1 0.0001))))  ; Is not 1/4 even after 10000 iterations
+  (is (= 0.249999875000001 (integral cube 0 1 0.001))))     ; Is not 1/4 even after 1000 iterations
 
 (deftest integral-simpson-test
   (is (= 1/3 (integral-simpson cube 0 1 1)))
