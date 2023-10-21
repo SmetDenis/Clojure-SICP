@@ -72,6 +72,12 @@
 
 (comment "1.1.6")
 ; Conditional Expressions and Predicates -----------------------------------------------------------
+; Exercises:
+; * 1.1
+; * 1.2
+; * 1.3
+; * 1.4
+; * 1.5
 
 ; Renamed `abs` => `abs-x` due to Clojure conflit names
 (defn abs-1
@@ -98,6 +104,10 @@
 
 (comment "1.1.7")
 ; Example: Square Roots by Newton’s Method ---------------------------------------------------------
+; Exercises:
+; * 1.6
+; * 1.7
+; * 1.8
 
 (defn average [x y]
   (/ (+ x y) 2))
