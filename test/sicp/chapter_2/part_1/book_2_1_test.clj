@@ -1,35 +1,35 @@
 (ns sicp.chapter-2.part-1.book-2-1-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.book-2-1 :as b]))
+            [sicp.chapter-2.part-1.book-2-1 :as b21]))
 
 (deftest linear-combination-test
-  (is (= 11 (b/linear-combination 1 2 3 4))))
+  (is (= 11 (b21/linear-combination 1 2 3 4))))
 
-(def one-half (b/make-rat 1 2))
-(def one-third (b/make-rat 1 3))
+(def one-half (b21/make-rat 1 2))
+(def one-third (b21/make-rat 1 3))
 
 (deftest make-rat-test
-  (is (= [1 2] (b/make-rat 1 2)))
-  (is (= [1 3] (b/make-rat 1 3))))
+  (is (= [1 2] (b21/make-rat 1 2)))
+  (is (= [1 3] (b21/make-rat 1 3))))
 
 (deftest add-rat-test
-  (is (= [5 6] (b/add-rat one-half one-third)))
-  (is (= [2 3] (b/add-rat one-third one-third))))
+  (is (= [5 6] (b21/add-rat one-half one-third)))
+  (is (= [2 3] (b21/add-rat one-third one-third))))
 
 (deftest sub-rat-test
-  (is (= [1 6] (b/sub-rat one-half one-third)))
-  (is (= [0 1] (b/sub-rat one-half one-half))))
+  (is (= [1 6] (b21/sub-rat one-half one-third)))
+  (is (= [0 1] (b21/sub-rat one-half one-half))))
 
 (deftest mul-rat-test
-  (is (= [1 6] (b/mul-rat one-half one-third))))
+  (is (= [1 6] (b21/mul-rat one-half one-third))))
 
 (deftest div-rat-test
-  (is (= [3 2] (b/div-rat one-half one-third))))
+  (is (= [3 2] (b21/div-rat one-half one-third))))
 
 (deftest equal-rat?-test
-  (is (= false (b/equal-rat? one-half one-third)))
-  (is (= true (b/equal-rat? one-half one-half))))
+  (is (= false (b21/equal-rat? one-half one-third)))
+  (is (= true (b21/equal-rat? one-half one-half))))
 
 (deftest print-rat-test
-  (is (= "1/2" (b/print-rat one-half)))
-  (is (= "1/3" (b/print-rat one-third))))
+  (is (= "1/2" (b21/print-rat one-half)))
+  (is (= "1/3" (b21/print-rat one-third))))
