@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_1.ex-1-1)
+(ns sicp.chapter-1.part_1.ex-1-01)
 
 ; Exercise 1.1
 ; Below is a sequence of expressions.

@@ -21,8 +21,8 @@ Jay Sussman on basics of computer science and software engineering.
   * [1.1.3](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e3) Evaluating Combinations
   * [1.1.4](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e4) Compound Procedures
   * [1.1.5](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e5) The Substitution Model for Procedure Application
-  * [1.1.6](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e6) Conditional Expressions and Predicates - [1.1](src/sicp/chapter_1/part_1/ex_1_1.clj), [1.2](src/sicp/chapter_1/part_1/ex_1_2.clj), [1.3](src/sicp/chapter_1/part_1/ex_1_3.clj), [1.4](src/sicp/chapter_1/part_1/ex_1_4.clj), [1.5](src/sicp/chapter_1/part_1/ex_1_5.clj)
-  * [1.1.7](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e7) Example: Square Roots by Newton's Method - [1.6](src/sicp/chapter_1/part_1/ex_1_6.clj), [1.7](src/sicp/chapter_1/part_1/ex_1_7.clj), [1.8](src/sicp/chapter_1/part_1/ex_1_8.clj)
+  * [1.1.6](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e6) Conditional Expressions and Predicates - [1.1](src/sicp/chapter_1/part_1/ex_1_01.clj), [1.2](src/sicp/chapter_1/part_1/ex_1_02.clj), [1.3](src/sicp/chapter_1/part_1/ex_1_03.clj), [1.4](src/sicp/chapter_1/part_1/ex_1_04.clj), [1.5](src/sicp/chapter_1/part_1/ex_1_05.clj)
+  * [1.1.7](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e7) Example: Square Roots by Newton's Method - [1.6](src/sicp/chapter_1/part_1/ex_1_06.clj), [1.7](src/sicp/chapter_1/part_1/ex_1_07.clj), [1.8](src/sicp/chapter_1/part_1/ex_1_08.clj)
   * [1.1.8](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e8) Procedures as Black-Box Abstractions
 * [1.2](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2) Procedures and the Processes They Generate - [code in book](src/sicp/chapter_1/part_2/book_1_2.clj)
   * [1.2.1](https://sarabander.github.io/sicp/html/1_002e2.xhtml#g_t1_002e2_002e1) Linear Recursion and Iteration - [1.9](src/sicp/chapter_1/part_2/ex_1_09.clj), [1.10](src/sicp/chapter_1/part_2/ex_1_10.clj)
