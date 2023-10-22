@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_1.ex-1-3)
+(ns sicp.chapter-1.part_1.ex-1-03)
 
 ; Exercise 1.3
 ; Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two
