@@ -40,7 +40,7 @@ Jay Sussman on basics of computer science and software engineering.
 ### Chapter 2 - Building Abstractions with Data
 
 * [2.1](https://sarabander.github.io/sicp/html/Chapter-2.xhtml#Chapter-2) Introduction to Data Abstraction - [CODE](src/sicp/chapter_2/part_1/book_2_1.clj)
-  * [2.1.1](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1) Example: Arithmetic Operations for Rational Numbers
+  * [2.1.1](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1) Example: Arithmetic Operations for Rational Numbers  - [2.1](src/sicp/chapter_2/part_1/ex_2_01.clj)
   * 2.1.2 Abstraction Barriers
   * 2.1.3 What Is Meant by Data?
   * 2.1.4 Extended Exercise: Interval Arithmetic
