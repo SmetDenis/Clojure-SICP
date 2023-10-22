@@ -6,7 +6,6 @@
 (def print-logs false)
 
 (deftest fixed-point-print-test
-  (is (= 1.6180327868852458 (fixed-point-print #(+ 1.0 (/ 1 %)) 1 0.00001 print-logs)))
   ; 2.0
   ; 1.5
   ; 1.6666666666666665
@@ -22,8 +21,8 @@
   ; 1.6180371352785146
   ; 1.6180327868852458
   ; Summary: 14 iterations
+  (is (= 1.6180327868852458 (fixed-point-print #(+ 1.0 (/ 1 %)) 1 0.00001 print-logs)))
 
-  (is (= 1.6180327871539473 (fixed-point-print #(+ 1.0 (/ 1 %)) 0.0001 0.00001 print-logs)))
   ; 11.0
   ; 10001.0
   ; 1.000099990001
@@ -42,12 +41,8 @@
   ; 1.6180371345750424
   ; 1.6180327871539473
   ; Summary: 17 iterations
+  (is (= 1.6180327871539473 (fixed-point-print #(+ 1.0 (/ 1 %)) 0.0001 0.00001 print-logs)))
 
-  (is (= 4.555532257016376 (fixed-point-print
-                             #(/ (Math/log 1000) (Math/log %))
-                             10
-                             0.00001
-                             print-logs)))
   ; 2.9999999999999996
   ; 6.2877098228681545
   ; 3.7570797902002955
@@ -83,12 +78,12 @@
   ; 4.555536206185039
   ; 4.555532257016376
   ; Summary: 34 iterations
-
-  (is (= 4.555536206185039 (fixed-point-print
-                             #(m/average % (/ (Math/log 1000) (Math/log %)))
+  (is (= 4.555532257016376 (fixed-point-print
+                             #(/ (Math/log 1000) (Math/log %))
                              10
                              0.00001
                              print-logs)))
+
   ; 6.5
   ; 5.095215099176933
   ; 4.668760681281611
@@ -100,4 +95,8 @@
   ; 4.555538647701617
   ; 4.555536206185039
   ; Summary: 10 iterations
-)
+  (is (= 4.555536206185039 (fixed-point-print
+                             #(m/average % (/ (Math/log 1000) (Math/log %)))
+                             10
+                             0.00001
+                             print-logs))))
