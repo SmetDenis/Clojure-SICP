@@ -38,8 +38,6 @@
     (recursive 0)))
 
 ; 2. Iterative process -------------------
-; (/ n (+ d result))
-;        (iter (- i 1) (/ n (+ d result))))))
 (defn cont-frac-iter
   [func-n func-d k]
   (letfn [(iterator [i result]
