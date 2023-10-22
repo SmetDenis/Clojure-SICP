@@ -107,12 +107,11 @@
       (and (m/negative? b-value) (m/positive? a-value)) (search f b a)
       :else (throw (Exception. (str "Values are not of opposite sign " a " " b))))))
 
-(def tolerance 0.00001)
 (defn fixed-point
   [f first-guess]
   (letfn [(try-fn [guess]
             (let [next (f guess)]
-              (if (m/close-enough? guess next tolerance) next (recur next))))]
+              (if (m/close-enough? guess next 0.00001) next (recur next))))]
     (try-fn first-guess)))
 
 (defn sqrt [x]
