@@ -113,3 +113,13 @@
   (is (= 7.000000000000103 (book/sqrt-newton 49)))
   (is (= 10.0 (book/sqrt-newton 100)))
   (is (= 31.62277660168526 (book/sqrt-newton 1000))))
+
+(deftest sqrt-transform-test
+  (is (= 7.000000000000002 (book/sqrt-transform-average 49)))
+  (is (= 10.0 (book/sqrt-newton 100)))
+  (is (= 31.622776601684336 (book/sqrt-transform-average 1000))))
+
+(deftest sqrt-newtons-transform-test
+  (is (= 7.000000000000103 (book/sqrt-newtons-transform 49)))
+  (is (= 10.0 (book/sqrt-newton 100)))
+  (is (= 31.62277660168526 (book/sqrt-newtons-transform 1000))))

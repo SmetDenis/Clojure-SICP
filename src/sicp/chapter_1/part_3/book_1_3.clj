@@ -149,3 +149,12 @@
 
 (defn sqrt-newton [x]
   (newtons-method (fn [y] (- (m/square y) x)) 1.0))
+
+(defn fixed-point-of-transform [g transform guess]
+  (fixed-point (transform g) guess))
+
+(defn sqrt-transform-average [x]
+  (fixed-point-of-transform (fn [y] (/ x y)) average-damp 1.0))
+
+(defn sqrt-newtons-transform [x]
+  (fixed-point-of-transform (fn [y] (- (m/square y) x)) newton-transform 1.0))
