@@ -116,3 +116,19 @@
 
 (defn sqrt [x]
   (fixed-point #(/ (+ % (/ x %)) 2) 1.0))
+
+(comment "1.3.4")
+; Procedures as Returned Values --------------------------------------------------------------------
+; Exercises:
+; * 1.40
+; * 1.41
+; * 1.42
+; * 1.43
+; * 1.44
+; * 1.45
+; * 1.46
+
+(defn average-damp [f]
+  (fn [x] (m/average x (f x))))
+
+((average-damp m/square) 10)

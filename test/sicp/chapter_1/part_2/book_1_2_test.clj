@@ -2,6 +2,9 @@
   (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-1.part-2.book-1-2 :as book]))
 
+(comment "1.2.1")
+; Linear Recursion and Iteration -------------------------------------------------------------------
+
 (deftest factorial-test
   (is (= 1 (book/factorial 1)))
   (is (= 2 (book/factorial 2)))
@@ -18,6 +21,9 @@
   (is (= 120 (book/factorial-iter 5)))
   (is (= 720 (book/factorial-iter 6))))
 
+(comment "1.2.2")
+; Tree Recursion -----------------------------------------------------------------------------------
+
 (deftest fib-test
   (is (= 5 (book/fib 5)))
   (is (= 55 (book/fib 10)))
@@ -33,6 +39,13 @@
   (is (= 4 (book/count-change 10)))
   (is (= 50 (book/count-change 50)))
   (is (= 292 (book/count-change 100))))
+
+(comment "1.2.3")
+; Orders of Growth ---------------------------------------------------------------------------------
+; There are no code examples for this part in the book :(
+
+(comment "1.2.4")
+; Exponentiation -----------------------------------------------------------------------------------
 
 (deftest expt-test
   (is (= 1 (book/expt 1 2)))
@@ -52,6 +65,9 @@
   (is (= false (book/even?-alt 3)))
   (is (= true (book/even?-alt 4))))
 
+(comment "1.2.5")
+; Greatest Common Divisors -------------------------------------------------------------------------
+
 (deftest gcd-test
   (is (= 8 (book/gcd 56 48)))
   (is (= 1 (book/gcd 101 103)))
@@ -61,6 +77,9 @@
   (is (= 0 (book/gcd 0 0)))
   (is (= 21 (book/gcd 21 21)))
   (is (= 1 (book/gcd 17 19))))
+
+(comment "1.2.6")
+; Example: Testing for Primality -------------------------------------------------------------------
 
 (deftest smallest-divisor-test
   (is (= 1 (book/smallest-divisor 1)))

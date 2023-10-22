@@ -1,9 +1,10 @@
-(ns sicp.chapter-1.part-3.book-text-test
+(ns sicp.chapter-1.part-3.book-1-3-test
   (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-1.part-3.book-1-3 :as book]
             [sicp.misc :refer [cube]]))
 
-(comment "1.3.1")                                           ; Procedures as Arguments ----------------------------------
+(comment "1.3.1")
+; Procedures as Arguments --------------------------------------------------------------------------
 
 (deftest sum-integers-test
   (is (= 0 (book/sum-integers 0 0)))
@@ -53,7 +54,8 @@
   (is (= 0.24998750000000042 (book/integral cube 0 1 0.01)))
   (is (= 0.249999875000001 (book/integral cube 0 1 0.001))))
 
-(comment "1.3.2")                                           ; Constructing Procedures Using Lambda ---------------------
+(comment "1.3.2")
+; Constructing Procedures Using Lambda -------------------------------------------------------------
 
 (deftest pi-sum-lamda-test
   (is (= 0.3333333333333333 (book/pi-sum-lamda 1 1)))
@@ -65,7 +67,8 @@
   (is (= 0.24998750000000042 (book/integral-lamda cube 0 1 0.01)))
   (is (= 0.249999875000001 (book/integral-lamda cube 0 1 0.001))))
 
-(comment "1.3.3")                                           ; Procedures as General Methods ----------------------------
+(comment "1.3.3")
+; Procedures as General Methods --------------------------------------------------------------------
 
 (deftest search-test
   (is (= 0 (book/search cube -1 1)))
