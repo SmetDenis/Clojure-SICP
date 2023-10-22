@@ -12,6 +12,8 @@
 
 (comment "2.1.1")
 ; Example: Arithmetic Operations for Rational Numbers ----------------------------------------------
+; Exercises:
+; * 2.1
 
 ; (defn make-rat [n d] (m/pair n d))
 (defn make-rat [numer denom]
