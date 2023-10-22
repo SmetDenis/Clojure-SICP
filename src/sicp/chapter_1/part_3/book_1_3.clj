@@ -130,5 +130,3 @@
 
 (defn average-damp [f]
   (fn [x] (m/average x (f x))))
-
-((average-damp m/square) 10)

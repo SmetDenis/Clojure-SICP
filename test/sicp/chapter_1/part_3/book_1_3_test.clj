@@ -88,3 +88,9 @@
 (deftest sqrt-test
   (is (= 1.4142135623746899 (book/sqrt 2)))
   (is (= 3.0 (book/sqrt 9))))
+
+(deftest average-damp-test)
+
+(comment "1.3.4")
+; Procedures as Returned Values --------------------------------------------------------------------
+
