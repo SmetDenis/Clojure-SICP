@@ -68,3 +68,20 @@
 (defn denom-alt [ratio]
   (let [g (m/gcd (m/car ratio) (m/cdr ratio))]
     (/ (m/cdr ratio) g)))
+
+(comment "2.1.3")
+; What Is Meant by Data? ---------------------------------------------------------------------------
+; Exercises:
+; * 2.4
+; * 2.5
+; * 2.6
+
+(defn pair-alt [x y]
+  (let [dispatch (fn [m] (cond
+                           (= m 0) x
+                           (= m 1) y
+                           :else (throw (Exception. "Argument not 0 or 1: CONS"))))]
+    dispatch))
+
+(defn car-alt [z] (z 0))
+(defn cdr-alt [z] (z 1))

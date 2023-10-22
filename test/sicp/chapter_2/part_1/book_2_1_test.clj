@@ -72,3 +72,10 @@
   (is (= 2 (b21/denom-alt one-half)))
   (is (= 3 (b21/denom-alt one-third-alt)))
   (is (= 4 (b21/denom-alt no-optimal-alt))))
+
+(comment "2.1.3")
+; What Is Meant by Data? ---------------------------------------------------------------------------
+
+(deftest pair-alt-test
+  (is (= 1 (b21/car-alt (b21/pair-alt 1 2))))
+  (is (= 2 (b21/cdr-alt (b21/pair-alt 1 2)))))
