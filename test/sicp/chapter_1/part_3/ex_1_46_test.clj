@@ -11,4 +11,5 @@
 (deftest fixed-point-improved-test
   (is (= 0.1814333572199292 (fixed-point-improved (fn [x] (Math/sin x)) 1)))
   (is (= 0.7395672022122561 (fixed-point-improved (fn [x] (Math/cos x)) 1)))
-  (is (= -0.10103212125727049 (fixed-point-improved (fn [x] (Math/tan x)) 1))))
+  (is (= 0.18093821315586828 (fixed-point-improved (fn [x] (Math/sin x)) 2)))
+  (is (= 0.7386015286351051 (fixed-point-improved (fn [x] (Math/cos x)) 2))))
