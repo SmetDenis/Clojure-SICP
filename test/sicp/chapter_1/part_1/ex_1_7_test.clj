@@ -1,6 +1,6 @@
 (ns sicp.chapter-1.part_1.ex-1-7-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-1.book-1-1 :as b]
+            [sicp.chapter-1.part-1.book-1-1 :as b11]
             [sicp.chapter-1.part_1.ex-1-7 :refer [sqrt-iter-v2]]))
 
 (deftest sqrt-iter-test
@@ -10,7 +10,7 @@
   ; 6.872226737643129
   ; 6.055351744849479
   ; 6.0002529841194185 - better
-  (is (= 6.000000005333189 (b/sqrt-iter 1.0 36))))
+  (is (= 6.000000005333189 (b11/sqrt-iter 1.0 36))))
 
   ; 1.0
   ; 4.9382716056172717E17

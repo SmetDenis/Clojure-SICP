@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part_1.ex-1-6
-  (:require [sicp.chapter-1.part-1.book-1-1 :as b]))
+  (:require [sicp.chapter-1.part-1.book-1-1 :as b11]))
 
 ; Exercise 1.6
 ; Alyssa P. Hacker doesn’t see why if needs to be provided as a special form.
@@ -19,9 +19,9 @@
 
 (defn sqrt-iter-new-if
   [guess x]
-  (new-if (b/good-enough? guess x)
+  (new-if (b11/good-enough? guess x)
           guess
-          (b/sqrt-iter (b/improve guess x) x)))
+          (b11/sqrt-iter (b11/improve guess x) x)))
 
 ; What happens when Alyssa attempts to use this to compute square roots? Explain.
 ; TODO Explain.
