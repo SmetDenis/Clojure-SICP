@@ -130,3 +130,22 @@
 
 (defn average-damp [f]
   (fn [x] (m/average x (f x))))
+
+(defn sqrt-lamda [x]
+  (fixed-point (average-damp #(/ x %)) 1.0))
+
+(defn cube-root [x]
+  (fixed-point (average-damp #(/ x (m/square %))) 1.0))
+
+(defn deriv
+  ([g] (deriv g 0.00001))
+  ([g dx] (fn [x] (/ (- (g (+ x dx)) (g x)) dx))))
+
+(defn newton-transform [g]
+  (fn [x] (- x (/ (g x) ((deriv g) x)))))
+
+(defn newtons-method [g guess]
+  (fixed-point (newton-transform g) guess))
+
+(defn sqrt-newton [x]
+  (newtons-method (fn [y] (- (m/square y) x)) 1.0))
