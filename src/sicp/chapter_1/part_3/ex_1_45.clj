@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part-3.ex-1-45
-  (:require [sicp.chapter-1.part-3.book-1-3 :as book-1-3]
+  (:require [sicp.chapter-1.part-3.book-1-3 :as b]
             [sicp.chapter-1.part-3.ex-1-43 :as ex-1-43]))
 
 ; Exercise 1.45
@@ -23,8 +23,8 @@
 ; Assume that any arithmetic operations you need are available as primitives.
 
 (defn nth-root [x n damps]
-  (book-1-3/fixed-point
-    ((ex-1-43/repeated book-1-3/average-damp damps)
+  (b/fixed-point
+    ((ex-1-43/repeated b/average-damp damps)
      (fn [y] (/ x (Math/pow y (- n 1)))))
     1.0))
 
