@@ -3,19 +3,21 @@
             [sicp.chapter-2.part-1.ex-2-06 :as ex-2-06]))
 
 (def f (fn [x] x))
+(def placeholder (rand-int 100))                            ; Hackish to execute test cases
 
 (deftest zero-test
-  (is (= 0 ((ex-2-06/zero f) 0))))
+  (is (= placeholder ((ex-2-06/zero f) placeholder))))
 
 (deftest one-test
-  (is (= 0 ((ex-2-06/one f) 0))))
+  (is (= placeholder ((ex-2-06/one f) placeholder))))
 
 (deftest two-test
-  (is (= 0 ((ex-2-06/two f) 0))))
+  (is (= placeholder ((ex-2-06/two f) placeholder))))
 
 (deftest add-1-test
-  (is (= 0 (((ex-2-06/add-1 ex-2-06/one) f) 0))))
+  (is (= ((ex-2-06/two f) placeholder)
+         (((ex-2-06/add-1 ex-2-06/one) f) placeholder))))
 
 (deftest add-test
-  (is (= ((ex-2-06/two f) 0)
-         (((ex-2-06/add ex-2-06/zero ex-2-06/one) f) 0))))
+  (is (= ((ex-2-06/two f) placeholder)
+         (((ex-2-06/add ex-2-06/zero ex-2-06/one) f) placeholder))))
