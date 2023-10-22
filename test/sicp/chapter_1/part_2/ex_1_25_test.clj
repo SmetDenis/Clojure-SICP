@@ -7,6 +7,5 @@
   (is (= 16 (expmod 123 44 55))))
 
 (deftest expmod-alyssa-test
-  (is (= 1 (expmod-alyssa 2 0 3)))
+  (is (= 1 (expmod-alyssa 2 0 3))))
   ; (is (= 3 (expmod-alyssa 123 44 55))) ;  It makes too many iterations => time & memory consuming
-)

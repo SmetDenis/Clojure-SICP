@@ -128,5 +128,5 @@
 
   ; Boundary conditions
   (is (not (b12/fast-prime? 1 10)))
-  (is (b12/fast-prime? 2 0))                               ; times = 0, must be true
-  (is (b12/fast-prime? 4 0)))                              ; times = 0, must be true, but is not prime
+  (is (b12/fast-prime? 2 0))                                ; times = 0, must be true
+  (is (b12/fast-prime? 4 0)))                               ; times = 0, must be true, but is not prime
