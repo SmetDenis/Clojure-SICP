@@ -51,3 +51,20 @@
 
 (defn print-rat [ratio]
   (str (numer ratio) "/" (denom ratio)))
+
+(comment "2.1.2")
+; Abstraction Barriers -----------------------------------------------------------------------------
+; Exercises:
+; * 2.2
+; * 2.3
+
+(defn make-rat-alt [numer denom]
+  (m/pair numer denom))
+
+(defn numer-alt [ratio]
+  (let [g (m/gcd (m/car ratio) (m/cdr ratio))]
+    (/ (m/car ratio) g)))
+
+(defn denom-alt [ratio]
+  (let [g (m/gcd (m/car ratio) (m/cdr ratio))]
+    (/ (m/cdr ratio) g)))
