@@ -1,5 +1,5 @@
 (ns sicp.chapter-1.part_1.ex-1-8
-  (:require [sicp.chapter-1.part-1.book-1-1 :as book]))
+  (:require [sicp.chapter-1.part-1.book-1-1 :as b]))
 
 ; Exercise 1.8
 ; Newton’s method for cube roots is based on the fact that if y
@@ -11,7 +11,7 @@
 
 (defn improve
   [guess x]
-  (/ (+ (/ x (book/square guess))
+  (/ (+ (/ x (b/square guess))
         (* guess 2))
      3))
 
