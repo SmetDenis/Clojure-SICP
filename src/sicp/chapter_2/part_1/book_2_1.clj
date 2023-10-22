@@ -21,8 +21,11 @@
     (m/pair (/ numer g)
             (/ denom g))))
 
-(defn numer [ratio] (m/car ratio))
-(defn denom [ratio] (m/cdr ratio))
+(defn numer [ratio]
+  (m/car ratio))
+
+(defn denom [ratio]
+  (m/cdr ratio))
 
 (defn add-rat [x y]
   (make-rat (+ (* (numer x) (denom y))
