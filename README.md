@@ -35,7 +35,7 @@ Jay Sussman on basics of computer science and software engineering.
   * [1.3.1](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e1) Procedures as Arguments - [1.29](src/sicp/chapter_1/part_3/ex_1_29.clj), [1.30](src/sicp/chapter_1/part_3/ex_1_30.clj), [1.31](src/sicp/chapter_1/part_3/ex_1_31.clj), [1.32](src/sicp/chapter_1/part_3/ex_1_32.clj), [1.33](src/sicp/chapter_1/part_3/ex_1_33.clj)
   * [1.3.2](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e2) Constructing Procedures Using Lambda - [1.34](src/sicp/chapter_1/part_3/ex_1_34.clj)
   * [1.3.3](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e3) Procedures as General Methods - [1.35](src/sicp/chapter_1/part_3/ex_1_35.clj), [1.36](src/sicp/chapter_1/part_3/ex_1_36.clj), [1.37](src/sicp/chapter_1/part_3/ex_1_37.clj), [1.38](src/sicp/chapter_1/part_3/ex_1_38.clj), [1.39](src/sicp/chapter_1/part_3/ex_1_39.clj)
-  * [1.3.4](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e4) Procedures as Returned Values - [1.40](src/sicp/chapter_1/part_3/ex_1_40.clj), [1.41](src/sicp/chapter_1/part_3/ex_1_41.clj), [1.42](src/sicp/chapter_1/part_3/ex_1_42.clj), [1.43](src/sicp/chapter_1/part_3/ex_1_43.clj)
+  * [1.3.4](https://sarabander.github.io/sicp/html/1_002e3.xhtml#g_t1_002e3_002e4) Procedures as Returned Values - [1.40](src/sicp/chapter_1/part_3/ex_1_40.clj), [1.41](src/sicp/chapter_1/part_3/ex_1_41.clj), [1.42](src/sicp/chapter_1/part_3/ex_1_42.clj), [1.43](src/sicp/chapter_1/part_3/ex_1_43.clj), [1.44](src/sicp/chapter_1/part_3/ex_1_44.clj)
 
 ### Chapter 2 - Building Abstractions with Data
 
