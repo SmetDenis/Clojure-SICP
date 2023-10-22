@@ -2,6 +2,9 @@
   (:require [clojure.test :refer [deftest is]]
             [sicp.misc :as m]))
 
+(comment "Chapter #1")
+; The Elements of Programming ----------------------------------------------------------------------
+
 (deftest square-test
   (is (= 4 (m/square 2)))
   (is (= 9 (m/square 3))))
@@ -51,3 +54,18 @@
   (is (= 0 (m/gcd 0 0)))
   (is (= 21 (m/gcd 21 21)))
   (is (= 1 (m/gcd 17 19))))
+
+(comment "Chapter #2")
+; Introduction to Data Abstraction -----------------------------------------------------------------
+
+(deftest pair-test
+  (is (= [1 2] (m/pair 1 2)))
+  (is (= [1123 2123] (m/pair 1123 2123))))
+
+(deftest car-test
+  (is (= 1 (m/car (m/pair 1 2))))
+  (is (= 1123 (m/car (m/pair 1123 2)))))
+
+(deftest cdr-test
+  (is (= 2 (m/cdr (m/pair 1 2))))
+  (is (= 2123 (m/cdr (m/pair 1 2123)))))

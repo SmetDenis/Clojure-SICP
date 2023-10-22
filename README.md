@@ -15,7 +15,7 @@ Jay Sussman on basics of computer science and software engineering.
 
 ### Chapter 1 - Building Abstractions with Procedures
 
-* [1.1](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1) The Elements of Programming - [CODE](src/sicp/chapter_1/part_1/book_1_1.clj)
+* [1.1](https://sarabander.github.io/sicp/html/Chapter-1.xhtml#Chapter-1) The Elements of Programming - [CODE](src/sicp/chapter_1/part_1/book_1_1.clj)
   * [1.1.1](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e1) Expressions
   * [1.1.2](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e2) Naming and the Environment
   * [1.1.3](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e3) Evaluating Combinations
@@ -39,8 +39,8 @@ Jay Sussman on basics of computer science and software engineering.
 
 ### Chapter 2 - Building Abstractions with Data
 
-* 2.1 Introduction to Data Abstraction
-  * 2.1.1 Example: Arithmetic Operations for Rational Numbers
+* [2.1](https://sarabander.github.io/sicp/html/Chapter-2.xhtml#Chapter-2) Introduction to Data Abstraction - [CODE](src/sicp/chapter_2/part_1/book_2_1.clj)
+  * [2.1.1](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1) Example: Arithmetic Operations for Rational Numbers
   * 2.1.2 Abstraction Barriers
   * 2.1.3 What Is Meant by Data?
   * 2.1.4 Extended Exercise: Interval Arithmetic
