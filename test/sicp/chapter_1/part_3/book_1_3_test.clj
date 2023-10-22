@@ -1,9 +1,10 @@
-(ns sicp.chapter-1.part-3.book-text-test
+(ns sicp.chapter-1.part-3.book-1-3-test
   (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-1.part-3.book-1-3 :as book]
-            [sicp.misc :refer [cube]]))
+            [sicp.misc :as m]))
 
-(comment "1.3.1")                                           ; Procedures as Arguments ----------------------------------
+(comment "1.3.1")
+; Procedures as Arguments --------------------------------------------------------------------------
 
 (deftest sum-integers-test
   (is (= 0 (book/sum-integers 0 0)))
@@ -33,7 +34,7 @@
   (is (= 3.139592655589783 (* 8 (book/pi-sum 1 1000)))))
 
 (deftest sum-terms-test
-  (is (= 3025 (book/sum-terms cube 1 inc 10))))
+  (is (= 3025 (book/sum-terms m/cube 1 inc 10))))
 
 (deftest sum-integers-2-test
   (is (= 15 (book/sum-integers-2 1 5)))
@@ -50,10 +51,11 @@
   (is (= 3.139592655589783 (* 8 (book/pi-sum-2 1 1000)))))
 
 (deftest integral-test
-  (is (= 0.24998750000000042 (book/integral cube 0 1 0.01)))
-  (is (= 0.249999875000001 (book/integral cube 0 1 0.001))))
+  (is (= 0.24998750000000042 (book/integral m/cube 0 1 0.01)))
+  (is (= 0.249999875000001 (book/integral m/cube 0 1 0.001))))
 
-(comment "1.3.2")                                           ; Constructing Procedures Using Lambda ---------------------
+(comment "1.3.2")
+; Constructing Procedures Using Lambda -------------------------------------------------------------
 
 (deftest pi-sum-lamda-test
   (is (= 0.3333333333333333 (book/pi-sum-lamda 1 1)))
@@ -62,20 +64,21 @@
   (is (= 3.139592655589783 (* 8 (book/pi-sum-lamda 1 1000)))))
 
 (deftest integral-lamda-test
-  (is (= 0.24998750000000042 (book/integral-lamda cube 0 1 0.01)))
-  (is (= 0.249999875000001 (book/integral-lamda cube 0 1 0.001))))
+  (is (= 0.24998750000000042 (book/integral-lamda m/cube 0 1 0.01)))
+  (is (= 0.249999875000001 (book/integral-lamda m/cube 0 1 0.001))))
 
-(comment "1.3.3")                                           ; Procedures as General Methods ----------------------------
+(comment "1.3.3")
+; Procedures as General Methods --------------------------------------------------------------------
 
 (deftest search-test
-  (is (= 0 (book/search cube -1 1)))
-  (is (= 0 (book/search cube -9 9)))
-  (is (= 1/16384 (book/search cube -1 9))))
+  (is (= 0 (book/search m/cube -1 1)))
+  (is (= 0 (book/search m/cube -9 9)))
+  (is (= 1/16384 (book/search m/cube -1 9))))
 
 (deftest half-interval-method-test
-  (is (= 6.103515625E-5 (book/half-interval-method cube -1.0 9.0)))
+  (is (= 6.103515625E-5 (book/half-interval-method m/cube -1.0 9.0)))
   (is (= 3.14111328125 (book/half-interval-method #(Math/sin %) 2.0 4.0)))
-  (is (= 1.89306640625 (book/half-interval-method #(- (cube %) (* 2 %) 3) 1.0 2.0))))
+  (is (= 1.89306640625 (book/half-interval-method #(- (m/cube %) (* 2 %) 3) 1.0 2.0))))
 
 (deftest fixed-point-test
   (is (= 0.7390822985224024 (book/fixed-point #(Math/cos %) -1.0)))
@@ -85,3 +88,38 @@
 (deftest sqrt-test
   (is (= 1.4142135623746899 (book/sqrt 2)))
   (is (= 3.0 (book/sqrt 9))))
+
+(comment "1.3.4")
+; Procedures as Returned Values --------------------------------------------------------------------
+
+(deftest average-damp-test
+  (is (= 55 ((book/average-damp m/square) 10))))
+
+(deftest sqrt-lamda-test
+  (is (= 3.0 (book/sqrt-lamda 9)))
+  (is (= 3.162277660168379 (book/sqrt-lamda 10))))
+
+(deftest cube-root-test
+  (is (= 2.9999972321057697 (book/cube-root 27)))
+  (is (= 10.000002544054729 (book/cube-root 1000))))
+
+(deftest deriv-test
+  (is (= 75.00014999664018 ((book/deriv m/cube) 5))))
+
+(deftest newton-transform-test
+  (is (= 75.00014999664018 ((book/deriv m/cube) 5))))
+
+(deftest sqrt-newton-test
+  (is (= 7.000000000000103 (book/sqrt-newton 49)))
+  (is (= 10.0 (book/sqrt-newton 100)))
+  (is (= 31.62277660168526 (book/sqrt-newton 1000))))
+
+(deftest sqrt-transform-test
+  (is (= 7.000000000000002 (book/sqrt-transform-average 49)))
+  (is (= 10.0 (book/sqrt-newton 100)))
+  (is (= 31.622776601684336 (book/sqrt-transform-average 1000))))
+
+(deftest sqrt-newtons-transform-test
+  (is (= 7.000000000000103 (book/sqrt-newtons-transform 49)))
+  (is (= 10.0 (book/sqrt-newton 100)))
+  (is (= 31.62277660168526 (book/sqrt-newtons-transform 1000))))
