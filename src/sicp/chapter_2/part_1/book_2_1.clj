@@ -100,6 +100,7 @@
 ; * 2.15
 ; * 2.16
 
+; Dummy function is only for valid Clojure syntax
 (defn make-interval [_ _])
 (defn lower-bound [_])
 (defn upper-bound [_])
