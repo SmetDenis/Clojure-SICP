@@ -100,9 +100,9 @@
 ; * 2.15
 ; * 2.16
 
-(defn make-interval [low high])
-(defn lower-bound [interval])
-(defn upper-bound [interval])
+(defn make-interval [_ _])
+(defn lower-bound [_])
+(defn upper-bound [_])
 
 (defn mul-interval [x y]
   (let [p1 (* (lower-bound x)
