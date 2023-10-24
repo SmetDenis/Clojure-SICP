@@ -85,3 +85,45 @@
 
 (defn car-alt [z] (z 0))
 (defn cdr-alt [z] (z 1))
+
+(comment "2.1.4")
+; Extended Exercise: Interval Arithmetic -----------------------------------------------------------
+; Exercises:
+; * 2.7
+; * 2.8
+; * 2.9
+; * 2.10
+; * 2.11
+; * 2.12
+; * 2.13
+; * 2.14
+; * 2.15
+; * 2.16
+
+; Dummy function is only for valid Clojure syntax
+(defn make-interval [_ _])
+(defn lower-bound [_])
+(defn upper-bound [_])
+
+(defn mul-interval [x y]
+  (let [p1 (* (lower-bound x)
+              (lower-bound y))
+        p2 (* (lower-bound x)
+              (upper-bound y))
+        p3 (* (upper-bound x)
+              (lower-bound y))
+        p4 (* (upper-bound x)
+              (upper-bound y))]
+    (make-interval (min p1 p2 p3 p4)
+                   (max p1 p2 p3 p4))))
+
+(defn div-interval [x y]
+  (mul-interval x (make-interval
+                    (/ 1.0 (upper-bound y))
+                    (/ 1.0 (lower-bound y)))))
+
+(defn add-interval [x y]
+  (make-interval (+ (lower-bound x)
+                    (lower-bound y))
+                 (+ (upper-bound x)
+                    (upper-bound y))))
