@@ -43,7 +43,7 @@ Jay Sussman on basics of computer science and software engineering.
   * [2.1.1](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e1) Example: Arithmetic Operations for Rational Numbers - [2.1](src/sicp/chapter_2/part_1/ex_2_01.clj)
   * [2.1.2](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e2) Abstraction Barriers - [2.2](src/sicp/chapter_2/part_1/ex_2_02.clj), [2.3](src/sicp/chapter_2/part_1/ex_2_03.clj)
   * [2.1.3](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e3) What Is Meant by Data? - [2.4](src/sicp/chapter_2/part_1/ex_2_04.clj), [2.5](src/sicp/chapter_2/part_1/ex_2_05.clj), [2.6](src/sicp/chapter_2/part_1/ex_2_06.clj)
-  * 2.1.4 Extended Exercise: Interval Arithmetic
+  * [2.1.4](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e4) Extended Exercise: Interval Arithmetic
 * 2.2 Hierarchical Data and the Closure Property
   * 2.2.1 Representing Sequences
   * 2.2.2 Hierarchical Structures
