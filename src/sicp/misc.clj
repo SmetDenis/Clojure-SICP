@@ -3,6 +3,9 @@
 (comment "Chapter #1")
 ; The Elements of Programming ----------------------------------------------------------------------
 
+(defn error [error-message]
+  (throw (Exception. (str error-message))))
+
 (defn square [x]
   (* x x))
 
@@ -59,3 +62,44 @@
 
 (defn cdr [pair]
   (second pair))
+
+(defn make-interval [low high]
+  (pair low high))
+
+(defn lower-bound [interval]
+  (car interval))
+
+(defn upper-bound [interval]
+  (cdr interval))
+
+(defn mul-interval [interval-1 interval-2]
+  (let [p1 (* (lower-bound interval-1)
+              (lower-bound interval-2))
+        p2 (* (lower-bound interval-1)
+              (upper-bound interval-2))
+        p3 (* (upper-bound interval-1)
+              (lower-bound interval-2))
+        p4 (* (upper-bound interval-1)
+              (upper-bound interval-2))]
+    (make-interval (min p1 p2 p3 p4)
+                   (max p1 p2 p3 p4))))
+
+(defn div-interval [interval-1 interval-2]
+  (mul-interval interval-1 (make-interval
+                             (/ 1.0 (upper-bound interval-2))
+                             (/ 1.0 (lower-bound interval-2)))))
+
+(defn add-interval [interval-1 interval-2]
+  (make-interval (+ (lower-bound interval-1)
+                    (lower-bound interval-2))
+                 (+ (upper-bound interval-1)
+                    (upper-bound interval-2))))
+
+(defn sub-interval [interval-1 interval-2]
+  (make-interval (- (lower-bound interval-1)
+                    (lower-bound interval-2))
+                 (- (upper-bound interval-1)
+                    (upper-bound interval-2))))
+
+
+
