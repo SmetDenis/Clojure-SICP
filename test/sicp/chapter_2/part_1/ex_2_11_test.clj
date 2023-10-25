@@ -16,7 +16,7 @@
   (is (= 100.0 (center interval))))
 
 (deftest width-test
-  (is (= 5 (width interval))))
+  (is (= 5.0 (width interval))))
 
 ; Test solution
 (deftest interval-case-test
