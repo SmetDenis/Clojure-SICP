@@ -7,16 +7,16 @@
                                                    width]]
             [sicp.misc :as m]))
 
-(def interval (m/make-interval 3.35 3.65))
+(def interval (m/make-interval 95 105))
 
 (deftest make-center-width-test
-  (is (= [-0.2999999999999998 7.0] (make-center-width 3.35 3.65))))
+  (is (= [97 103] (make-center-width 100 3))))
 
 (deftest center-test
-  (is (= 0.4589041095890411 (center interval))))
+  (is (= 100.0 (center interval))))
 
 (deftest width-test
-  (is (= 0.1499999999999999 (width interval))))
+  (is (= 5 (width interval))))
 
 ; Test solution
 (deftest interval-case-test

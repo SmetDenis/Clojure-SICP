@@ -38,10 +38,10 @@
   (m/make-interval (- c w) (+ c w)))
 
 (defn center [i]
-  (/ (+ (m/lower-bound i)) (m/upper-bound i) 2))
+  (/ (+ (m/lower-bound i) (m/upper-bound i)) 2.0))
 
 (defn width [i]
-  (/ (- (m/upper-bound i) (m/lower-bound i)) 2))
+  (/ (- (m/upper-bound i) (m/lower-bound i)) 2.0))
 
 ; Solution
 
