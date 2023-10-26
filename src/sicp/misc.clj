@@ -116,7 +116,7 @@
 
 (defn print-interval
   ([interval]
-   (print-interval interval 5))
+   (print-interval interval 3))
   ([interval precision]
    (str "[" (round-to-dec (upper-bound interval) precision)
         ", " (round-to-dec (lower-bound interval) precision)

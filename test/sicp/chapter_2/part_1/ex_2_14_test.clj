@@ -20,4 +20,4 @@
   (is (= "[1.001, 0.999] / 1.0±0.001" (m/print-interval (m/div-interval a-narrow a-narrow)))))
 
 (deftest a-b-narrow-test
-  (is (= "[100.001, 99.9001] / 99.95055±0.05045" (m/print-interval (m/div-interval b-narrow a-narrow)))))
+  (is (= "[100.001, 99.9] / 99.951±0.05" (m/print-interval (m/div-interval b-narrow a-narrow)))))
