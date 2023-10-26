@@ -44,6 +44,10 @@
 (defn gcd [a b]
   (if (zero? b) a (recur b (mod a b))))
 
+(defn round-to-dec [n decimals]
+  (let [factor (Math/pow 10 decimals)]
+    (/ (Math/round (* n factor)) factor)))
+
 (comment "Chapter #2")
 ; Introduction to Data Abstraction -----------------------------------------------------------------
 
@@ -101,5 +105,20 @@
                  (- (upper-bound interval-1)
                     (upper-bound interval-2))))
 
+(defn make-center-width [c w]
+  (make-interval (- c w) (+ c w)))
 
+(defn center-interval [interval]
+  (/ (+ (lower-bound interval) (upper-bound interval)) 2.0))
 
+(defn width-interval [interval]
+  (/ (- (upper-bound interval) (lower-bound interval)) 2.0))
+
+(defn print-interval
+  ([interval]
+   (print-interval interval 3))
+  ([interval precision]
+   (str "[" (round-to-dec (upper-bound interval) precision)
+        ", " (round-to-dec (lower-bound interval) precision)
+        "] / " (round-to-dec (center-interval interval) precision)
+        "±" (round-to-dec (width-interval interval) precision))))
