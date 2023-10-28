@@ -9,10 +9,10 @@
 ; (34)
 
 (defn last-pair [items]
-  (letfn [(length-iter [list-current result]
+  (letfn [(iter [list-current result]
             (if (empty? list-current)
               result
-              (length-iter
+              (iter
                 (m/cdr list-current)
                 (list (m/car list-current)))))]
-    (length-iter items nil)))
+    (iter items nil)))
