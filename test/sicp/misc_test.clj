@@ -69,3 +69,9 @@
 (deftest cdr-test
   (is (= 2 (m/cdr (m/pair 1 2))))
   (is (= 2123 (m/cdr (m/pair 1 2123)))))
+
+(deftest cdr-for-list-test
+  (is (= '() (m/cdr '())))
+  (is (= '() (m/cdr '(1))))
+  (is (= '(2) (m/cdr '(1 2))))
+  (is (= '(2 3 4) (m/cdr '(1 2 3 4)))))

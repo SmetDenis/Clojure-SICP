@@ -64,8 +64,12 @@
 (defn car [pair]
   (first pair))
 
-(defn cdr [pair]
-  (second pair))
+(defn cdr [pair-list]
+  (cond
+    (vector? pair-list) (last pair-list)
+    (list? pair-list) (rest pair-list)
+    (= clojure.lang.LongRange (type pair-list)) (rest pair-list)
+    :else (error (str "Undefind input. Must be [x y] or '(a b c ...). " (type pair-list) "given"))))
 
 (defn make-interval [low high]
   (pair low high))
