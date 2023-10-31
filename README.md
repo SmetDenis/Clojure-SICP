@@ -45,7 +45,7 @@ Jay Sussman on basics of computer science and software engineering.
   * [2.1.3](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e3) What Is Meant by Data? - [2.4](src/sicp/chapter_2/part_1/ex_2_04.clj), [2.5](src/sicp/chapter_2/part_1/ex_2_05.clj), [2.6](src/sicp/chapter_2/part_1/ex_2_06.clj)
   * [2.1.4](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e4) Extended Exercise: Interval Arithmetic - [2.7](src/sicp/chapter_2/part_1/ex_2_07.clj), [2.8](src/sicp/chapter_2/part_1/ex_2_08.clj), [2.9](src/sicp/chapter_2/part_1/ex_2_09.clj), [2.10](src/sicp/chapter_2/part_1/ex_2_10.clj), [2.11](src/sicp/chapter_2/part_1/ex_2_11.clj), [2.12](src/sicp/chapter_2/part_1/ex_2_12.clj), [2.13](src/sicp/chapter_2/part_1/ex_2_13.clj), [2.14](src/sicp/chapter_2/part_1/ex_2_14.clj), [2.15](src/sicp/chapter_2/part_1/ex_2_15.clj), [2.16](src/sicp/chapter_2/part_1/ex_2_16.clj)
 * [2.2](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2) Hierarchical Data and the Closure Property [code in book](src/sicp/chapter_2/part_2/book_2_2.clj)
-  * [2.2.1](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e1) Representing Sequences - [2.17](src/sicp/chapter_2/part_2/ex_2_17.clj), [2.18](src/sicp/chapter_2/part_2/ex_2_18.clj)
+  * [2.2.1](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e1) Representing Sequences - [2.17](src/sicp/chapter_2/part_2/ex_2_17.clj), [2.18](src/sicp/chapter_2/part_2/ex_2_18.clj), [2.19](src/sicp/chapter_2/part_2/ex_2_19.clj)
   * 2.2.2 Hierarchical Structures
   * 2.2.3 Sequences as Conventional Interfaces
   * 2.2.4 Example: A Picture Language
