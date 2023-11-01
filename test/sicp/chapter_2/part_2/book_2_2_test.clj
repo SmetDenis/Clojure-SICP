@@ -1,6 +1,6 @@
 (ns sicp.chapter-2.part-2.book-2-2-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.book-2-2 :refer [append length length-recursice list-ref]]))
+            [sicp.chapter-2.part-2.book-2-2 :refer [append length length-recursice list-ref my-map]]))
 
 (deftest list-ref-test
   (is (= 1 (list-ref '(1 4 9 16 25) 0)))
@@ -33,3 +33,11 @@
   (is (= '(1 2) (append '(1) '(2))))
   (is (= '(1 4 9 16 25) (append '(1 4 9 16 25) '())))
   (is (= '(1 4 9 16 25 3 2 1) (append '(1 4 9 16 25) '(3 2 1)))))
+
+(deftest my-map-test
+  ; Custom
+  (is (= '(10 2.5 11.6 17) (my-map abs (list -10 2.5 -11.6 17))))
+  (is (= '(1 4 9 16) (my-map #(* % %) (list 1 2 3 4))))
+  ; Clojure built-in
+  (is (= '(10 2.5 11.6 17) (map abs (list -10 2.5 -11.6 17))))
+  (is (= '(1 4 9 16) (map #(* % %) (list 1 2 3 4)))))

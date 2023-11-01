@@ -79,7 +79,7 @@
   (if (empty? items)
     nil
     (cons (proc (m/car items))
-          (map proc (m/cdr items)))))
+          (my-map proc (m/cdr items)))))
 
 (comment
   (my-map abs (list -10 2.5 -11.6 17))                      ; (10 2.5 11.6 17)
