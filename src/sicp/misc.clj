@@ -15,8 +15,7 @@
 (defn divides? [a b]
   (zero? (rem b a)))
 
-(defn find-divisor
-  [n test-divisor]
+(defn find-divisor [n test-divisor]
   (cond
     (> (square test-divisor) n) n
     (divides? test-divisor n) test-divisor
