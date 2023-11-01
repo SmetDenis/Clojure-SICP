@@ -41,11 +41,11 @@
                           answer))))]
     (iter items nil)))
 
-(defn square-list-2 [items]
-  (letfn [(iter [things answer]
-            (if (nil? things)
-              answer
-              (iter (m/cdr things)
-                    (cons answer                            ; non-list. it's the issue
-                          (m/square (m/car things))))))]
-    (iter items nil)))
+; (defn square-list-2 [items]
+;   (letfn [(iter [things answer]
+;             (if (empty? things)
+;               answer
+;               (iter (m/cdr things)
+;                     (cons answer                            ; non-list. it's the issue
+;                           (m/square (m/car things)))
+;     (iter items nil)))
