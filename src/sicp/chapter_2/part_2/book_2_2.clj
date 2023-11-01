@@ -64,3 +64,29 @@
 (comment
   (append '(1 4 9 16 25) '(1 3 5 7))                        ; (1 4 9 16 25 1 3 5 7)
   (append '(1 3 5 7) '(1 4 9 16 25)))                       ; (1 3 5 7 1 4 9 16 25)
+
+(defn scale-list [items factor]
+  (if (empty? items)
+    nil
+    (cons (* (m/car items) factor)
+          (scale-list (m/cdr items)
+                      factor))))
+
+(comment
+  (scale-list (list 1 2 3 4 5) 10))                         ; (10 20 30 40 50)
+
+(defn my-map [proc items]
+  (if (empty? items)
+    nil
+    (cons (proc (m/car items))
+          (map proc (m/cdr items)))))
+
+(comment
+  (my-map abs (list -10 2.5 -11.6 17))                      ; (10 2.5 11.6 17)
+  (my-map #(* % %) (list 1 2 3 4)))                         ; (1 4 9 16)
+
+(defn scale-list-2 [items factor]
+  (my-map #(* % factor) items))
+
+(comment
+  (scale-list-2 (list 1 2 3 4 5) 10))                       ; (10 20 30 40 50)
