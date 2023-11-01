@@ -46,6 +46,6 @@
 ;             (if (empty? things)
 ;               answer
 ;               (iter (m/cdr things)
-;                     (cons answer                            ; non-list. it's the issue
+;                     (cons answer                            ; invalid structure of list here
 ;                           (m/square (m/car things)))
 ;     (iter items nil)))
