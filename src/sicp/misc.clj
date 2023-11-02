@@ -121,3 +121,17 @@
         ", " (round-to-dec (lower-bound interval) precision)
         "] / " (round-to-dec (center-interval interval) precision)
         "±" (round-to-dec (width-interval interval) precision))))
+
+(defn length [items]
+  (letfn [(length-iter [a count]
+            (if (or (empty? a) (nil? a))
+              count
+              (length-iter (cdr a) (+ 1 count))))]
+    (length-iter items 0)))
+
+(defn append [list1 list2]
+  (if (empty? list1)
+    (if (empty? list2) '() list2)
+    (cons (car list1)
+          (append (cdr list1)
+                  list2))))
