@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.book-2-2-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.book-2-2 :refer [append length length-recursice list-ref my-map]]))
+            [sicp.chapter-2.part-2.book-2-2 :refer
+             [append count-leaves length length-recursice length-tree list-ref my-map]]))
 
 (deftest list-ref-test
   (is (= 1 (list-ref '(1 4 9 16 25) 0)))
@@ -21,8 +22,8 @@
   (is (= 0 (length nil)))
   (is (= 0 (length '())))
   (is (= 1 (length '(123))))
-  (is (= 5 (length '(1 4 9 16 25))))
-  (is (= 50 (length (range 0 100 2)))))
+  (is (= 5 (length '(1 4 9 16 25)))))
+; (is (= 50 (length (range 0 100 2))))) (type (range ... )) => clojure.lang.LongRange
 
 (deftest append-test
   (is (= '() (append nil '())))
@@ -41,3 +42,21 @@
   ; Clojure built-in
   (is (= '(10 2.5 11.6 17) (map abs (list -10 2.5 -11.6 17))))
   (is (= '(1 4 9 16) (map #(* % %) (list 1 2 3 4)))))
+
+(comment "2.2.2")
+; Hierarchical Structures --------------------------------------------------------------------------
+
+(def tree (cons (list 1 2) (list 3 4)))                     ; ((1 2) 3 4)
+(def tree-2 (list tree tree))                               ; (((1 2) 3 4) ((1 2) 3 4))
+
+(deftest count-leaves-test
+  (is (= 4 (count-leaves tree)))
+  (is (= 8 (count-leaves tree-2))))
+
+(deftest length-tree-test
+  (is (= 3 (length-tree tree)))
+  (is (= 2 (length-tree tree-2))))
+
+(deftest length-2-test
+  (is (= 3 (length tree)))
+  (is (= 2 (length tree-2))))

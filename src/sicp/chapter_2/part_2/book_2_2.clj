@@ -46,7 +46,7 @@
 
 (defn length [items]
   (letfn [(length-iter [a count]
-            (if (empty? a)
+            (if (or (empty? a) (nil? a))
               count
               (length-iter (m/cdr a) (+ 1 count))))]
     (length-iter items 0)))
@@ -90,3 +90,23 @@
 
 (comment
   (scale-list-2 (list 1 2 3 4 5) 10))                       ; (10 20 30 40 50)
+
+(comment "2.2.2")
+; Hierarchical Structures --------------------------------------------------------------------------
+; Exercises:
+; * 2.24
+; * 2.25
+; * 2.26
+; * 2.27
+; * 2.28
+; * 2.29
+
+(defn length-tree [tree]
+  (reduce (fn [acc _] (inc acc)) 0 tree))
+
+(defn count-leaves [x]
+  (cond
+    (number? x) 1
+    (or (empty? x) (nil? x)) 0
+    :else (+ (count-leaves (first x))
+             (count-leaves (rest x)))))
