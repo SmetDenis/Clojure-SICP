@@ -75,3 +75,24 @@
   (is (= '() (m/cdr '(1))))
   (is (= '(2) (m/cdr '(1 2))))
   (is (= '(2 3 4) (m/cdr '(1 2 3 4)))))
+
+(def tree (cons (list 1 2) (list 3 4)))                     ; ((1 2) 3 4)
+(def tree-2 (list tree tree))                               ; (((1 2) 3 4) ((1 2) 3 4))
+
+(deftest length-test
+  (is (= 0 (m/length nil)))
+  (is (= 0 (m/length '())))
+  (is (= 1 (m/length '(123))))
+  (is (= 5 (m/length '(1 4 9 16 25))))
+  (is (= 3 (m/length tree)))
+  (is (= 2 (m/length tree-2))))
+
+(deftest append-test
+  (is (= '() (m/append nil '())))
+  (is (= '() (m/append '() nil)))
+  (is (= '() (m/append '() '())))
+  (is (= '(1) (m/append '(1) '())))
+  (is (= '(2) (m/append '() '(2))))
+  (is (= '(1 2) (m/append '(1) '(2))))
+  (is (= '(1 4 9 16 25) (m/append '(1 4 9 16 25) '())))
+  (is (= '(1 4 9 16 25 3 2 1) (m/append '(1 4 9 16 25) '(3 2 1)))))
