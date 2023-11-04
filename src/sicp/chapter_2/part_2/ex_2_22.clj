@@ -34,7 +34,7 @@
 
 (defn square-list-1 [items]
   (letfn [(iter [things answer]
-            (if (empty? things)
+            (if (m/list-empty? things)
               answer
               (iter (m/cdr things)
                     (cons (m/square (m/car things))

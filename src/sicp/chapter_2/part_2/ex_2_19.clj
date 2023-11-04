@@ -48,7 +48,7 @@
 ; Does the order of the list coin-values affect the answer produced by cc? Why or why not?
 
 (defn no-more? [coin-values]
-  (empty? coin-values))
+  (m/list-empty? coin-values))
 
 (defn except-first-denomination [coin-values]
   (m/cdr coin-values))

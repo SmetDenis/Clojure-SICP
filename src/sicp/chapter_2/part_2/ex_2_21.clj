@@ -20,7 +20,7 @@
 ;   (map ⟨??⟩ ⟨??⟩))
 
 (defn square-list-1 [items]
-  (if (empty? items)
+  (if (m/list-empty? items)
     nil
     (cons (* (m/car items) (m/car items))
           (square-list-1 (m/cdr items)))))
