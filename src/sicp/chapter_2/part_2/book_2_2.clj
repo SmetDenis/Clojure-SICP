@@ -26,30 +26,28 @@
   (m/cdr '(1 2 3 4))                                        ; 2
   (m/cdr '(1 (2 (3 4)))))                                   ; (2 (3 4))
 
-(defn list-ref [items n]
-  (if (= n 0)
-    (m/car items)
-    (list-ref (m/cdr items)
-              (- n 1))))
+(defn list-ref [lst index]
+  (cond
+    (< index 0) nil
+    (= index 0) (first lst)
+    :else (list-ref (rest lst) (dec index))))
 
 (comment
   (def squares '(1 4 9 16 25))
   (list-ref squares 3))                                     ; 16
 
 (defn length-recursice [items]
-  (if (empty? items)
+  (if (m/list-empty? items)
     0
     (+ 1 (length-recursice (m/cdr items)))))
 
 (comment
   (length-recursice (list 1 3 5 7)))                        ; 4
 
-(defn length [items]
-  (letfn [(length-iter [a count]
-            (if (or (empty? a) (nil? a))
-              count
-              (length-iter (m/cdr a) (+ 1 count))))]
-    (length-iter items 0)))
+(defn length [list]
+  (if (seq list)
+    (+ 1 (length (rest list)))
+    0))
 
 (comment
   (length (list 1 3 5 7)))                                  ; 4
@@ -57,16 +55,14 @@
 (defn append [list1 list2]
   (if (empty? list1)
     (if (empty? list2) '() list2)
-    (cons (m/car list1)
-          (append (m/cdr list1)
-                  list2))))
+    (cons (first list1) (append (rest list1) list2))))
 
 (comment
   (append '(1 4 9 16 25) '(1 3 5 7))                        ; (1 4 9 16 25 1 3 5 7)
   (append '(1 3 5 7) '(1 4 9 16 25)))                       ; (1 3 5 7 1 4 9 16 25)
 
 (defn scale-list [items factor]
-  (if (empty? items)
+  (if (m/list-empty? items)
     nil
     (cons (* (m/car items) factor)
           (scale-list (m/cdr items)
@@ -76,7 +72,8 @@
   (scale-list (list 1 2 3 4 5) 10))                         ; (10 20 30 40 50)
 
 (defn my-map [proc items]
-  (if (empty? items)
+  (println items)
+  (if (m/list-empty? items)
     nil
     (cons (proc (m/car items))
           (my-map proc (m/cdr items)))))

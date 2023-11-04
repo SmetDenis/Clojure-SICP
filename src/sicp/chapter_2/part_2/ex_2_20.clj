@@ -39,7 +39,7 @@
 
 (defn same-parity [base & check-list]
   (letfn [(iter [rest result]
-            (if (empty? rest)
+            (if (m/list-empty? rest)
               result
               (if (= (mod (m/car rest) 2) (mod base 2))
                 (iter (m/cdr rest) (b22/append result (list (m/car rest))))

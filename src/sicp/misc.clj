@@ -75,7 +75,7 @@
 
 (defn car [pair]
   (if (not (list? pair))
-    nil
+    pair
     (first pair)))
 
 (defn cdr [pair]

@@ -10,7 +10,7 @@
 
 (defn last-pair [items]
   (letfn [(iter [list-current result]
-            (if (empty? list-current)
+            (if (m/list-empty? list-current)
               result
               (iter
                 (m/cdr list-current)

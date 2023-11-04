@@ -131,7 +131,7 @@
 (deftest car-test
   (is (= 1 (m/car (m/pair 1 2))))
   (is (= 1123 (m/car (m/pair 1123 2))))
-  (is (= nil (m/car 1123))))
+  (is (= 1123 (m/car 1123))))
 
 (deftest cdr-test
   (is (= 2 (m/cdr (m/pair 1 2))))

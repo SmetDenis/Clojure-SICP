@@ -4,6 +4,7 @@
              [append count-leaves length length-recursice length-tree list-ref my-map]]))
 
 (deftest list-ref-test
+  (is (= nil (list-ref '(1 4 9 16 25) -1)))
   (is (= 1 (list-ref '(1 4 9 16 25) 0)))
   (is (= 4 (list-ref '(1 4 9 16 25) 1)))
   (is (= 9 (list-ref '(1 4 9 16 25) 2)))
@@ -23,7 +24,6 @@
   (is (= 0 (length '())))
   (is (= 1 (length '(123))))
   (is (= 5 (length '(1 4 9 16 25)))))
-; (is (= 50 (length (range 0 100 2))))) (type (range ... )) => clojure.lang.LongRange
 
 (deftest append-test
   (is (= '() (append nil '())))

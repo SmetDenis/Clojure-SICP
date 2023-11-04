@@ -10,6 +10,6 @@
 ; (25 16 9 4 1)
 
 (defn list-reverse [items]
-  (if (empty? items)
+  (if (m/list-empty? items)
     '()
     (b22/append (list-reverse (m/cdr items)) (list (m/car items)))))
