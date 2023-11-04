@@ -65,6 +65,9 @@
   (and (list? pair)
        (= 2 (count pair))))
 
+(defn leaf? [item]
+  (not (list? item)))
+
 (defn pair-empty? [pair]
   (or (nil? pair)
       (= '() pair)
