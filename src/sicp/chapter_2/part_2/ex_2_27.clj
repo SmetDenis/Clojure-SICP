@@ -1,5 +1,4 @@
-(ns sicp.chapter-2.part-2.ex-2-27
-  (:require [sicp.misc :as m]))
+(ns sicp.chapter-2.part-2.ex-2-27)
 
 ; Exercise 2.27
 ;
@@ -13,20 +12,7 @@
 ; (deep-reverse x)                                            ; ((4 3) (2 1))
 ;
 
-(defn deep-reverse [items]
-  (if (empty? items)
-    '()
-    (m/append (deep-reverse (m/cdr items))
-              (list (deep-reverse (m/car items))))))
-
-;(defn deep-reverse [items]
-;  (cond (empty? items) nil
-;        (not (list? items)) items
-;        :else (m/append (deep-reverse (m/cdr items))
-;                        (list (deep-reverse (m/car items))))))))
-
-(println (deep-reverse (list (list 1 2) (list 3 4))))
-
-(count (list (list 1 2) (list 3 4)))
-
-
+(defn deep-reverse [coll]
+  (if (list? coll)
+    (map deep-reverse (reverse coll))
+    coll))

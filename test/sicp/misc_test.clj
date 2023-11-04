@@ -126,7 +126,8 @@
 
 (deftest list-empty?-test
   (is (= true (m/list-empty? '())))
-  (is (= true (m/list-empty? nil))))
+  (is (= true (m/list-empty? nil)))
+  (is (= false (m/list-empty? 4))))                         ; Potential issues?
 
 (deftest car-test
   (is (= 1 (m/car (m/pair 1 2))))
