@@ -21,7 +21,7 @@
 ; be something arbitrary, such as true. Give an implementation of for-each.
 
 (defn for-each [proc items]
-  (if (empty? items)
+  (if (m/list-empty? items)
     true
     (do
       (proc (m/car items))

@@ -72,7 +72,6 @@
   (scale-list (list 1 2 3 4 5) 10))                         ; (10 20 30 40 50)
 
 (defn my-map [proc items]
-  (println items)
   (if (m/list-empty? items)
     nil
     (cons (proc (m/car items))
