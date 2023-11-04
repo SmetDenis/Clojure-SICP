@@ -78,10 +78,6 @@
     (first pair)
     pair))
 
-(car '(1 2 3))
-(car (list 1 2 3))
-(car 1)
-
 (defn cdr [pair]
   (cond
     (pair-empty? pair) nil
