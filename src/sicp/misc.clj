@@ -57,14 +57,34 @@
   ; Get the second element, equivalent to cdr in Scheme if cdr is a list with one element
   (second x))                                               ; (cdr x)
 
-(defn pair [head tail]
-  [head tail])
+(defn pair
+  ([] (list nil nil))
+  ([head tail] (list head tail)))
+
+(defn pair? [pair]
+  (and (list? pair)
+       (= 2 (count pair))))
+
+(defn pair-empty? [pair]
+  (or (nil? pair)
+      (= '() pair)
+      (= '(nil nil) pair)))
+
+(defn list-empty? [l]
+  (or (= '() l) (nil? l)))
 
 (defn car [pair]
-  (first pair))
+  (if (not (list? pair))
+    nil
+    (first pair)))
 
-(defn cdr [pair-list]
-  (if (vector? pair-list) (last pair-list) (rest pair-list)))
+(defn cdr [pair]
+  (cond
+    (pair-empty? pair) nil
+    (pair? pair) (last pair)
+    (and (list? pair) (= 1 (count pair))) nil
+    (instance? clojure.lang.Sequential pair) (rest pair)
+    :else nil))
 
 (defn make-interval [low high]
   (pair low high))
@@ -122,16 +142,12 @@
         "] / " (round-to-dec (center-interval interval) precision)
         "±" (round-to-dec (width-interval interval) precision))))
 
-(defn length [items]
-  (letfn [(length-iter [a count]
-            (if (or (empty? a) (nil? a))
-              count
-              (length-iter (cdr a) (+ 1 count))))]
-    (length-iter items 0)))
+(defn length [lst]
+  (if (seq lst)
+    (+ 1 (length (rest lst)))
+    0))
 
 (defn append [list1 list2]
   (if (empty? list1)
     (if (empty? list2) '() list2)
-    (cons (car list1)
-          (append (cdr list1)
-                  list2))))
+    (cons (first list1) (append (rest list1) list2))))
