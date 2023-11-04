@@ -114,6 +114,11 @@
   (is (= false (m/pair? [1 2])))
   (is (= false (m/pair? [1 2 3]))))
 
+(deftest leaf?-test
+  (is (= false (m/leaf? '(1 2))))
+  (is (= true (m/leaf? 1)))
+  (is (= true (m/leaf? nil))))
+
 (deftest pair-empty?-test
   (is (= true (m/pair-empty? (m/pair))))
   (is (= true (m/pair-empty? (m/pair nil nil))))
@@ -211,4 +216,3 @@
   (is (= '(1 2) (m/append '(1) '(2))))
   (is (= '(1 4 9 16 25) (m/append '(1 4 9 16 25) '())))
   (is (= '(1 4 9 16 25 3 2 1) (m/append '(1 4 9 16 25) '(3 2 1)))))
-
