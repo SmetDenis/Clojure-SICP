@@ -126,6 +126,14 @@
 
 (comment "2.2.3")
 ; Sequences as Conventional Interfaces -------------------------------------------------------------
+; Exercises:
+; * 2.33
+; * 2.34
+; * 2.35
+; * 2.36
+; * 2.37
+; * 2.38
+; * 2.39
 
 (defn sum-odd-squares [tree]
   (cond (m/list-empty? tree) 0
