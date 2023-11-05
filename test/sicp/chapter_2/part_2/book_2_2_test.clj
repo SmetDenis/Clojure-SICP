@@ -1,7 +1,7 @@
 (ns sicp.chapter-2.part-2.book-2-2-test
   (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-2.part-2.book-2-2 :refer
-             [append count-leaves length length-recursice length-tree list-ref my-map]]))
+             [append count-leaves length length-recursice length-tree list-ref my-map scale-tree scale-tree-v0]]))
 
 (deftest list-ref-test
   (is (= nil (list-ref '(1 4 9 16 25) -1)))
@@ -60,3 +60,9 @@
 (deftest length-2-test
   (is (= 3 (length tree)))
   (is (= 2 (length tree-2))))
+
+(deftest scale-tree-v0-test
+  (is (= '(10 (20 (30 40) 50) (60 70)) (scale-tree-v0 '(1 (2 (3 4) 5) (6 7)) 10))))
+
+(deftest scale-tree-test
+  (is (= '(10 (20 (30 40) 50) (60 70)) (scale-tree '(1 (2 (3 4) 5) (6 7)) 10))))
