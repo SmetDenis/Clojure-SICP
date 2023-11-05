@@ -24,5 +24,5 @@
 (defn accumulate-n [op init seqs]
   (if (nil? (m/car seqs))
     nil
-    (cons (b22/accumulate op init (reduce (fn [acc i] (+ acc (m/car i))) 0 seqs))
+    (cons (b22/accumulate op init (map m/car seqs))
           (accumulate-n op init (map m/cdr seqs)))))
