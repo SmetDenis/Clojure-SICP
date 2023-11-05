@@ -1,7 +1,23 @@
 (ns sicp.chapter-2.part-2.book-2-2-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.book-2-2 :refer
-             [append count-leaves length length-recursice length-tree list-ref my-map scale-tree scale-tree-v0]]))
+            [sicp.chapter-2.part-2.book-2-2 :refer [accumulate
+                                                    append
+                                                    count-leaves
+                                                    enumerate-interval
+                                                    enumerate-tree
+                                                    even-fibs
+                                                    even-fibs-v2
+                                                    length
+                                                    length-recursice
+                                                    length-tree
+                                                    list-fib-squares
+                                                    list-ref
+                                                    my-map
+                                                    product-of-squares-of-odd-elements
+                                                    scale-tree
+                                                    scale-tree-v0
+                                                    sum-odd-squares
+                                                    sum-odd-squares-v2]]))
 
 (deftest list-ref-test
   (is (= nil (list-ref '(1 4 9 16 25) -1)))
@@ -66,3 +82,38 @@
 
 (deftest scale-tree-test
   (is (= '(10 (20 (30 40) 50) (60 70)) (scale-tree '(1 (2 (3 4) 5) (6 7)) 10))))
+
+(comment "2.2.3")
+; Sequences as Conventional Interfaces -------------------------------------------------------------
+
+(deftest sum-odd-squares-test
+  (is (= 84 (sum-odd-squares '(1 (2 (3 4) 5) (6 7))))))
+
+(deftest even-fibs-test
+  (is (= '(0 2 8 34) (even-fibs 10))))
+
+(deftest my-filter-test
+  (is (= '(1 3 5) (filter odd? '(1 2 3 4 5)))))
+
+(deftest accumulate-test
+  (is (= 15 (accumulate + 0 '(1 2 3 4 5))))
+  (is (= 120 (accumulate * 1 '(1 2 3 4 5))))
+  (is (= '(1 2 3 4 5) (accumulate cons nil '(1 2 3 4 5)))))
+
+(deftest enumerate-interval-test
+  (is (= '(2 3 4 5 6 7) (enumerate-interval 2 7))))
+
+(deftest enumerate-tree-test
+  (is (= '(1 2 3 4 5) (enumerate-tree '(1 (2 (3 4)) 5)))))
+
+(deftest sum-odd-squares-v2-test
+  (is (= 84 (sum-odd-squares-v2 '(1 (2 (3 4) 5) (6 7))))))
+
+(deftest even-fibs-v2-test
+  (is (= '(0 2 8 34) (even-fibs-v2 10))))
+
+(deftest list-fib-squares-test
+  (is (= '(0 1 1 4 9 25 64 169 441 1156 3025) (list-fib-squares 10))))
+
+(deftest product-of-squares-of-odd-elements-test
+  (is (= 225 (product-of-squares-of-odd-elements '(1 2 3 4 5)))))
