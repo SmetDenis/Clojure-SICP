@@ -12,10 +12,19 @@
 ;        (list 6 7)))
 ;
 ; (1 (4 (9 16) 25) (36 49))
+;
+; Define square-tree both directly (i.e., without using any higher-order procedures)
+; and also by using map and recursion.
 
 (defn square-tree [tree]
-  (println tree)
   (cond (m/list-empty? tree) nil
         (m/leaf? tree) (m/square tree)
         :else (cons (square-tree (first tree))
                     (square-tree (rest tree)))))
+
+(defn square-tree-map [tree]
+  (map (fn [sub-tree]
+         (if (list? sub-tree)
+           (square-tree-map sub-tree)
+           (m/square sub-tree)))
+       tree))
