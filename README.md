@@ -47,7 +47,7 @@ Jay Sussman on basics of computer science and software engineering.
 * [2.2](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2) Hierarchical Data and the Closure Property - [Code in book](src/sicp/chapter_2/part_2/book_2_2.clj)
   * [2.2.1](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e1) Representing Sequences - [2.17](src/sicp/chapter_2/part_2/ex_2_17.clj), [2.18](src/sicp/chapter_2/part_2/ex_2_18.clj), [2.19](src/sicp/chapter_2/part_2/ex_2_19.clj), [2.20](src/sicp/chapter_2/part_2/ex_2_20.clj), [2.21](src/sicp/chapter_2/part_2/ex_2_21.clj), [2.22](src/sicp/chapter_2/part_2/ex_2_22.clj), [2.23](src/sicp/chapter_2/part_2/ex_2_23.clj)
   * [2.2.2](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e2) Hierarchical Structures - [2.24](src/sicp/chapter_2/part_2/ex_2_24.clj), [2.25](src/sicp/chapter_2/part_2/ex_2_25.clj), [2.26](src/sicp/chapter_2/part_2/ex_2_26.clj), [2.27](src/sicp/chapter_2/part_2/ex_2_27.clj), [2.28](src/sicp/chapter_2/part_2/ex_2_28.clj), [2.29](src/sicp/chapter_2/part_2/ex_2_29.clj), [2.30](src/sicp/chapter_2/part_2/ex_2_30.clj), [2.31](src/sicp/chapter_2/part_2/ex_2_31.clj), [2.32](src/sicp/chapter_2/part_2/ex_2_32.clj)
-  * 2.2.3 Sequences as Conventional Interfaces
+  * [2.2.3](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e3) Sequences as Conventional Interfaces
   * 2.2.4 Example: A Picture Language
 * 2.3 Symbolic Data
   * 2.3.1 Quotation

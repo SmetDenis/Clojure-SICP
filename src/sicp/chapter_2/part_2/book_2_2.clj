@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.book-2-2
-  (:require [sicp.misc :as m]))
+  (:require [sicp.chapter-1.part-2.book-1-2 :refer [fib]]
+            [sicp.misc :as m]))
 
 (comment "2.2")
 ; Hierarchical Data and the Closure Property -------------------------------------------------------
@@ -122,3 +123,83 @@
            (scale-tree sub-tree factor)
            (* sub-tree factor)))
        tree))
+
+(comment "2.2.3")
+; Sequences as Conventional Interfaces -------------------------------------------------------------
+
+(defn sum-odd-squares [tree]
+  (cond (m/list-empty? tree) 0
+        (m/leaf? tree) (if (odd? tree) (m/square tree) 0)
+        :else (+ (sum-odd-squares (first tree))
+                 (sum-odd-squares (rest tree)))))
+
+(defn even-fibs [n]
+  (letfn [(next [k]
+            (if (> k n)
+              nil
+              (let [f (fib k)]
+                (if (even? f)
+                  (cons f (next (inc k)))
+                  (next (inc k))))))]
+    (next 0)))
+
+(defn my-filter [predicate sequence]
+  (cond (m/list-empty? sequence) nil
+        (predicate (m/car sequence))
+        (cons (m/car sequence)
+              (my-filter predicate (m/cdr sequence)))
+        :else (my-filter predicate (m/cdr sequence))))
+
+(defn accumulate [op initial sequence]
+  (if (m/list-empty? sequence)
+    initial
+    (op (m/car sequence)
+        (accumulate op initial (m/cdr sequence)))))
+
+(defn enumerate-interval [low high]
+  (if (> low high)
+    nil
+    (cons low (enumerate-interval (+ low 1) high))))
+
+(defn enumerate-tree [tree]
+  (cond (m/list-empty? tree) nil
+        (m/leaf? tree) (list tree)
+        :else (m/append (enumerate-tree (m/car tree))
+                        (enumerate-tree (m/cdr tree)))))
+
+(defn sum-odd-squares-v2 [tree]
+  (accumulate
+    +
+    0
+    (map m/square
+         (filter odd?
+                 (enumerate-tree tree)))))
+
+(defn even-fibs-v2 [n]
+  (accumulate
+    cons
+    nil
+    (filter even?
+            (map fib
+                 (enumerate-interval 0 n)))))
+
+(defn list-fib-squares [n]
+  (accumulate
+    cons
+    nil
+    (map m/square
+         (map fib
+              (enumerate-interval 0 n)))))
+
+(defn product-of-squares-of-odd-elements [sequence]
+  (accumulate
+    *
+    1
+    (map m/square (filter odd? sequence))))
+
+; (defn salary-of-highest-paid-programmer [records]
+;   (accumulate
+;     max
+;     0
+;     (map salary
+;          (filter programmer? records))))
