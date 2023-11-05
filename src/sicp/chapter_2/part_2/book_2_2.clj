@@ -96,13 +96,29 @@
 ; * 2.27
 ; * 2.28
 ; * 2.29
+; * 2.30
+; * 2.31
+; * 2.32
 
 (defn length-tree [tree]
   (reduce (fn [acc _] (inc acc)) 0 tree))
 
-(defn count-leaves [x]
+(defn count-leaves [tree]
   (cond
-    (number? x) 1
-    (or (empty? x) (nil? x)) 0
-    :else (+ (count-leaves (first x))
-             (count-leaves (rest x)))))
+    (number? tree) 1
+    (or (empty? tree) (nil? tree)) 0
+    :else (+ (count-leaves (m/car tree))
+             (count-leaves (m/cdr tree)))))
+
+(defn scale-tree-v0 [tree factor]
+  (cond (m/list-empty? tree) nil
+        (m/leaf? tree) (* tree factor)
+        :else (cons (scale-tree-v0 (first tree) factor)
+                    (scale-tree-v0 (rest tree) factor))))
+
+(defn scale-tree [tree factor]
+  (map (fn [sub-tree]
+         (if (list? sub-tree)
+           (scale-tree sub-tree factor)
+           (* sub-tree factor)))
+       tree))
