@@ -7,19 +7,22 @@
 ; less than or equal to a given integer n that sum to a given integer s.
 
 (defn duplets [n]
-  (b22/flatmap
-    (fn [i] (map (fn [j] (list i j)) (b22/enumerate-interval 1 n)))
-    (b22/enumerate-interval 1 n)))
+  (b22/flatmap (fn [i] (map (fn [j] (list i j))
+                            (b22/enumerate-interval 1 n)))
+               (b22/enumerate-interval 1 n)))
 
 (defn triplets [n]
-  (b22/flatmap
-    (fn [i] (map (fn [j] (cons i j)) (duplets n)))
-    (b22/enumerate-interval 1 n)))
+  (b22/flatmap (fn [i] (map (fn [j] (cons i j))
+                            (duplets n)))
+               (b22/enumerate-interval 1 n)))
 
 (defn check-triplet? [triplet sum]
   (and (< (first triplet) (second triplet))
        (< (second triplet) (last triplet))
-       (= sum (+ (first triplet) (second triplet) (last triplet)))))
+       (= sum (+ (first triplet)
+                 (second triplet)
+                 (last triplet)))))
 
 (defn find-triplets [n s]
-  (filter (fn [i] (check-triplet? i s)) (triplets n)))
+  (filter (fn [i] (check-triplet? i s))
+          (triplets n)))
