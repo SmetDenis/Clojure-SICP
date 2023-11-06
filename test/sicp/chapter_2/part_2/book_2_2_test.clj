@@ -7,12 +7,17 @@
                                                     enumerate-tree
                                                     even-fibs
                                                     even-fibs-v2
+                                                    flatmap
                                                     length
                                                     length-recursice
                                                     length-tree
                                                     list-fib-squares
                                                     list-ref
+                                                    make-pair-sum
                                                     my-map
+                                                    permutations
+                                                    prime-sum-pairs
+                                                    prime-sum?
                                                     product-of-squares-of-odd-elements
                                                     scale-tree
                                                     scale-tree-v0
@@ -117,3 +122,33 @@
 
 (deftest product-of-squares-of-odd-elements-test
   (is (= 225 (product-of-squares-of-odd-elements '(1 2 3 4 5)))))
+
+(deftest flatmap-test
+  (is (= '(0 1 2 3 4 5) (flatmap (fn [i] (list (dec i))) '(1 2 3 4 5 6)))))
+
+(deftest prime-sum?-test
+  (is (= true (prime-sum? '(1 2))))
+  (is (= true (prime-sum? '(1 4))))
+  (is (= true (prime-sum? '(2 5))))
+  (is (= false (prime-sum? '(2 6)))))
+
+(deftest make-pair-sum-test
+  (is (= '(1 2 3) (make-pair-sum '(1 2))))
+  (is (= '(2 5 7) (make-pair-sum '(2 5)))))
+
+(deftest prime-sum-pairs-test
+  (is (= '((2 1 3)
+           (3 2 5)
+           (4 1 5)
+           (4 3 7)
+           (5 2 7)
+           (6 1 7)
+           (6 5 11)) (prime-sum-pairs 6))))
+
+(deftest permutations-test
+  (is (= '((1 2 3)
+           (1 3 2)
+           (2 1 3)
+           (2 3 1)
+           (3 1 2)
+           (3 2 1)) (permutations '(1 2 3)))))

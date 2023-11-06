@@ -134,6 +134,10 @@
 ; * 2.37
 ; * 2.38
 ; * 2.39
+; * 2.40
+; * 2.41
+; * 2.42
+; * 2.43
 
 (defn sum-odd-squares [tree]
   (cond (m/list-empty? tree) 0
@@ -211,3 +215,41 @@
 ;     0
 ;     (map salary
 ;          (filter programmer? records))))
+
+(comment
+  (accumulate append nil
+              (map (fn [i]
+                     (map (fn [j] (list i j))
+                          (enumerate-interval 1 (- i 1))))
+                   (enumerate-interval 1 6))))              ; (1 2 3 4 5 6)
+; ((2 1) (3 1) (3 2) (4 1) (4 2) (4 3) (5 1) (5 2) (5 3) (5 4) (6 1) (6 2) (6 3) (6 4) (6 5))
+
+(defn flatmap [proc seq]
+  (accumulate append nil (map proc seq)))
+
+(defn prime-sum? [pair]
+  (m/prime? (+ (m/car pair) (m/cdr pair))))
+
+(defn make-pair-sum [pair]
+  (list (m/car pair)
+        (m/cdr pair)
+        (+ (m/car pair) (m/cdr pair))))
+
+(defn prime-sum-pairs [n]
+  (map make-pair-sum
+       (filter prime-sum? (flatmap
+                            (fn [i]
+                              (map (fn [j] (list i j))
+                                   (enumerate-interval 1 (- i 1))))
+                            (enumerate-interval 1 n)))))
+
+(defn my-remove [item sequence]
+  (filter (fn [x] (not (= x item))) sequence))
+
+(defn permutations [s]
+  (if (m/list-empty? s)                                     ; empty set?
+    (list nil)                                              ; sequence containing empty set
+    (flatmap (fn [x]
+               (map (fn [p] (cons x p))
+                    (permutations (my-remove x s))))
+             s)))
