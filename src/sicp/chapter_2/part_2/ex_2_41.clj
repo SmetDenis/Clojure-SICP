@@ -16,13 +16,17 @@
                             (duplets n)))
                (b22/enumerate-interval 1 n)))
 
-(defn check-triplet? [triplet sum]
-  (and (< (first triplet) (second triplet))
-       (< (second triplet) (last triplet))
-       (= sum (+ (first triplet)
-                 (second triplet)
-                 (last triplet)))))
+(defn check-triplet? [triplet]
+  (and (< (b22/list-ref triplet 0)
+          (b22/list-ref triplet 1))
+       (< (b22/list-ref triplet 1)
+          (b22/list-ref triplet 2))))
+
+(defn check-triplet-sum? [triplet sum]
+  (= sum (+ (b22/list-ref triplet 0)
+            (b22/list-ref triplet 1)
+            (b22/list-ref triplet 2))))
 
 (defn find-triplets [n s]
-  (filter (fn [i] (check-triplet? i s))
-          (triplets n)))
+  (filter (fn [i] (check-triplet-sum? i s))
+          (filter check-triplet? (triplets n))))
