@@ -1,6 +1,5 @@
 (ns sicp.chapter-2.part-2.ex-2-40
-  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]
-            [sicp.misc :as m]))
+  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]))
 
 ; Exercise 2.40
 ;
