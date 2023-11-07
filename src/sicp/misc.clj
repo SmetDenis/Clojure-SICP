@@ -3,8 +3,9 @@
 (comment "Chapter #1")
 ; The Elements of Programming ----------------------------------------------------------------------
 
-(defn d [& vars]
-  (println vars))
+(defn d [vars]
+  (println vars)
+  vars)
 
 (defn error [error-message]
   (throw (Exception. (str error-message))))
