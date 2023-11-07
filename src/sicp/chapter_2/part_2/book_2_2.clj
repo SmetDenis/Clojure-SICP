@@ -253,3 +253,40 @@
                (map (fn [p] (cons x p))
                     (permutations (my-remove x s))))
              s)))
+
+(comment "2.2.4")
+; Example: A Picture Language ----------------------------------------------------------------------
+; Exercises:
+; * 2.34
+
+; The part of book has fake functions
+(defn beside [wave param] (comment wave param))
+(defn below [wave param] (comment wave param))
+(defn flip-vert [wave] (comment wave))
+(defn flip-horiz [quarter] (comment quarter))
+
+(defn flipped-pairs [painter]
+  (let [painter2 (beside painter (flip-vert painter))]
+    (below painter2 painter2)))
+
+(comment
+  (def wave (list 1))
+  (def wave2 (beside wave (flip-vert wave)))
+  (def wave4 (below wave2 wave2))
+  (def wave5 (flipped-pairs wave)))
+
+(defn corner-split [painter n]
+  (if (= n 0)
+    painter
+    (let [up           (corner-split painter (dec n))
+          right        (corner-split painter (dec n))
+          top-left     (beside up up)
+          bottom-right (below right right)
+          corner       (corner-split painter (dec n))]
+      (beside (below painter top-left)
+              (below bottom-right corner)))))
+
+(defn square-limit [painter n]
+  (let [quarter (corner-split painter n)
+        half    (beside (flip-horiz quarter) quarter)]
+    (below (flip-vert half) half)))
