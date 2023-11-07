@@ -6,7 +6,6 @@
 ; Define the procedure up-split used by corner-split. It is similar to right-split,
 ; except that it switches the roles of below and beside.
 
-
 (defn up-split [painter n]                                  ; Just a potential solution...
   (if (= n 0)
     painter
