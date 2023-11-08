@@ -1,5 +1,4 @@
-(ns sicp.chapter-2.part-2.ex-2-47
-  (:require [sicp.chapter-2.part-2.ex-2-46 :as ex-2-46]))
+(ns sicp.chapter-2.part-2.ex-2-47)
 
 ; Exercise 2.47
 ;
