@@ -326,4 +326,11 @@
 ;
 ; ((frame-coord-map a-frame) (make-vect 0 0)) ; (origin-frame a-frame)
 
+; (defn segments->painter [segment-list]
+;   (fn [frame]
+;     (doseq [segment segment-list]
+;       (let [start (start-segment segment)
+;             end (end-segment segment)
+;             frame-coord-map (frame-coord-map frame)]
+;         (draw-line (frame-coord-map start) (frame-coord-map end))))))
 
