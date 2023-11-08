@@ -257,15 +257,24 @@
 (comment "2.2.4")
 ; Example: A Picture Language ----------------------------------------------------------------------
 ; Exercises:
-; * 2.34
+; * 2.44
+; * 2.45
+; * 2.46
+; * 2.47
+; * 2.48
+; * 2.49
+; * 2.50
+; * 2.51
+; * 2.52
 
 ; The part of book has fake functions
 (defn beside [wave param] (comment wave param))
 (defn below [wave param] (comment wave param))
 (defn flip-vert [wave] (comment wave))
 (defn flip-horiz [quarter] (comment quarter))
+(defn rotate180 [wave] (comment wave))
 
-(defn flipped-pairs [painter]
+(defn flipped-pairs-prev [painter]
   (let [painter2 (beside painter (flip-vert painter))]
     (below painter2 painter2)))
 
@@ -286,7 +295,21 @@
       (beside (below painter top-left)
               (below bottom-right corner)))))
 
-(defn square-limit [painter n]
+(defn square-limit-prev [painter n]
   (let [quarter (corner-split painter n)
         half    (beside (flip-horiz quarter) quarter)]
     (below (flip-vert half) half)))
+
+(defn square-of-four [tl tr bl br]
+  (fn [painter]
+    (let [top (beside (tl painter) (tr painter))
+          bottom (beside (bl painter) (br painter))]
+      (below top bottom))))
+
+(defn flipped-pairs [painter]
+  (let [combine4 (fn [p] ((square-of-four identity flip-vert identity flip-vert) p))]
+    (combine4 painter)))
+
+(defn square-limit [painter n]
+  (let [combine4 (fn [p] ((square-of-four flip-horiz identity rotate180 flip-vert) p))]
+    (combine4 (corner-split painter n))))
