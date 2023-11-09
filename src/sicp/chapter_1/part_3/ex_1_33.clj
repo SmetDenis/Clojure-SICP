@@ -18,21 +18,21 @@
 ; that are relatively prime to n  (i.e., all positive integers i<n such that GCD(i,n)=1).
 
 (defn filtered-accumulate
-  [combiner null-value term a next b filter?]
+  [combiner null-value term a next-fn b filter?]
   (if (> a b)
     null-value
     (if (filter? a)
       (combiner (term a)
-                (filtered-accumulate combiner null-value term (next a) next b filter?))
+                (filtered-accumulate combiner null-value term (next-fn a) next-fn b filter?))
       (combiner null-value
-                (filtered-accumulate combiner null-value term (next a) next b filter?)))))
+                (filtered-accumulate combiner null-value term (next-fn a) next-fn b filter?)))))
 
 (defn filtered-accumulate-iter
-  [combiner null-value term a next b filter?]
+  [combiner null-value term a next-fn b filter?]
   (letfn [(iter [a result]
             (if (> a b)
               result
-              (iter (next a)
+              (iter (next-fn a)
                     (if (filter? a)
                       (combiner (term a) result)
                       result))))]

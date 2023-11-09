@@ -25,8 +25,8 @@
 (def one (fn [f] (fn [x] (f x))))
 (def two (fn [f] (fn [x] (f (f x)))))
 
-(defn add-1 [num]
-  (fn [f] (fn [x] (f ((num f) x)))))
+(defn add-1 [next-item-fn]
+  (fn [f] (fn [x] (f ((next-item-fn f) x)))))
 
 (defn add [num-1 num-2]
   (fn [f] (fn [x] ((num-1 f)
