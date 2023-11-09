@@ -1,11 +1,11 @@
 {:tasks {test          (shell "clojure -X:test")
          lint:fix      (shell "cljfmt fix")
-         lint:check    (do (shell "lint:eastwood")
-                           (shell "cljfmt check"))
+         lint:check    (shell "cljfmt check")
          lint:eastwood (shell "clojure -M:test:eastwood")
          lint:kondo    (shell "clj-kondo --lint test src")
          pre-push      (do (run 'lint:fix)
                            (run 'test)
                            (run 'lint))
          lint          (do (run 'lint:check)
+                           (run 'lint:eastwood)
                            (run 'lint:kondo))}}
