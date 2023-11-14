@@ -5,6 +5,7 @@
 ; Exercises:
 ; * 2.53
 ; * 2.54
+; * 2.55
 
 (defn memq [item x]
   (cond (empty? x) false
