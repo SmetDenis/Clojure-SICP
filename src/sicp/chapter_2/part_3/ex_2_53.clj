@@ -1,6 +1,6 @@
 (ns sicp.chapter-2.part-3.ex-2-53
-  (:require [sicp.misc :as m]
-            [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]
+            [sicp.misc :as m]))
 
 ; Exercise 2.53
 ;
