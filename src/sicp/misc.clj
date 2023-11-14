@@ -93,6 +93,9 @@
     (instance? clojure.lang.Sequential pair) (rest pair)
     :else nil))
 
+(defn cadr [pair]
+  (second pair))
+
 (defn make-interval [low high]
   (pair low high))
 
