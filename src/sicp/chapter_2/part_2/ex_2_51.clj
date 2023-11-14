@@ -1,7 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-51
   (:require [sicp.chapter-2.part-2.book-2-2 :as b22]
-            [sicp.chapter-2.part-2.ex-2-50 :as ex-2-50]
-            [sicp.chapter-2.part-2.ex-2-46 :as ex-2-46]))
+            [sicp.chapter-2.part-2.ex-2-46 :as ex-2-46]
+            [sicp.chapter-2.part-2.ex-2-50 :as ex-2-50]))
 
 ; Exercise 2.51
 ;
