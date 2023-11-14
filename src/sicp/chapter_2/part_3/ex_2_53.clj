@@ -22,4 +22,3 @@
    (m/pair? (m/car '(a short list)))                        ; false
    (b23/memq 'red '((red shoes) (blue socks)))              ; false
    (b23/memq 'red '(red shoes blue socks))])                ; (red shoes blue socks)
-

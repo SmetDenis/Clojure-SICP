@@ -2,6 +2,9 @@
 
 (comment "2.3")
 ; Symbolic Data ------------------------------------------------------------------------------------
+; Exercises:
+; * 2.53
+; * 2.54
 
 (defn memq [item x]
   (cond (empty? x) false
