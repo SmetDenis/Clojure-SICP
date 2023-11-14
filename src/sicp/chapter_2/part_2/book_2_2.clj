@@ -1,5 +1,8 @@
 (ns sicp.chapter-2.part-2.book-2-2
   (:require [sicp.chapter-1.part-2.book-1-2 :refer [fib]]
+            [sicp.chapter-2.part-2.ex-2-46 :as ex-2-46]
+            [sicp.chapter-2.part-2.ex-2-47 :as ex-2-47]
+            [sicp.chapter-2.part-2.ex-2-48 :as ex-2-48]
             [sicp.misc :as m]))
 
 (comment "2.2")
@@ -268,21 +271,74 @@
 ; * 2.52
 
 ; The part of book has fake functions
-(defn beside [wave param] (comment wave param))
-(defn below [wave param] (comment wave param))
-(defn flip-vert [wave] (comment wave))
-(defn flip-horiz [quarter] (comment quarter))
+(defn below [wave-1 wave-2] (comment wave-1 wave-2))
+(defn flip-horiz [painter] (comment painter))
 (defn rotate180 [wave] (comment wave))
+(defn draw-line [param1 param2] (comment param1 param2))
 
-(defn flipped-pairs-prev [painter]
-  (let [painter2 (beside painter (flip-vert painter))]
-    (below painter2 painter2)))
+(defn frame-coord-map [frame]
+  (fn [v]
+    (ex-2-46/add-vect
+      (ex-2-47/origin-frame frame)
+      (ex-2-46/add-vect
+        (ex-2-46/scale-vect (ex-2-46/xcor-vect v)
+                            (ex-2-47/edge1-frame frame))
+        (ex-2-46/scale-vect (ex-2-46/ycor-vect v)
+                            (ex-2-47/edge2-frame frame))))))
 
-(comment
-  (def wave (list 1))
-  (def wave2 (beside wave (flip-vert wave)))
-  (def wave4 (below wave2 wave2))
-  (def wave5 (flipped-pairs wave)))
+; ((frame-coord-map a-frame) (ex-2-46/make-vect 0 0)) ; (origin-frame a-frame)
+
+(defn segments->painter [segment-list]
+  (fn [frame]
+    (doseq [segment segment-list]
+      (let [start               (ex-2-48/start-segment segment)
+            end                 (ex-2-48/end-segment segment)
+            frame-coord-map-int (frame-coord-map frame)]
+        (draw-line (frame-coord-map-int start) (frame-coord-map-int end))))))
+
+(defn transform-painter [painter origin corner1 corner2]
+  (fn [frame]
+    (let [m          (frame-coord-map frame)
+          new-origin (m origin)]
+      (painter (ex-2-47/make-frame
+                 new-origin
+                 (ex-2-46/sub-vect (m corner1) new-origin)
+                 (ex-2-46/sub-vect (m corner2) new-origin))))))
+
+(defn flip-vert [painter]
+  (transform-painter
+    painter
+    (ex-2-46/make-vect 0.0 1.0)                             ; new origin
+    (ex-2-46/make-vect 1.0 1.0)                             ; new end of edge1
+    (ex-2-46/make-vect 0.0 0.0)))                           ; new end of edge2
+
+(defn rotate90 [painter]
+  (transform-painter painter
+                     (ex-2-46/make-vect 1.0 0.0)
+                     (ex-2-46/make-vect 1.0 1.0)
+                     (ex-2-46/make-vect 0.0 0.0)))
+
+(defn squash-inwards [painter]
+  (transform-painter painter
+                     (ex-2-46/make-vect 0.0 0.0)
+                     (ex-2-46/make-vect 0.65 0.35)
+                     (ex-2-46/make-vect 0.35 0.65)))
+
+(defn beside [painter1 painter2]
+  (let [split-point (ex-2-46/make-vect 0.5 0.0)
+        paint-left  (transform-painter
+                      painter1
+                      (ex-2-46/make-vect 0.0 0.0)
+                      split-point
+                      (ex-2-46/make-vect 0.0 1.0))
+        paint-right (transform-painter
+                      painter2
+                      split-point
+                      (ex-2-46/make-vect 1.0 0.0)
+                      (ex-2-46/make-vect 0.5 1.0))]
+    (fn [frame]
+      (paint-left frame)
+      (paint-right frame))))
 
 (defn corner-split [painter n]
   (if (= n 0)
@@ -295,14 +351,9 @@
       (beside (below painter top-left)
               (below bottom-right corner)))))
 
-(defn square-limit-prev [painter n]
-  (let [quarter (corner-split painter n)
-        half    (beside (flip-horiz quarter) quarter)]
-    (below (flip-vert half) half)))
-
 (defn square-of-four [tl tr bl br]
   (fn [painter]
-    (let [top (beside (tl painter) (tr painter))
+    (let [top    (beside (tl painter) (tr painter))
           bottom (beside (bl painter) (br painter))]
       (below top bottom))))
 
@@ -313,24 +364,3 @@
 (defn square-limit [painter n]
   (let [combine4 (fn [p] ((square-of-four flip-horiz identity rotate180 flip-vert) p))]
     (combine4 (corner-split painter n))))
-
-; (defn frame-coord-map [frame]
-;   (fn [v]
-;     (add-vect
-;       (origin-frame frame)
-;       (add-vect
-;          (scale-vect (xcor-vect v)
-;                        (edge1-frame frame))
-;          (scale-vect (ycor-vect v)
-;                        (edge2-frame frame))))))
-;
-; ((frame-coord-map a-frame) (make-vect 0 0)) ; (origin-frame a-frame)
-
-; (defn segments->painter [segment-list]
-;   (fn [frame]
-;     (doseq [segment segment-list]
-;       (let [start (start-segment segment)
-;             end (end-segment segment)
-;             frame-coord-map (frame-coord-map frame)]
-;         (draw-line (frame-coord-map start) (frame-coord-map end))))))
-

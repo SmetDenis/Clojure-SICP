@@ -8,4 +8,4 @@
   (is (= nil (up-split #() 1))))
 
 (deftest right-split-test
-  (is (= nil (right-split #() 1))))
+  (is (fn? (right-split #() 1))))
