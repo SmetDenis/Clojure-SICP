@@ -26,7 +26,7 @@
       ((iterative-improve enough? func-improver) (func-improver guess)))))
 
 (defn sqrt-improved [x first-guess]
-  (let [is-enough? (fn [guess] (< (Math/abs (- (* guess guess) x)) 0.001))
+  (let [is-enough? (fn [guess] (< (abs (- (* guess guess) x)) 0.001))
         improver   (fn [guess] (m/average guess (/ x guess)))]
     ((iterative-improve is-enough? improver) first-guess)))
 
@@ -38,7 +38,7 @@
 
 (defn fixed-point-improved
   [func-improver first-guess]
-  (let [close-enough? (fn [a b] (< (Math/abs (- a b)) 0.001))]
+  (let [close-enough? (fn [a b] (< (abs (- a b)) 0.001))]
     ((iterative-improve
        (fn [x] (close-enough? x (func-improver x)))
        func-improver) first-guess)))

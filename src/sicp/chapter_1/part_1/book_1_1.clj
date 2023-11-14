@@ -134,7 +134,7 @@
   (Math/exp (double (Math/log x))))
 
 (defn sqrt-alt [x]
-  (letfn [(good-enough? [guess x] (< (Math/abs (- (* guess guess) x)) 0.001))
+  (letfn [(good-enough? [guess x] (< (abs (- (* guess guess) x)) 0.001))
           (improve [guess x] (/ (+ guess (/ x guess)) 2))
           (sqrt-iter [guess x]
             (if (good-enough? guess x)

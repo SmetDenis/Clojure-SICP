@@ -31,11 +31,11 @@
        (pi-sum (+ a 4) b))))
 
 (defn sum-terms
-  [term a next b]
+  [term a next-fn b]
   (if (> a b)
     0
     (+ (term a)
-       (sum-terms term (next a) next b))))
+       (sum-terms term (next-fn a) next-fn b))))
 
 (defn sum-integers-2 [a b]
   (sum-terms identity a inc b))

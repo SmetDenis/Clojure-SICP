@@ -18,19 +18,19 @@
 
 ; 1. ---------
 (defn accumulate
-  [combiner null-value term a next b]
+  [combiner null-value term a next-item-fn b]
   (if (> a b)
     null-value
     (combiner (term a)
-              (accumulate combiner null-value term (next a) next b))))
+              (accumulate combiner null-value term (next-item-fn a) next-item-fn b))))
 
 ; 2. ---------
 (defn accumulate-iter
-  [combiner null-value term a next b]
+  [combiner null-value term a next-fn b]
   (letfn [(iter [a result]
             (if (> a b)
               result
-              (iter (next a) (combiner (term a) result))))]
+              (iter (next-fn a) (combiner (term a) result))))]
     (iter a null-value)))
 
 (defn factorial
