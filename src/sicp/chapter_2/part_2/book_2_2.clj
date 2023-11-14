@@ -291,10 +291,10 @@
 (defn segments->painter [segment-list]
   (fn [frame]
     (doseq [segment segment-list]
-      (let [start           (ex-2-48/start-segment segment)
-            end             (ex-2-48/end-segment segment)
-            frame-coord-map (frame-coord-map frame)]
-        (draw-line (frame-coord-map start) (frame-coord-map end))))))
+      (let [start               (ex-2-48/start-segment segment)
+            end                 (ex-2-48/end-segment segment)
+            frame-coord-map-int (frame-coord-map frame)]
+        (draw-line (frame-coord-map-int start) (frame-coord-map-int end))))))
 
 (defn transform-painter [painter origin corner1 corner2]
   (fn [frame]
