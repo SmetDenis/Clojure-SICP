@@ -21,9 +21,13 @@
 ; * 2.56
 ; * 2.57
 ; * 2.58
-
+(defn =number? [exp num] (and (number? exp) (= exp num)))
 (defn variable? [x] (symbol? x))
 (defn same-variable? [v1 v2] (and (variable? v1) (variable? v2) (= v1 v2)))
+
+(defn sum? [x] (and (sequential? x) (= (first x) '+)))
+(defn addend [s] (second s))
+(defn augend [s] (nth s 2))
 (defn make-sum [a1 a2]
   (cond
     (= a1 0) a2
@@ -31,22 +35,15 @@
     (and (number? a1) (number? a2)) (+ a1 a2)
     :else (list '+ a1 a2)))
 
-(defn =number? [exp num]
-  (and (number? exp) (= exp num)))
-
+(defn product? [x] (and (sequential? x) (= (first x) '*)))
+(defn multiplier [p] (second p))
+(defn multiplicand [p] (nth p 2))
 (defn make-product [m1 m2]
   (cond (or (=number? m1 0) (=number? m2 0)) 0
         (=number? m1 1) m2
         (=number? m2 1) m1
         (and (number? m1) (number? m2)) (* m1 m2)
         :else (list '* m1 m2)))
-
-(defn sum? [x] (and (sequential? x) (= (first x) '+)))
-(defn addend [s] (second s))
-(defn augend [s] (nth s 2))
-(defn product? [x] (and (sequential? x) (= (first x) '*)))
-(defn multiplier [p] (second p))
-(defn multiplicand [p] (nth p 2))
 
 (defn deriv [exp var]
   (cond
@@ -61,4 +58,4 @@
                      (make-product
                        (deriv (multiplier exp) var)
                        (multiplicand exp)))
-    :else (throw (Exception. (str "unknown expression type: DERIV" exp)))))
+    :else (throw (Exception. (str "unknown expression type: DERIV " exp)))))

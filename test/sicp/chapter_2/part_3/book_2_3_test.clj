@@ -5,7 +5,6 @@
 (comment "2.3")
 ; Symbolic Data ------------------------------------------------------------------------------------
 
-
 (comment "2.3.1")
 ; Quotation ----------------------------------------------------------------------------------------
 
@@ -14,7 +13,6 @@
   (is (= '(pear banana prune) (memq 'pear '(pear banana prune))))
   (is (= '(apple pear) (memq 'apple '(x (apple sauce) y apple pear)))))
 
-
 (comment "2.3.2")
 ; Example: Symbolic Differentiation ----------------------------------------------------------------
 
@@ -22,4 +20,4 @@
   (is (= 1 (deriv '(+ x 3) 'x)))
   (is (= 'y (deriv '(* x y) 'x)))
   (is (= '(+ (* x y) (* y (+ x 3)))
-         (deriv '(* (* x y) (+ x 3)) 'x))))
+          (deriv '(* (* x y) (+ x 3)) 'x))))
