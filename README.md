@@ -1,6 +1,7 @@
 # Solving exercises from SICP with Clojure
 
 [![Clojure CI](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml)
+![Progress](https://progress-bar.dev/101/?scale=356&title=Solved&width=500&suffix=)
 
 SICP (Structure and Interpretation of Computer Programs) is the book of Harold Abelson and Gerald
 Jay Sussman on basics of computer science and software engineering.
@@ -14,6 +15,8 @@ Jay Sussman on basics of computer science and software engineering.
 ## Table of Contents
 
 ### Chapter 1 - Building Abstractions with Procedures
+
+![Progress](https://progress-bar.dev/46/?scale=46&title=Solved&width=500&suffix=)
 
 * [1.1](https://sarabander.github.io/sicp/html/Chapter-1.xhtml#Chapter-1) The Elements of Programming - [Code in book](src/sicp/chapter_1/part_1/book_1_1.clj)
   * [1.1.1](https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1_002e1) Expressions
@@ -39,6 +42,8 @@ Jay Sussman on basics of computer science and software engineering.
 
 ### Chapter 2 - Building Abstractions with Data
 
+![Progress](https://progress-bar.dev/56/?scale=97&title=Solved&width=500&suffix=)
+
 * [2.1](https://sarabander.github.io/sicp/html/Chapter-2.xhtml#Chapter-2) Introduction to Data Abstraction - [Code in book](src/sicp/chapter_2/part_1/book_2_1.clj)
   * [2.1.1](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e1) Example: Arithmetic Operations for Rational Numbers - [2.1](src/sicp/chapter_2/part_1/ex_2_01.clj)
   * [2.1.2](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e2) Abstraction Barriers - [2.2](src/sicp/chapter_2/part_1/ex_2_02.clj), [2.3](src/sicp/chapter_2/part_1/ex_2_03.clj)
@@ -49,7 +54,7 @@ Jay Sussman on basics of computer science and software engineering.
   * [2.2.2](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e2) Hierarchical Structures - [2.24](src/sicp/chapter_2/part_2/ex_2_24.clj), [2.25](src/sicp/chapter_2/part_2/ex_2_25.clj), [2.26](src/sicp/chapter_2/part_2/ex_2_26.clj), [2.27](src/sicp/chapter_2/part_2/ex_2_27.clj), [2.28](src/sicp/chapter_2/part_2/ex_2_28.clj), [2.29](src/sicp/chapter_2/part_2/ex_2_29.clj), [2.30](src/sicp/chapter_2/part_2/ex_2_30.clj), [2.31](src/sicp/chapter_2/part_2/ex_2_31.clj), [2.32](src/sicp/chapter_2/part_2/ex_2_32.clj)
   * [2.2.3](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e3) Sequences as Conventional Interfaces - [2.33](src/sicp/chapter_2/part_2/ex_2_33.clj), [2.34](src/sicp/chapter_2/part_2/ex_2_34.clj), [2.35](src/sicp/chapter_2/part_2/ex_2_35.clj), [2.36](src/sicp/chapter_2/part_2/ex_2_36.clj), [2.37](src/sicp/chapter_2/part_2/ex_2_37.clj), [2.38](src/sicp/chapter_2/part_2/ex_2_38.clj), [2.39](src/sicp/chapter_2/part_2/ex_2_39.clj), [2.40](src/sicp/chapter_2/part_2/ex_2_40.clj), [2.41](src/sicp/chapter_2/part_2/ex_2_41.clj), [2.42](src/sicp/chapter_2/part_2/ex_2_42.clj), [2.43](src/sicp/chapter_2/part_2/ex_2_43.clj)
   * [2.2.4](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e4) Example: A Picture Language - [2.44](src/sicp/chapter_2/part_2/ex_2_44.clj), [2.45](src/sicp/chapter_2/part_2/ex_2_46.clj), [2.45](src/sicp/chapter_2/part_2/ex_2_46.clj), [2.47](src/sicp/chapter_2/part_2/ex_2_47.clj), [2.48](src/sicp/chapter_2/part_2/ex_2_48.clj), [2.49](src/sicp/chapter_2/part_2/ex_2_49.clj), [2.50](src/sicp/chapter_2/part_2/ex_2_50.clj), [2.51](src/sicp/chapter_2/part_2/ex_2_51.clj), [2.52](src/sicp/chapter_2/part_2/ex_2_52.clj)
-* [2.3](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3) Symbolic Data - [2.53](src/sicp/chapter_2/part_3/ex_2_53.clj), [2.54](src/sicp/chapter_2/part_3/ex_2_54.clj), [2.55](src/sicp/chapter_2/part_3/ex_2_55.clj)
+* [2.3](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3) Symbolic Data - [2.53](src/sicp/chapter_2/part_3/ex_2_53.clj), [2.54](src/sicp/chapter_2/part_3/ex_2_54.clj), [2.55](src/sicp/chapter_2/part_3/ex_2_55.clj), [2.56](src/sicp/chapter_2/part_3/ex_2_56.clj)
   * 2.3.1 Quotation
   * 2.3.2 Example: Symbolic Differentiation
   * 2.3.3 Example: Representing Sets
@@ -64,6 +69,8 @@ Jay Sussman on basics of computer science and software engineering.
   * 2.5.3 Example: Symbolic Algebra
 
 ### Chapter 3 - Modularity, Objects, and State
+
+![Progress](https://progress-bar.dev/0/?scale=82&title=Solved&width=500&suffix=)
 
 * 3.1 Assignment and Local State
   * 3.1.1 Local State Variables
@@ -91,6 +98,8 @@ Jay Sussman on basics of computer science and software engineering.
   * 3.5.5 Modularity of Functional Programs and Modularity of Objects
 
 ### Chapter 4 - Metalinguistic Abstraction
+
+![Progress](https://progress-bar.dev/0/?scale=79&title=Solved&width=500&suffix=)
 
 * 4.1 The Metacircular Evaluator
   * 4.1.1 The Core of the Evaluator
@@ -123,6 +132,8 @@ Jay Sussman on basics of computer science and software engineering.
     * 4.4.4.8 Frames and Bindings
 
 ### Chapter 5 - Computing with Register Machines
+
+![Progress](https://progress-bar.dev/0/?scale=52&title=Solved&width=500&suffix=)
 
 * 5.1 Designing Register Machines
   * 5.1.1 A Language for Describing Register Machines
