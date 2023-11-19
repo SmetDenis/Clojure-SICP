@@ -24,7 +24,6 @@
 
 (defn multiplicand [s]
   (let [last-items (drop 2 s)]
-    (println last-items)
     (cond (every? number? last-items) (reduce * last-items)
           :else (cons '* last-items))))
 
