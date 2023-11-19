@@ -1,7 +1,7 @@
 # Solving exercises from SICP with Clojure
 
 [![Clojure CI](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml)
-![Progress](https://progress-bar.dev/103/?scale=356&title=Solved&width=500&suffix=)
+![Progress](https://progress-bar.dev/104/?scale=356&title=Solved&width=500&suffix=)
 
 SICP (Structure and Interpretation of Computer Programs) is the book of Harold Abelson and Gerald
 Jay Sussman on basics of computer science and software engineering.
@@ -42,7 +42,7 @@ Jay Sussman on basics of computer science and software engineering.
 
 ### Chapter 2 - Building Abstractions with Data
 
-![Progress](https://progress-bar.dev/57/?scale=97&title=Solved&width=500&suffix=)
+![Progress](https://progress-bar.dev/58/?scale=97&title=Solved&width=500&suffix=)
 
 * [2.1](https://sarabander.github.io/sicp/html/Chapter-2.xhtml#Chapter-2) Introduction to Data Abstraction - [Code in book](src/sicp/chapter_2/part_1/book_2_1.clj)
   * [2.1.1](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e1) Example: Arithmetic Operations for Rational Numbers - [2.1](src/sicp/chapter_2/part_1/ex_2_01.clj)
@@ -54,7 +54,7 @@ Jay Sussman on basics of computer science and software engineering.
   * [2.2.2](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e2) Hierarchical Structures - [2.24](src/sicp/chapter_2/part_2/ex_2_24.clj), [2.25](src/sicp/chapter_2/part_2/ex_2_25.clj), [2.26](src/sicp/chapter_2/part_2/ex_2_26.clj), [2.27](src/sicp/chapter_2/part_2/ex_2_27.clj), [2.28](src/sicp/chapter_2/part_2/ex_2_28.clj), [2.29](src/sicp/chapter_2/part_2/ex_2_29.clj), [2.30](src/sicp/chapter_2/part_2/ex_2_30.clj), [2.31](src/sicp/chapter_2/part_2/ex_2_31.clj), [2.32](src/sicp/chapter_2/part_2/ex_2_32.clj)
   * [2.2.3](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e3) Sequences as Conventional Interfaces - [2.33](src/sicp/chapter_2/part_2/ex_2_33.clj), [2.34](src/sicp/chapter_2/part_2/ex_2_34.clj), [2.35](src/sicp/chapter_2/part_2/ex_2_35.clj), [2.36](src/sicp/chapter_2/part_2/ex_2_36.clj), [2.37](src/sicp/chapter_2/part_2/ex_2_37.clj), [2.38](src/sicp/chapter_2/part_2/ex_2_38.clj), [2.39](src/sicp/chapter_2/part_2/ex_2_39.clj), [2.40](src/sicp/chapter_2/part_2/ex_2_40.clj), [2.41](src/sicp/chapter_2/part_2/ex_2_41.clj), [2.42](src/sicp/chapter_2/part_2/ex_2_42.clj), [2.43](src/sicp/chapter_2/part_2/ex_2_43.clj)
   * [2.2.4](https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2_002e4) Example: A Picture Language - [2.44](src/sicp/chapter_2/part_2/ex_2_44.clj), [2.45](src/sicp/chapter_2/part_2/ex_2_46.clj), [2.45](src/sicp/chapter_2/part_2/ex_2_46.clj), [2.47](src/sicp/chapter_2/part_2/ex_2_47.clj), [2.48](src/sicp/chapter_2/part_2/ex_2_48.clj), [2.49](src/sicp/chapter_2/part_2/ex_2_49.clj), [2.50](src/sicp/chapter_2/part_2/ex_2_50.clj), [2.51](src/sicp/chapter_2/part_2/ex_2_51.clj), [2.52](src/sicp/chapter_2/part_2/ex_2_52.clj)
-* [2.3](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3) Symbolic Data - [2.53](src/sicp/chapter_2/part_3/ex_2_53.clj), [2.54](src/sicp/chapter_2/part_3/ex_2_54.clj), [2.55](src/sicp/chapter_2/part_3/ex_2_55.clj), [2.56](src/sicp/chapter_2/part_3/ex_2_56.clj), [2.57](src/sicp/chapter_2/part_3/ex_2_57.clj)
+* [2.3](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3) Symbolic Data - [2.53](src/sicp/chapter_2/part_3/ex_2_53.clj), [2.54](src/sicp/chapter_2/part_3/ex_2_54.clj), [2.55](src/sicp/chapter_2/part_3/ex_2_55.clj), [2.56](src/sicp/chapter_2/part_3/ex_2_56.clj), [2.57](src/sicp/chapter_2/part_3/ex_2_57.clj), [2.58](src/sicp/chapter_2/part_3/ex_2_58.clj)
   * 2.3.1 Quotation
   * 2.3.2 Example: Symbolic Differentiation
   * 2.3.3 Example: Representing Sets
