@@ -1,4 +1,5 @@
-(ns sicp.chapter-2.part-3.book-2-3)
+(ns sicp.chapter-2.part-3.book-2-3
+  (:require [clojure.set :as set]))
 
 (comment "2.3")
 ; Symbolic Data ------------------------------------------------------------------------------------
@@ -21,6 +22,7 @@
 ; * 2.56
 ; * 2.57
 ; * 2.58
+
 (defn =number? [exp num] (and (number? exp) (= exp num)))
 (defn variable? [x] (symbol? x))
 (defn same-variable? [v1 v2] (and (variable? v1) (variable? v2) (= v1 v2)))
@@ -59,3 +61,33 @@
                        (deriv (multiplier exp) var)
                        (multiplicand exp)))
     :else (throw (Exception. (str "unknown expression type: DERIV " exp)))))
+
+(comment "2.3.3")
+; Example: Representing Sets -----------------------------------------------------------------------
+; Exercises:
+; * 2.59
+; * 2.60
+; * 2.61
+; * 2.62
+; * 2.63
+; * 2.64
+; * 2.65
+; * 2.66
+
+(defn element-of-set? [x set]
+  (cond
+    (empty? set) false
+    (= x (first set)) true
+    :else (element-of-set? x (rest set))))
+
+(defn adjoin-set [x set]
+  (if (element-of-set? x set)
+    set
+    (cons x set)))
+
+(defn intersection-set [set1 set2]
+  (cond
+    (or (empty? set1) (empty? set2)) '()
+    (element-of-set? (first set1) set2)
+    (cons (first set1) (intersection-set (rest set1) set2))
+    :else (intersection-set (rest set1) set2)))
