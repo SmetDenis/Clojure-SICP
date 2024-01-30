@@ -91,3 +91,16 @@
     (element-of-set? (first set1) set2)
     (cons (first set1) (intersection-set (rest set1) set2))
     :else (intersection-set (rest set1) set2)))
+
+(defn element-of-set-sorted? [x set]
+  (cond (empty? set) false
+        (= x (first set)) true
+        (< x (first set)) false
+        :else (element-of-set-sorted? x (rest set))))
+
+(defn intersection-set-sorted [set1 set2]
+  (cond (or (empty? set1) (empty? set2)) '()
+        :else (let [x1 (first set1) x2 (first set2)]
+                (cond (= x1 x2) (cons x1 (intersection-set-sorted (rest set1) (rest set2)))
+                      (< x1 x2) (intersection-set-sorted (rest set1) set2)
+                      :else (intersection-set-sorted set1 (rest set2))))))
