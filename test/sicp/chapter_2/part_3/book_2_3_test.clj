@@ -31,7 +31,9 @@
 
 (deftest element-of-set?-test
   (is (= true (element-of-set? 1 '(1 2 3))))
-  (is (= false (element-of-set? 1 '(2 3)))))
+  (is (= false (element-of-set? 1 '(2 3))))
+  (is (= false (element-of-set? 1 '())))
+  (is (= false (element-of-set? nil '()))))
 
 (deftest adjoin-set-test
   (is (= '(4) (adjoin-set 4 '())))
