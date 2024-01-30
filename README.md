@@ -1,7 +1,7 @@
 # Solving exercises from SICP with Clojure
 
 [![Clojure CI](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml)
-![Progress](https://progress-bar.dev/113/?scale=356&title=Solved&width=500&suffix=)
+![Progress](https://progress-bar.dev/114/?scale=356&title=Solved&width=500&suffix=)
 
 SICP (Structure and Interpretation of Computer Programs) is the book of Harold Abelson and Gerald
 Jay Sussman on basics of computer science and software engineering.
@@ -42,7 +42,7 @@ Jay Sussman on basics of computer science and software engineering.
 
 ### Chapter 2 - Building Abstractions with Data
 
-![Progress](https://progress-bar.dev/67/?scale=97&title=Solved&width=500&suffix=)
+![Progress](https://progress-bar.dev/68/?scale=97&title=Solved&width=500&suffix=)
 
 * [2.1](https://sarabander.github.io/sicp/html/Chapter-2.xhtml#Chapter-2) Introduction to Data Abstraction - [Code in book](src/sicp/chapter_2/part_1/book_2_1.clj)
   * [2.1.1](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e1) Example: Arithmetic Operations for Rational Numbers - [2.1](src/sicp/chapter_2/part_1/ex_2_01.clj)
