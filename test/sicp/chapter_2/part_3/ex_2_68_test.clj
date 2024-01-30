@@ -1,5 +1,5 @@
 (ns sicp.chapter-2.part-3.ex-2-68-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-2.part-3.book-2-3 :as b23]
             [sicp.chapter-2.part-3.ex-2-68 :refer [encode encode-symbol]]))
 
