@@ -153,7 +153,9 @@
 ; * 2.72
 
 (defn make-leaf [symbol weight] [:leaf symbol weight])
-(defn leaf? [object] (= (first object) :leaf))
+(defn leaf? [object]
+  (and (or (list? object) (vector? object))
+       (= (first object) :leaf)))
 (defn symbol-leaf [x] (second x))
 (defn weight-leaf [x] (nth x 2))
 (defn left-branch-h [tree] (first tree))
@@ -176,8 +178,8 @@
 
 (defn choose-branch [bit branch]
   (cond
-    (= bit 0) (left-branch branch)
-    (= bit 1) (right-branch branch)
+    (= bit 0) (left-branch-h branch)
+    (= bit 1) (right-branch-h branch)
     :else (throw (Exception. (str "bad bit: CHOOSE-BRANCH " bit)))))
 
 (defn decode [bits tree]

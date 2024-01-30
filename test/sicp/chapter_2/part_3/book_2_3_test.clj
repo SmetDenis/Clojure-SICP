@@ -126,6 +126,8 @@
 
 (deftest leaf?-test
   (is (= true (leaf? (make-leaf :a 8))))
+  (is (= false (leaf? :a)))
+  (is (= false (leaf? '())))
   (is (= false (leaf? '(:node (:leaf :a 8) (:leaf :b 3))))))
 
 (deftest symbol-leaf-test
