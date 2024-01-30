@@ -58,7 +58,7 @@ Jay Sussman on basics of computer science and software engineering.
   * [2.3.1](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3_002e1) Quotation - [2.53](src/sicp/chapter_2/part_3/ex_2_53.clj), [2.54](src/sicp/chapter_2/part_3/ex_2_54.clj), [2.55](src/sicp/chapter_2/part_3/ex_2_55.clj)
   * [2.3.2](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3_002e2) Example: Symbolic Differentiation - [2.56](src/sicp/chapter_2/part_3/ex_2_56.clj), [2.57](src/sicp/chapter_2/part_3/ex_2_57.clj), [2.58](src/sicp/chapter_2/part_3/ex_2_58.clj)
   * [2.3.3](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3_002e3) Example: Representing Sets - [2.59](src/sicp/chapter_2/part_3/ex_2_59.clj), [2.60](src/sicp/chapter_2/part_3/ex_2_60.clj), [2.61](src/sicp/chapter_2/part_3/ex_2_61.clj), [2.62](src/sicp/chapter_2/part_3/ex_2_62.clj), [2.63](src/sicp/chapter_2/part_3/ex_2_63.clj), [2.64](src/sicp/chapter_2/part_3/ex_2_64.clj), [2.65](src/sicp/chapter_2/part_3/ex_2_65.clj), [2.66](src/sicp/chapter_2/part_3/ex_2_66.clj)
-  * 2.3.4 Example: Huffman Encoding Trees
+  * [2.3.4](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3_002e4) Example: Huffman Encoding Trees
 * 2.4 Multiple Representations for Abstract Data
   * 2.4.1 Representations for Complex Numbers
   * 2.4.2 Tagged data
