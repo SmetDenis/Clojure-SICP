@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-09)
+(ns sicp.chapter-1.part-2.ex-1-09)
 
 ; Exercise 1.9
 ; Each of the following two procedures defines a method for adding two positive integers

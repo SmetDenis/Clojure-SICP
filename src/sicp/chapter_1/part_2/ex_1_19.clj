@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-19)
+(ns sicp.chapter-1.part-2.ex-1-19)
 
 ; Exercise 1.19.
 ;

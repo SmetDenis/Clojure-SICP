@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-10)
+(ns sicp.chapter-1.part-2.ex-1-10)
 
 ; Exercise 1.10
 ; The following procedure computes a mathematical function called Ackermann’s function.

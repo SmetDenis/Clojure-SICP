@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-24)
+(ns sicp.chapter-1.part-2.ex-1-24)
 
 ; Exercise 1.24
 ; Modify the timed-prime-test procedure of Exercise 1.22 to use fast-prime? (the Fermat method),

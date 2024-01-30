@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_1.ex-1-06
+(ns sicp.chapter-1.part-1.ex-1-06
   (:require [sicp.chapter-1.part-1.book-1-1 :as b11]))
 
 ; Exercise 1.6

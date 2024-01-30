@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-11)
+(ns sicp.chapter-1.part-2.ex-1-11)
 
 ; Exercise 1.11
 ; A function f is defined by the rule that f(n)=n

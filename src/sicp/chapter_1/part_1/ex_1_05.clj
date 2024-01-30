@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_1.ex-1-05)
+(ns sicp.chapter-1.part-1.ex-1-05)
 
 ; Exercise 1.5
 ; Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is

@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_1.ex-1-04)
+(ns sicp.chapter-1.part-1.ex-1-04)
 
 ; Exercise 1.4
 ; Observe that our model of evaluation allows for combinations whose operators are compound expressions.

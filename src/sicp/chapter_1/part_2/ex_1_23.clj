@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-23
+(ns sicp.chapter-1.part-2.ex-1-23
   (:require [sicp.misc :as m]))
 
 ; Exercise 1.23

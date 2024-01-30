@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-22)
+(ns sicp.chapter-1.part-2.ex-1-22)
 
 ; Exercise 1.22
 ; Most Lisp implementations include a primitive called runtime that returns an integer that specifies

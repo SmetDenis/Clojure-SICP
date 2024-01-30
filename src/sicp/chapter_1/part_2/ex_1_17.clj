@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-17)
+(ns sicp.chapter-1.part-2.ex-1-17)
 
 ; Exercise 1.17
 ; The exponentiation algorithms in this section are based on performing exponentiation by means of repeated

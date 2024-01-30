@@ -1,6 +1,6 @@
-(ns sicp.chapter-1.part_2.ex-1-11-test
+(ns sicp.chapter-1.part-2.ex-1-11-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part_2.ex-1-11 :refer [f f-v2]]))
+            [sicp.chapter-1.part-2.ex-1-11 :refer [f f-v2]]))
 
 (deftest f-test
   ; ~ O(3^n)

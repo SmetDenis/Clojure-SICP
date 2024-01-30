@@ -1,6 +1,6 @@
-(ns sicp.chapter-1.part_2.ex-1-10-test
+(ns sicp.chapter-1.part-2.ex-1-10-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part_2.ex-1-10 :refer [A f g h k]]))
+            [sicp.chapter-1.part-2.ex-1-10 :refer [A f g h k]]))
 
 (deftest A-test
   (is (= 1024 (A 1 10)))
