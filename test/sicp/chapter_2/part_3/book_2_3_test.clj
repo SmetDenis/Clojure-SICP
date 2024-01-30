@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-3.book-2-3-test
   (:require [clojure.test :refer [deftest is]]
             [sicp.chapter-2.part-3.book-2-3 :refer [adjoin-set
+                                                    adjoin-set-h
                                                     deriv
                                                     element-of-set-sorted?
                                                     element-of-set-tree?
@@ -8,11 +9,21 @@
                                                     entry
                                                     intersection-set
                                                     intersection-set-sorted
+                                                    leaf?
                                                     left-branch
+                                                    left-branch-h
                                                     lookup
+                                                    make-code-tree
+                                                    make-leaf
+                                                    make-leaf-set
                                                     make-tree
                                                     memq
-                                                    right-branch]]))
+                                                    right-branch
+                                                    right-branch-h
+                                                    symbol-leaf
+                                                    symbols
+                                                    weight
+                                                    weight-leaf]]))
 
 (comment "2.3")
 ; symbolic data ------------------------------------------------------------------------------------
@@ -97,3 +108,61 @@
     (is (= '{:key 2 :value "B"} (lookup 2 records)))
     (is (= '{:key 3 :value "C"} (lookup 3 records)))
     (is (= false (lookup 4 records)))))
+
+(comment "2.3.4")
+; Example: Huffman Encoding Trees ------------------------------------------------------------------
+
+(def sample-tree
+  (make-code-tree
+    (make-leaf :A 4)
+    (make-code-tree
+      (make-leaf :B 2)
+      (make-code-tree
+        (make-leaf :D 1)
+        (make-leaf :C 1)))))
+
+(deftest make-leaf-test
+  (is (= '(:leaf :a 8) (make-leaf :a 8))))
+
+(deftest leaf?-test
+  (is (= true (leaf? (make-leaf :a 8))))
+  (is (= false (leaf? '(:node (:leaf :a 8) (:leaf :b 3))))))
+
+(deftest symbol-leaf-test
+  (is (= :a (symbol-leaf (make-leaf :a 8))))
+  (is (= :b (symbol-leaf (make-leaf :b 4)))))
+
+(deftest weight-leaf-test
+  (is (= 8 (weight-leaf (make-leaf :a 8))))
+  (is (= 4 (weight-leaf (make-leaf :b 4)))))
+
+(deftest left-branch-h-test
+  (is (= '(:leaf :a 8)
+         (left-branch-h (make-tree (make-leaf :a 8) '() '())))))
+
+(deftest right-branch-h-test
+  (is (= '((:leaf :b 4))
+         (right-branch-h (make-tree (make-leaf :a 8) (list (make-leaf :b 4)) '())))))
+
+(deftest symbols-test
+  (is (= '(:a) (symbols (make-leaf :a 8))))
+  (is (= '(:A :B :D :C) (symbols sample-tree))))
+
+(deftest weight-test
+  (is (= 9 (weight (make-leaf :a 9))))
+  (is (= 8 (weight sample-tree))))
+
+(deftest adjoin-set-h-test
+  (is (= '((:leaf :a 8))
+         (adjoin-set-h (make-leaf :a 8) '())))
+  (is (= '((:leaf :b 4) (:leaf :a 8))
+         (adjoin-set-h (make-leaf :b 4) (list (make-leaf :a 8)))))
+  (is (= '((:leaf :b 4) (:leaf :b 4) (:leaf :a 8))
+         (adjoin-set-h (make-leaf :b 4) (list (make-leaf :b 4) (make-leaf :a 8))))))
+
+(deftest make-leaf-set-test
+  (is (= '([:leaf :A 4]
+           [:leaf :B 2]
+           [:leaf :C 1]
+           [:leaf :D 1])
+         (make-leaf-set '((:A 4) (:B 2) (:C 1) (:D 1))))))

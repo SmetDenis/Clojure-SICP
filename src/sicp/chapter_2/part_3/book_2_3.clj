@@ -141,3 +141,68 @@
     (empty? set-of-records) false
     (= given-key (:key (first set-of-records))) (first set-of-records)
     :else (lookup given-key (rest set-of-records))))
+
+(comment "2.3.4")
+; Example: Huffman Encoding Trees ------------------------------------------------------------------
+; Exercises:
+; * 2.67
+; * 2.68
+; * 2.69
+; * 2.70
+; * 2.71
+; * 2.72
+
+(defn make-leaf [symbol weight] [:leaf symbol weight])
+(defn leaf? [object] (= (first object) :leaf))
+(defn symbol-leaf [x] (second x))
+(defn weight-leaf [x] (nth x 2))
+(defn left-branch-h [tree] (first tree))
+(defn right-branch-h [tree] (second tree))
+(defn symbols [tree]
+  (if (leaf? tree)
+    (list (symbol-leaf tree))
+    (nth tree 2)))
+
+(defn weight [tree]
+  (if (leaf? tree)
+    (weight-leaf tree)
+    (nth tree 3)))
+
+(defn make-code-tree [left right]
+  [left
+   right
+   (concat (symbols left) (symbols right))
+   (+ (weight left) (weight right))])
+
+(defn choose-branch [bit branch]
+  (cond
+    (= bit 0) (left-branch branch)
+    (= bit 1) (right-branch branch)
+    :else (throw (Exception. (str "bad bit: CHOOSE-BRANCH " bit)))))
+
+(defn decode [bits tree]
+  (letfn [(decode-1 [bits current-branch]
+            (if (empty? bits)
+              '()
+              (let [next-branch (choose-branch (first bits) current-branch)]
+                (if (leaf? next-branch)
+                  (cons (symbol-leaf next-branch)
+                        (decode-1 (rest bits) tree))
+                  (decode-1 (rest bits) next-branch)))))]
+    (decode-1 bits tree)))
+
+(defn adjoin-set-h [x set]
+  (cond
+    (empty? set) (list x)
+    (< (weight x) (weight (first set))) (cons x set)
+    :else (cons (first set)
+                (adjoin-set x (rest set)))))
+
+(defn make-leaf-set [pairs]
+  (if (empty? pairs)
+    '()
+    (let [pair (first pairs)]
+      (adjoin-set
+        (make-leaf (first pair)                             ; symbol
+                   (second pair))                           ; frequency
+        (make-leaf-set (rest pairs))))))
