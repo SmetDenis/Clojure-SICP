@@ -107,8 +107,17 @@
 
 ; List as tree
 (defn entry [tree] (first tree))
-(defn left-branch [tree] (second tree))
-(defn right-branch [tree] (nth tree 2))
+
+(defn left-branch [tree]
+  (if (< 1 (count tree))
+    (nth tree 1)
+    '()))
+
+(defn right-branch [tree]
+  (if (< 2 (count tree))
+    (nth tree 2)
+    '()))
+
 (defn make-tree [entry left right] (list entry left right))
 
 (defn element-of-set-tree? [x set]

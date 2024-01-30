@@ -71,10 +71,12 @@
   (is (= '(1 (1 2 3) (4 5 6)) (make-tree 1 '(1 2 3) '(4 5 6)))))
 
 (deftest right-branch-test
-  (is (= '(3) (right-branch (make-tree 1 '(2) '(3))))))
+  (is (= '(3) (right-branch (make-tree 1 '(2) '(3)))))
+  (is (= '() (right-branch '(2)))))
 
 (deftest left-branch-test
-  (is (= '(2) (left-branch (make-tree 1 '(2) '(3))))))
+  (is (= '(2) (left-branch (make-tree 1 '(2) '(3)))))
+  (is (= '() (left-branch '(2)))))
 
 (deftest entry-test
   (is (= 1 (entry (make-tree 1 '(2) '(3))))))
@@ -83,4 +85,5 @@
   (is (= true (element-of-set-tree? 2 (make-tree 2 '(1) '(3)))))
   (is (= true (element-of-set-tree? 2 (make-tree 2 '(1) '(3)))))
   (is (= true (element-of-set-tree? 3 (make-tree 2 '(1) '(3)))))
-  (is (= false (element-of-set-tree? 0 (make-tree 2 '(1) '(3))))))
+  (is (= false (element-of-set-tree? 0 (make-tree 2 '(1) '(3)))))
+  (is (= false (element-of-set-tree? 4 (make-tree 2 '(1) '(3))))))
