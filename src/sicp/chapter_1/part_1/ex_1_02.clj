@@ -1,4 +1,4 @@
-(ns sicp.chapter_1.part_1.ex-1-02)
+(ns sicp.chapter-1.part-1.ex-1-02)
 
 ; Exercise 1.2
 ; Translate the following expression into prefix form:

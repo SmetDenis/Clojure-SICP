@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex_1_15)
+(ns sicp.chapter-1.part-2.ex-1-15)
 
 ; Exercise 1.15
 ; The sine of an angle (specified in radians) can be computed by making use of the approximation sinx≈x

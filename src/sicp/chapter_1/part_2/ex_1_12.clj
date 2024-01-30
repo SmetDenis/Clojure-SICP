@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-12)
+(ns sicp.chapter-1.part-2.ex-1-12)
 
 ; Exercise 1.12
 ; The following pattern of numbers is called Pascal’s triangle.

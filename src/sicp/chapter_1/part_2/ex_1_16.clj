@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-16)
+(ns sicp.chapter-1.part-2.ex-1-16)
 
 ; Exercise 1.16
 ; Design a procedure that evolves an iterative exponentiation process

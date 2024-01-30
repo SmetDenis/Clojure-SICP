@@ -1,6 +1,6 @@
-(ns sicp.chapter-1.part_2.ex-1-17-test
+(ns sicp.chapter-1.part-2.ex-1-17-test
   (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part_2.ex-1-17 :refer [multi multi-fast]]))
+            [sicp.chapter-1.part-2.ex-1-17 :refer [multi multi-fast]]))
 
 (deftest multi-test
   (is (= 2 (multi 1 2)))                                    ; "Elapsed time: 2.383128 msecs"

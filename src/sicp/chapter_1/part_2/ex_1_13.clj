@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part_2.ex-1-13)
+(ns sicp.chapter-1.part-2.ex-1-13)
 
 ; Exercise 1.13
 ; Prove that Fib(n) is the closest integer to φn/5⎯√, where φ=(1+5⎯√)/2.
