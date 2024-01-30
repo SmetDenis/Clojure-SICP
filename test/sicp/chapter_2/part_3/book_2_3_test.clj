@@ -9,6 +9,7 @@
                                                     intersection-set
                                                     intersection-set-sorted
                                                     left-branch
+                                                    lookup
                                                     make-tree
                                                     memq
                                                     right-branch]]))
@@ -87,3 +88,12 @@
   (is (= true (element-of-set-tree? 3 (make-tree 2 '(1) '(3)))))
   (is (= false (element-of-set-tree? 0 (make-tree 2 '(1) '(3)))))
   (is (= false (element-of-set-tree? 4 (make-tree 2 '(1) '(3))))))
+
+(deftest lookup-test
+  (let [records [{:key 1 :value "A"}
+                 {:key 2 :value "B"}
+                 {:key 3 :value "C"}]]
+    (is (= '{:key 1 :value "A"} (lookup 1 records)))
+    (is (= '{:key 2 :value "B"} (lookup 2 records)))
+    (is (= '{:key 3 :value "C"} (lookup 3 records)))
+    (is (= false (lookup 4 records)))))
