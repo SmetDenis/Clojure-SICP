@@ -1,5 +1,4 @@
-(ns sicp.chapter-2.part-3.book-2-3
-  (:require [clojure.set :as set]))
+(ns sicp.chapter-2.part-3.book-2-3)
 
 (comment "2.3")
 ; Symbolic Data ------------------------------------------------------------------------------------
@@ -92,6 +91,7 @@
     (cons (first set1) (intersection-set (rest set1) set2))
     :else (intersection-set (rest set1) set2)))
 
+; Sorted list for optimization
 (defn element-of-set-sorted? [x set]
   (cond (empty? set) false
         (= x (first set)) true
@@ -104,3 +104,25 @@
                 (cond (= x1 x2) (cons x1 (intersection-set-sorted (rest set1) (rest set2)))
                       (< x1 x2) (intersection-set-sorted (rest set1) set2)
                       :else (intersection-set-sorted set1 (rest set2))))))
+
+; List as tree
+(defn entry [tree] (first tree))
+(defn left-branch [tree] (second tree))
+(defn right-branch [tree] (nth tree 2))
+(defn make-tree [entry left right] (list entry left right))
+
+(defn element-of-set-tree? [x set]
+  (cond (empty? set) false
+        (= x (entry set)) true
+        (< x (entry set)) (element-of-set-tree? x (left-branch set))
+        :else (element-of-set-tree? x (right-branch set))))
+
+(defn adjoin-set-tree [x set]
+  (cond (empty? set) (make-tree x '() '())
+        (= x (entry set)) set
+        (< x (entry set)) (make-tree (entry set)
+                                     (adjoin-set-tree x (left-branch set))
+                                     (right-branch set))
+        :else (make-tree (entry set)
+                         (left-branch set)
+                         (adjoin-set-tree x (right-branch set)))))
