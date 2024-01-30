@@ -7,9 +7,7 @@
 
 (defn union-set [set1 set2]
   (cond
-    (or (empty? set1) (empty? set2)) '()
-    (not (b23/element-of-set? (first set2) set1))
-    (concat (union-set set1 (list (first set2))) (rest set2))
-    :else (union-set set1 (rest set2))))
-
-(println (union-set '(1 2 3) '(3 4 5 1 2 7 8 9)))
+    (empty? set1) set2
+    (empty? set2) set1
+    (b23/element-of-set? (first set2) set1) (union-set set1 (rest set2))
+    :else (union-set (concat set1 (list (first set2))) (rest set2))))
