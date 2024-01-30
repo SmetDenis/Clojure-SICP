@@ -135,3 +135,9 @@
         :else (make-tree (entry set)
                          (left-branch set)
                          (adjoin-set-tree x (right-branch set)))))
+
+(defn lookup [given-key set-of-records]
+  (cond
+    (empty? set-of-records) false
+    (= given-key (:key (first set-of-records))) (first set-of-records)
+    :else (lookup given-key (rest set-of-records))))
