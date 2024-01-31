@@ -28,7 +28,7 @@
                     right-branch      (b23/right-branch-h tree)
                     symbols-in-branch (b23/symbols tree)]
                 (if (b23/element-of-set? symbol symbols-in-branch)
-                  (if (b23/element-of-set? symbol left-branch)
+                  (if (b23/element-of-set? symbol (b23/symbols left-branch))
                     (cons 0 (encode-symbol symbol left-branch))
                     (cons 1 (encode-symbol symbol right-branch)))
                   (throw (Exception. (str "Symbol not found in tree " symbol)))))))
