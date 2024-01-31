@@ -208,3 +208,38 @@
         (make-leaf (first pair)                             ; symbol
                    (second pair))                           ; frequency
         (make-leaf-set (rest pairs))))))
+
+; Samples
+(def huffman-pairs '((:A 4) (:B 2) (:C 1) (:D 1)))
+
+(def huffman-tree
+  (make-code-tree
+    (make-leaf :A 4)
+    (make-code-tree
+      (make-leaf :B 2)
+      (make-code-tree
+        (make-leaf :D 1)
+        (make-leaf :C 1)))))
+
+(def huffman-tree-as-list
+  '[[:leaf :A 4]
+    [[:leaf :B 2]
+     [[:leaf :D 1]
+      [:leaf :C 1]
+      (:D :C) 2]
+     (:B :D :C) 4]
+    (:A :B :D :C) 8])
+
+(def huffman-message-decoded '(0                            ; A
+                                1 1 0                       ; D
+                                0                           ; A
+                                1 0                         ; B
+                                1 0                         ; B
+                                1 1 1                       ; C
+                                0))                         ; A
+(def huffman-message-encoded '(:A :D :A :B :B :C :A))
+
+(def huffman-A '(0))
+(def huffman-B '(1 0))
+(def huffman-C '(1 1 1))
+(def huffman-D '(1 1 0))

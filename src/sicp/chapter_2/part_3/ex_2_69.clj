@@ -21,7 +21,6 @@
 ;
 ; You can take significant advantage of the fact that we are using an ordered set representation.)
 
-
 (defn successive-merge [leaf-set]
   (if (= (count leaf-set) 1)
     (first leaf-set)

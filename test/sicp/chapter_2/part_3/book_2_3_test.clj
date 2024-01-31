@@ -7,6 +7,9 @@
                                                     element-of-set-tree?
                                                     element-of-set?
                                                     entry
+                                                    huffman-pairs
+                                                    huffman-tree
+                                                    huffman-tree-as-list
                                                     intersection-set
                                                     intersection-set-sorted
                                                     leaf?
@@ -168,3 +171,6 @@
            [:leaf :B 2]
            [:leaf :A 4])
          (make-leaf-set '((:A 4) (:B 2) (:C 1) (:D 1))))))
+
+(deftest huffman-examples-tests
+  (is (= huffman-tree-as-list huffman-tree)))
