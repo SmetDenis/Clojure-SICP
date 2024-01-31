@@ -3,30 +3,21 @@
             [sicp.chapter-2.part-3.book-2-3 :as b23]
             [sicp.chapter-2.part-3.ex-2-68 :refer [encode encode-symbol]]))
 
-(def sample-tree
-  (b23/make-code-tree
-    (b23/make-leaf :A 4)
-    (b23/make-code-tree
-      (b23/make-leaf :B 2)
-      (b23/make-code-tree
-        (b23/make-leaf :D 1)
-        (b23/make-leaf :C 1)))))
-
 (deftest encode-symbol-test
-  (is (= '(0) (encode-symbol :A sample-tree)))
-  (is (= '(1 0) (encode-symbol :B sample-tree)))
-  (is (= '(1 1 1) (encode-symbol :C sample-tree)))
-  (is (= '(1 1 0) (encode-symbol :D sample-tree))))
+  (is (= b23/huffman-A (encode-symbol :A b23/huffman-tree)))
+  (is (= b23/huffman-B (encode-symbol :B b23/huffman-tree)))
+  (is (= b23/huffman-C (encode-symbol :C b23/huffman-tree)))
+  (is (= b23/huffman-D (encode-symbol :D b23/huffman-tree))))
 
 (deftest encode-symbol-exception-test
   (is (thrown-with-msg?
         Exception
         #"Symbol not found in tree :Z"
-        (encode-symbol :Z sample-tree))))
+        (encode-symbol :Z b23/huffman-tree))))
 
 (deftest encode-exception-test
   (try
-    (encode-symbol :Z sample-tree)
+    (encode-symbol :Z b23/huffman-tree)
     (is false "Exception not thrown")
     (catch Exception e
       (is (= (.getMessage e) "Symbol not found in tree :Z")))))
@@ -39,4 +30,4 @@
             1 0                                             ; B
             1 1 1                                           ; C
             0)                                              ; A
-         (encode '(:A :D :A :B :B :C :A) sample-tree))))
+         (encode '(:A :D :A :B :B :C :A) b23/huffman-tree))))
