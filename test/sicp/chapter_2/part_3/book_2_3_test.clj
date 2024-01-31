@@ -52,6 +52,11 @@
 
 (deftest element-of-set?-test
   (is (= true (element-of-set? 1 '(1 2 3))))
+  (is (= true (element-of-set? 1 '[1 2 3])))
+  (is (= true (element-of-set? :a '(:a :b))))
+  (is (= true (element-of-set? :a '[:a :b])))
+  (is (= true (element-of-set? :b '[:a :b :c :d])))
+  (is (= true (element-of-set? :c '[:a :b :c :d])))
   (is (= false (element-of-set? 1 '(2 3))))
   (is (= false (element-of-set? 1 '())))
   (is (= false (element-of-set? nil '()))))
@@ -70,6 +75,8 @@
 (deftest element-of-set-optimized?-test
   (is (= true (element-of-set-sorted? 1 '(1 2 3))))
   (is (= false (element-of-set-sorted? 1 '(2 3))))
+  (is (= true (element-of-set-sorted? :a '(:a :b))))
+  (is (= true (element-of-set-sorted? :a '[:a :b])))
   (is (= false (element-of-set-sorted? 1 '())))
   (is (= false (element-of-set-sorted? nil '())))
   (is (= true (element-of-set-sorted? 100 (range 10000000))))) ; faster than element-of-set?
