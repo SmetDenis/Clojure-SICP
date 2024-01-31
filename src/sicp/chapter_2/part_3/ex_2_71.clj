@@ -30,10 +30,8 @@
 ;
 ; Note. Only the left branch grows.
 
-
 ; In such a tree (for general n) how many bits are required to encode the most frequent symbol?
 ; Answer: The most frequent symbol (32 or 512) also requires just 1 bit.
-
 
 ; The least frequent symbol?
 ; Answer: The least frequent symbol is required n-1 bits. So it's 4 or 9.
