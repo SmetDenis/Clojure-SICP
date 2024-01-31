@@ -198,13 +198,13 @@
     (empty? set) (list x)
     (< (weight x) (weight (first set))) (cons x set)
     :else (cons (first set)
-                (adjoin-set x (rest set)))))
+                (adjoin-set-h x (rest set)))))
 
 (defn make-leaf-set [pairs]
   (if (empty? pairs)
     '()
     (let [pair (first pairs)]
-      (adjoin-set
+      (adjoin-set-h
         (make-leaf (first pair)                             ; symbol
                    (second pair))                           ; frequency
         (make-leaf-set (rest pairs))))))

@@ -163,8 +163,8 @@
          (adjoin-set-h (make-leaf :b 4) (list (make-leaf :b 4) (make-leaf :a 8))))))
 
 (deftest make-leaf-set-test
-  (is (= '([:leaf :A 4]
-           [:leaf :B 2]
+  (is (= '([:leaf :D 1]
            [:leaf :C 1]
-           [:leaf :D 1])
+           [:leaf :B 2]
+           [:leaf :A 4])
          (make-leaf-set '((:A 4) (:B 2) (:C 1) (:D 1))))))
