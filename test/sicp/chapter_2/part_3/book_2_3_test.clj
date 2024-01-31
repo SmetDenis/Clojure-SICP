@@ -7,7 +7,6 @@
                                                     element-of-set-tree?
                                                     element-of-set?
                                                     entry
-                                                    huffman-pairs
                                                     huffman-tree
                                                     huffman-tree-as-list
                                                     intersection-set

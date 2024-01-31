@@ -30,4 +30,4 @@
             1 0                                             ; B
             1 1 1                                           ; C
             0)                                              ; A
-         (encode '(:A :D :A :B :B :C :A) sample-tree))))
+         (encode '(:A :D :A :B :B :C :A) b23/huffman-tree))))
