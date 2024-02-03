@@ -1,7 +1,7 @@
 # Solving exercises from SICP with Clojure
 
 [![Clojure CI](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml)
-![Progress](https://progress-bar.dev/119/?scale=356&title=Solved&width=500&suffix=)
+![Progress](https://progress-bar.dev/120/?scale=356&title=Solved&width=500&suffix=)
 
 SICP (Structure and Interpretation of Computer Programs) is the book of Harold Abelson and Gerald
 Jay Sussman on basics of computer science and software engineering.
@@ -42,7 +42,7 @@ Jay Sussman on basics of computer science and software engineering.
 
 ### Chapter 2 - Building Abstractions with Data
 
-![Progress](https://progress-bar.dev/73/?scale=97&title=Solved&width=500&suffix=)
+![Progress](https://progress-bar.dev/74/?scale=97&title=Solved&width=500&suffix=)
 
 * [2.1](https://sarabander.github.io/sicp/html/Chapter-2.xhtml#Chapter-2) Introduction to Data Abstraction - [Code in book](src/sicp/chapter_2/part_1/book_2_1.clj)
   * [2.1.1](https://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e1) Example: Arithmetic Operations for Rational Numbers - [2.1](src/sicp/chapter_2/part_1/ex_2_01.clj)
@@ -62,7 +62,7 @@ Jay Sussman on basics of computer science and software engineering.
 * [2.4](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4) Multiple Representations for Abstract Data
   * [2.4.1](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4_002e1) Representations for Complex Numbers
   * [2.4.2](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4_002e2) Tagged data
-  * [2.4.3](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4_002e3) Data-Directed Programming and Additivity - [2.73](src/sicp/chapter_2/part_4/ex_2_73.clj)
+  * [2.4.3](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4_002e3) Data-Directed Programming and Additivity - [2.73](src/sicp/chapter_2/part_4/ex_2_73.clj), [2.74](src/sicp/chapter_2/part_4/ex_2_74.clj)
 * 2.5 Systems with Generic Operations
   * 2.5.1 Generic Arithmetic Operations
   * 2.5.2 Combining Data of Different Types
