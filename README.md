@@ -59,14 +59,14 @@ Jay Sussman on basics of computer science and software engineering.
   * [2.3.2](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3_002e2) Example: Symbolic Differentiation - [2.56](src/sicp/chapter_2/part_3/ex_2_56.clj), [2.57](src/sicp/chapter_2/part_3/ex_2_57.clj), [2.58](src/sicp/chapter_2/part_3/ex_2_58.clj)
   * [2.3.3](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3_002e3) Example: Representing Sets - [2.59](src/sicp/chapter_2/part_3/ex_2_59.clj), [2.60](src/sicp/chapter_2/part_3/ex_2_60.clj), [2.61](src/sicp/chapter_2/part_3/ex_2_61.clj), [2.62](src/sicp/chapter_2/part_3/ex_2_62.clj), [2.63](src/sicp/chapter_2/part_3/ex_2_63.clj), [2.64](src/sicp/chapter_2/part_3/ex_2_64.clj), [2.65](src/sicp/chapter_2/part_3/ex_2_65.clj), [2.66](src/sicp/chapter_2/part_3/ex_2_66.clj)
   * [2.3.4](https://sarabander.github.io/sicp/html/2_002e3.xhtml#g_t2_002e3_002e4) Example: Huffman Encoding Trees - [2.67](src/sicp/chapter_2/part_3/ex_2_67.clj), [2.68](src/sicp/chapter_2/part_3/ex_2_68.clj), [2.69](src/sicp/chapter_2/part_3/ex_2_69.clj), [2.70](src/sicp/chapter_2/part_3/ex_2_70.clj), [2.71](src/sicp/chapter_2/part_3/ex_2_71.clj), [2.72](src/sicp/chapter_2/part_3/ex_2_72.clj)
-* [2.4](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4) Multiple Representations for Abstract Data
+* [2.4](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4) Multiple Representations for Abstract Data - [Code in book](src/sicp/chapter_2/part_4/book_2_4.clj)
   * [2.4.1](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4_002e1) Representations for Complex Numbers
   * [2.4.2](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4_002e2) Tagged data
   * [2.4.3](https://sarabander.github.io/sicp/html/2_002e4.xhtml#g_t2_002e4_002e3) Data-Directed Programming and Additivity - [2.73](src/sicp/chapter_2/part_4/ex_2_73.clj), [2.74](src/sicp/chapter_2/part_4/ex_2_74.clj), [2.75](src/sicp/chapter_2/part_4/ex_2_75.clj), [2.76](src/sicp/chapter_2/part_4/ex_2_76.clj)
-* 2.5 Systems with Generic Operations
-  * 2.5.1 Generic Arithmetic Operations
-  * 2.5.2 Combining Data of Different Types
-  * 2.5.3 Example: Symbolic Algebra
+* [2.5](https://sarabander.github.io/sicp/html/2_002e5.xhtml#g_t2_002e5) Systems with Generic Operations - [Code in book](src/sicp/chapter_2/part_5/book_2_5.clj)
+  * [2.5.1](https://sarabander.github.io/sicp/html/2_002e5.xhtml#g_t2_002e5_002e1) Generic Arithmetic Operations
+  * [2.5.2](https://sarabander.github.io/sicp/html/2_002e5.xhtml#g_t2_002e5_002e2) Combining Data of Different Types
+  * [2.5.3](https://sarabander.github.io/sicp/html/2_002e5.xhtml#g_t2_002e5_002e3) Example: Symbolic Algebra
 
 ### Chapter 3 - Modularity, Objects, and State
 
