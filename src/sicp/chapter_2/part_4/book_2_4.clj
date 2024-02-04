@@ -134,15 +134,15 @@
     (polar? z) (angle-polar (contents z))
     :else (throw (Exception. (str "Unknown type: ANGLE " z)))))
 
-(defn make-from-real-imag [x y]
+(defn make-from-real-imag-v2 [x y]
   (make-from-real-imag-rectangular x y))
 
 (defn add-complex [z1 z2]
-  (make-from-real-imag
+  (make-from-real-imag-v2
     (+ (real-part z1) (real-part z2))
     (+ (imag-part z1) (imag-part z2))))
 
-(defn make-from-mag-ang [r a]
+(defn make-from-mag-ang-v2 [r a]
   (make-from-mag-ang-polar r a))
 
 (comment "2.4.3")
@@ -160,3 +160,15 @@
       (apply proc (map contents args))
       (throw (Exception. (str "No method for these types: APPLY-GENERIC "
                               (list op type-tags)))))))
+
+(defn make-from-real-imag [x y]
+  (fn [op]
+    (cond
+      (= op :real-part) x
+      (= op :imag-part) y
+      (= op :magnitude) (Math/sqrt (+ (* x x) (* y y)))
+      (= op :angle) (Math/atan2 y x)
+      :else (throw (Exception. (str "Unknown op: MAKE-FROM-REAL-IMAG " op))))))
+
+(defn apply-generic-v2 [op arg] (arg op))
+
