@@ -13,9 +13,9 @@
 
 (defn fast-expt
   [b n]
-  (cond (= n 0) 1
+  (cond (zero? n) 1
         (even? n) (m/square (fast-expt b (/ n 2)))
-        :else (* b (fast-expt b (- n 1)))))
+        :else (* b (fast-expt b (dec n)))))
 
 (defn expmod-alyssa
   [base exp m]
@@ -23,7 +23,7 @@
 
 (defn expmod
   [base exp m]
-  (cond (= exp 0) 1
+  (cond (zero? exp) 1
         (even? exp)
         (rem (m/square (expmod base (/ exp 2) m)) m)
-        :else (rem (* base (expmod base (- exp 1) m)) m)))
+        :else (rem (* base (expmod base (dec exp) m)) m)))

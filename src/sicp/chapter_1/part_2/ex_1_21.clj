@@ -10,7 +10,7 @@
   [number test-divisor]
   (cond (> (* test-divisor test-divisor) number) number
         (m/divides? test-divisor number) test-divisor
-        :else (find-divisor number (+ test-divisor 1))))
+        :else (find-divisor number (inc test-divisor))))
 
 (defn smallest-divisor
   [n]

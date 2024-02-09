@@ -18,9 +18,9 @@
 
 (defn fast-expt
   [b n product]
-  (cond (= n 0) product
+  (cond (zero? n) product
         (even? n) (fast-expt (* b b) (/ n 2) product)
-        :else (fast-expt b (- n 1) (* product b))))
+        :else (fast-expt b (dec n) (* product b))))
 
 (defn expt
   [b n]

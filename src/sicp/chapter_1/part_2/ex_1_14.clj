@@ -8,9 +8,9 @@
 
 (defn change
   [amount type-of-coins]
-  (cond (= amount 0) 1
-        (or (< amount 0) (= type-of-coins 0)) 0
-        :else (+ (change amount (- type-of-coins 1))
+  (cond (zero? amount) 1
+        (or (neg? amount) (zero? type-of-coins)) 0
+        :else (+ (change amount (dec type-of-coins))
                  (change (- amount (b12/first-denomination type-of-coins)) type-of-coins))))
 
 (defn money-change

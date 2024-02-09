@@ -18,9 +18,7 @@
 
 (defn sine
   [angle]
-  (if (not (> (abs angle) 0.1))
-    angle
-    (p (sine (/ angle 3.0)))))
+  (if-not (> (abs angle) 0.1) angle (p (sine (/ angle 3.0)))))
 
 ; 1. How many times is the procedure p applied when (sine 12.15) is evaluated?
 

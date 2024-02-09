@@ -35,7 +35,7 @@
   (cond (>= from to) (do
                        (when print-log (println "finish"))
                        from)
-        (even? from) (find-primes (+ from 1) to print-log)  ; Just skip to the next odd
+        (even? from) (find-primes (inc from) to print-log)  ; Just skip to the next odd
         :else (do
                 (when print-log (println from))
                 (find-primes (+ from 2) to print-log))))    ; Takes only odds

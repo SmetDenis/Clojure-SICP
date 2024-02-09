@@ -13,6 +13,6 @@
 
 (defn gcd
   [a b]
-  (if (= b 0)
+  (if (zero? b)
     a
     (gcd b (mod a b))))

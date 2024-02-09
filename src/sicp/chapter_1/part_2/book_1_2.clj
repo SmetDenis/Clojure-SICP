@@ -12,14 +12,14 @@
   [n]
   (if (= n 1)
     1
-    (* n (factorial (- n 1)))))
+    (* n (factorial (dec n)))))
 
 (defn fact-iter
   [product counter max-count]
   (if (> counter max-count)
     product
     (fact-iter (* counter product)
-               (+ counter 1)
+               (inc counter)
                max-count)))
 
 (defn factorial-iter
@@ -35,16 +35,16 @@
 
 (defn fib
   [n]
-  (cond (= n 0) 0
+  (cond (zero? n) 0
         (= n 1) 1
-        :else (+ (fib (- n 1))
+        :else (+ (fib (dec n))
                  (fib (- n 2)))))
 
 (defn fib-iter
   [a b count]
-  (if (= count 0)
+  (if (zero? count)
     b
-    (fib-iter (+ a b) a (- count 1))))
+    (fib-iter (+ a b) a (dec count))))
 
 (defn fib-2
   [n]
@@ -60,10 +60,10 @@
 
 (defn cc
   [amount kinds-of-coins]
-  (cond (= amount 0) 1
-        (or (< amount 0)
-            (= kinds-of-coins 0)) 0
-        :else (+ (cc amount (- kinds-of-coins 1))
+  (cond (zero? amount) 1
+        (or (neg? amount)
+            (zero? kinds-of-coins)) 0
+        :else (+ (cc amount (dec kinds-of-coins))
                  (cc (- amount (first-denomination kinds-of-coins)) kinds-of-coins))))
 
 (defn count-change
@@ -88,16 +88,16 @@
 
 (defn expt
   [b n]
-  (if (= n 0)
+  (if (zero? n)
     1
-    (* b (expt b (- n 1)))))
+    (* b (expt b (dec n)))))
 
 (defn expt-iter
   [b counter product]
-  (if (= counter 0)
+  (if (zero? counter)
     product
     (expt-iter b
-               (- counter 1)
+               (dec counter)
                (* b product))))
 
 (defn expt-2
@@ -106,13 +106,13 @@
 
 (defn fast-expt
   [b n]
-  (cond (= n 0) 1
+  (cond (zero? n) 1
         (even? n) (m/square (fast-expt b (/ n 2)))
-        :else (* b (fast-expt b (- n 1)))))
+        :else (* b (fast-expt b (dec n)))))
 
 (defn even?-alt
   [n]
-  (= (rem n 2) 0))
+  (zero? (rem n 2)))
 
 (comment "1.2.5 Greatest Common Divisors ---------------------------------------------------------")
 
@@ -121,7 +121,7 @@
 
 (defn gcd
   [a b]
-  (if (= b 0)
+  (if (zero? b)
     a
     (gcd b (rem a b))))
 
@@ -141,7 +141,7 @@
   [n test-divisor]
   (cond (> (m/square test-divisor) n) n
         (m/divides? test-divisor n) test-divisor
-        :else (find-divisor n (+ test-divisor 1))))
+        :else (find-divisor n (inc test-divisor))))
 
 (defn smallest-divisor
   [n]
@@ -153,9 +153,9 @@
 
 (defn expmod
   [base exp m]
-  (cond (= exp 0) 1
+  (cond (zero? exp) 1
         (even? exp) (rem (m/square (expmod base (/ exp 2) m)) m)
-        :else (rem (* base (expmod base (- exp 1) m)) m)))
+        :else (rem (* base (expmod base (dec exp) m)) m)))
 
 (defn fermat-test
   [n]
@@ -165,6 +165,6 @@
 
 (defn fast-prime?
   [n times]
-  (cond (= times 0) true
-        (fermat-test n) (fast-prime? n (- times 1))
+  (cond (zero? times) true
+        (fermat-test n) (fast-prime? n (dec times))
         :else false))

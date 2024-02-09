@@ -11,9 +11,9 @@
 
 (defn multi
   [a b]
-  (if (= b 0)
+  (if (zero? b)
     0
-    (+ a (* a (- b 1)))))
+    (+ a (* a (dec b)))))
 
 ; This algorithm takes a number of steps that is linear in b. Now suppose we include, together with addition,
 ; operations double, which doubles an integer, and halve, which divides an (even) integer by 2.
@@ -21,6 +21,6 @@
 
 (defn multi-fast
   [a b]
-  (cond (= b 0) 0
+  (cond (zero? b) 0
         (even? b) (* 2 (multi-fast a (/ b 2)))
-        :else (+ a (multi-fast a (- b 1)))))
+        :else (+ a (multi-fast a (dec b)))))

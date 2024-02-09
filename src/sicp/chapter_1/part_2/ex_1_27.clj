@@ -10,7 +10,7 @@
 (defn expmod
   [base exp m]
   (cond
-    (= exp 0) 1
+    (zero? exp) 1
     (even? exp) (rem (m/square (expmod base (/ exp 2) m)) m)
     :else (rem (* base (expmod base (dec exp) m)) m)))
 
