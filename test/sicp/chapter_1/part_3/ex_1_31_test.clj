@@ -1,10 +1,12 @@
 (ns sicp.chapter-1.part-3.ex-1-31-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-31 :refer [factorial pi pi-iter]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-31 :refer [factorial pi pi-iter]]))
 
-(def pi_manual (* 4.0
-                  (/ (* 2 4 4 6 6 8 8)
-                     (* 3 3 5 5 7 7 9))))
+(def pi_manual
+  (* 4.0
+     (/ (* 2 4 4 6 6 8 8)
+        (* 3 3 5 5 7 7 9))))
 
 (deftest factorial-test
   (is (= 1 (factorial 1)))

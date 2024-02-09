@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-37
-  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]
-            [sicp.chapter-2.part-2.ex-2-36 :as ex-2-36]))
+  (:require
+    [sicp.chapter-2.part-2.book-2-2 :as b22]
+    [sicp.chapter-2.part-2.ex-2-36 :as ex-2-36]))
 
 ; Exercise 2.37
 ;
@@ -40,15 +41,19 @@
 ;     (map ⟨??⟩ m)))
 ;
 
-(defn dot-product [v w]
+(defn dot-product
+  [v w]
   (b22/accumulate + 0 (map * v w)))
 
-(defn matrix-*-vector [m v]
+(defn matrix-*-vector
+  [m v]
   (map (fn [i] (dot-product i v)) m))
 
-(defn transpose [mat]
+(defn transpose
+  [mat]
   (ex-2-36/accumulate-n cons nil mat))
 
-(defn matrix-*-matrix [m n]
+(defn matrix-*-matrix
+  [m n]
   (let [cols (transpose n)]
     (map (fn [rows] (matrix-*-vector cols rows)) m)))

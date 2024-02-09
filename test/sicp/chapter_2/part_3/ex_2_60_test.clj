@@ -1,9 +1,10 @@
 (ns sicp.chapter-2.part-3.ex-2-60-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-60 :refer [adjoin-set
-                                                   element-of-set?
-                                                   intersection-set
-                                                   union-set]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-60 :refer [adjoin-set
+                                           element-of-set?
+                                           intersection-set
+                                           union-set]]))
 
 (deftest element-of-set?-test
   (is (= false (element-of-set? 1 '())))

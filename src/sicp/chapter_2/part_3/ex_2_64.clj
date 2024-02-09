@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-3.ex-2-64
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]))
 
 ; Exercise 2.64
 ;
@@ -42,7 +43,8 @@
 ;                                  right-tree)
 ;                       remaining-elts))))))))
 
-(defn partial-tree [elts n]
+(defn partial-tree
+  [elts n]
   (if (= n 0)
     (list '() elts)
     (let [left-size      (quot (- n 1) 2)
@@ -56,7 +58,8 @@
           remaining-elts (second right-result)]
       (list (b23/make-tree this-entry left-tree right-tree) remaining-elts))))
 
-(defn list->tree [elements]
+(defn list->tree
+  [elements]
   (first (partial-tree elements (count elements))))
 
 ; 1. Write a short paragraph explaining as clearly as you can how partial-tree works.

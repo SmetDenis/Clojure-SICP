@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-40-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-40 :refer [prime-sum-pairs]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-40 :refer [prime-sum-pairs]]))
 
 (deftest prime-sum-pairs-test
   (is (= '((2 1 3)

@@ -16,16 +16,20 @@
 (A 3 3)
 
 ; Consider the following procedures, where A is the procedure defined above:
-(defn f [n]
+(defn f
+  [n]
   (A 0 n))
 
-(defn g [n]
+(defn g
+  [n]
   (A 1 n))
 
-(defn h [n]
+(defn h
+  [n]
   (A 2 n))
 
-(defn k [n]
+(defn k
+  [n]
   (* 5 n n))
 
 ; Give concise mathematical definitions for the functions computed

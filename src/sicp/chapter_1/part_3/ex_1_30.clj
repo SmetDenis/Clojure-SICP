@@ -23,7 +23,8 @@
 
 (defn sum-2
   [term a next-fn b]
-  (letfn [(iter [a result]
+  (letfn [(iter
+            [a result]
             (if (> a b)
               result
               (iter (next-fn a) (+ (term a) result))))]

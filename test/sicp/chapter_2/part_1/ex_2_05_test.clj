@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-1.ex-2-05-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.ex-2-05 :as ex-2-05]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.ex-2-05 :as ex-2-05]))
 
 (deftest pair-test
   (is (= 1 (ex-2-05/car (ex-2-05/pair 1 2))))

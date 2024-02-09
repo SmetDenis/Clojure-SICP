@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-26-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.misc :as m]))
 
 (def x (list 1 2 3))
 (def y (list 4 5 6))

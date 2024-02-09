@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-2.ex-1-25
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 1.25
 ; Alyssa P. Hacker complains that we went to a lot of extra work in writing expmod

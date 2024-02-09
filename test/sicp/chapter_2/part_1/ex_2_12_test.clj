@@ -1,7 +1,8 @@
 (ns sicp.chapter-2.part-1.ex-2-12-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.ex-2-12 :refer [make-center-percent percent]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.ex-2-12 :refer [make-center-percent percent]]
+    [sicp.misc :as m]))
 
 (deftest make-center-percent-test
   (is (= [95.0 105.0] (make-center-percent 100 5)))

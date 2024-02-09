@@ -1,9 +1,10 @@
 (ns sicp.chapter-2.part-2.ex-2-52
-  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]
-            [sicp.chapter-2.part-2.ex-2-44 :as ex-2-44]
-            [sicp.chapter-2.part-2.ex-2-45 :as ex-2-45]
-            [sicp.chapter-2.part-2.ex-2-46 :as ex-2-46]
-            [sicp.chapter-2.part-2.ex-2-48 :as ex-2-48]))
+  (:require
+    [sicp.chapter-2.part-2.book-2-2 :as b22]
+    [sicp.chapter-2.part-2.ex-2-44 :as ex-2-44]
+    [sicp.chapter-2.part-2.ex-2-45 :as ex-2-45]
+    [sicp.chapter-2.part-2.ex-2-46 :as ex-2-46]
+    [sicp.chapter-2.part-2.ex-2-48 :as ex-2-48]))
 
 ; Exercise 2.52
 ;
@@ -18,7 +19,8 @@
 ; in a different pattern. (For example, you might make the big Mr. Rogers look
 ; outward from each corner of the square.)
 
-(defn corner-split [painter n]
+(defn corner-split
+  [painter n]
   (if (zero? n)
     painter
     (let [up           (ex-2-44/up-split painter (dec n))

@@ -1,8 +1,9 @@
 (ns sicp.chapter-1.part-3.book-1-3
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
-(comment "1.3.1")
-; Procedures as Arguments --------------------------------------------------------------------------
+(comment "1.3.1 Procedures as Arguments ----------------------------------------------------------")
+
 ; Exercises:
 ; * 1.29
 ; * 1.30
@@ -37,13 +38,16 @@
     (+ (term a)
        (sum-terms term (next-fn a) next-fn b))))
 
-(defn sum-integers-2 [a b]
+(defn sum-integers-2
+  [a b]
   (sum-terms identity a inc b))
 
-(defn sum-cubes-2 [a b]
+(defn sum-cubes-2
+  [a b]
   (sum-terms m/cube a inc b))
 
-(defn pi-sum-2 [a b]
+(defn pi-sum-2
+  [a b]
   (sum-terms #(/ 1.0 (* % (+ % 2))) a #(+ % 4) b))
 
 (defn integral
@@ -51,35 +55,39 @@
   (letfn [(add-dx [x] (+ x dx))]
     (* (sum-terms f (+ a (/ dx 2)) add-dx b) dx)))
 
-(comment "1.3.2")
-; Constructing Procedures Using Lambda -------------------------------------------------------------
+(comment "1.3.2 Constructing Procedures Using Lambda ---------------------------------------------")
+
 ; Exercises:
 ; * 1.34
 
-(defn pi-sum-lamda [a b]
+(defn pi-sum-lamda
+  [a b]
   (sum-terms #(/ 1.0 (* % (+ % 2))) a #(+ % 4) b))
 
-(defn integral-lamda [f a b dx]
+(defn integral-lamda
+  [f a b dx]
   (* (sum-terms f (+ a (/ dx 2.0)) #(+ % dx) b) dx))
 
 (defn f-1
   [x y]
-  (letfn [(f-helper [a b]
+  (letfn [(f-helper
+            [a b]
             (+ (* x (m/square a))
                (* y b)
                (* a b)))]
     (f-helper (+ 1 (* x y))
               (- 1 y))))
 
-(defn f-2 [x y]
+(defn f-2
+  [x y]
   (let [a (+ 1 (* x y))
         b (- 1 y)]
     (+ (* x (m/square a))
        (* y b)
        (* a b))))
 
-(comment "1.3.3")
-; Procedures as General Methods --------------------------------------------------------------------
+(comment "1.3.3 Procedures as General Methods ----------------------------------------------------")
+
 ; Exercises:
 ; * 1.35
 ; * 1.36
@@ -109,16 +117,18 @@
 
 (defn fixed-point
   [f first-guess]
-  (letfn [(try-fn [guess]
+  (letfn [(try-fn
+            [guess]
             (let [next (f guess)]
               (if (m/close-enough? guess next 0.00001) next (recur next))))]
     (try-fn first-guess)))
 
-(defn sqrt [x]
+(defn sqrt
+  [x]
   (fixed-point #(/ (+ % (/ x %)) 2) 1.0))
 
-(comment "1.3.4")
-; Procedures as Returned Values --------------------------------------------------------------------
+(comment "1.3.4 Procedures as Returned Values ----------------------------------------------------")
+
 ; Exercises:
 ; * 1.40
 ; * 1.41
@@ -128,33 +138,42 @@
 ; * 1.45
 ; * 1.46
 
-(defn average-damp [f]
+(defn average-damp
+  [f]
   (fn [x] (m/average x (f x))))
 
-(defn sqrt-lamda [x]
+(defn sqrt-lamda
+  [x]
   (fixed-point (average-damp #(/ x %)) 1.0))
 
-(defn cube-root [x]
+(defn cube-root
+  [x]
   (fixed-point (average-damp #(/ x (m/square %))) 1.0))
 
 (defn deriv
   ([g] (deriv g 0.00001))
   ([g dx] (fn [x] (/ (- (g (+ x dx)) (g x)) dx))))
 
-(defn newton-transform [g]
+(defn newton-transform
+  [g]
   (fn [x] (- x (/ (g x) ((deriv g) x)))))
 
-(defn newtons-method [g guess]
+(defn newtons-method
+  [g guess]
   (fixed-point (newton-transform g) guess))
 
-(defn sqrt-newton [x]
+(defn sqrt-newton
+  [x]
   (newtons-method (fn [y] (- (m/square y) x)) 1.0))
 
-(defn fixed-point-of-transform [g transform guess]
+(defn fixed-point-of-transform
+  [g transform guess]
   (fixed-point (transform g) guess))
 
-(defn sqrt-transform-average [x]
+(defn sqrt-transform-average
+  [x]
   (fixed-point-of-transform (fn [y] (/ x y)) average-damp 1.0))
 
-(defn sqrt-newtons-transform [x]
+(defn sqrt-newtons-transform
+  [x]
   (fixed-point-of-transform (fn [y] (- (m/square y) x)) newton-transform 1.0))

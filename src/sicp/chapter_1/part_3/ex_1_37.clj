@@ -29,7 +29,8 @@
 ; 1. Recursive process -------------------
 (defn cont-frac
   [func-n func-d k]
-  (letfn [(recursive [i]
+  (letfn [(recursive
+            [i]
             (let [n (func-n i)
                   d (func-d i)]
               (if (= i k)
@@ -40,7 +41,8 @@
 ; 2. Iterative process -------------------
 (defn cont-frac-iter
   [func-n func-d k]
-  (letfn [(iterator [i result]
+  (letfn [(iterator
+            [i result]
             (let [n (func-n i)
                   d (func-d i)]
               (if (= i 1)

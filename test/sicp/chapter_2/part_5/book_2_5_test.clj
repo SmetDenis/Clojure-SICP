@@ -1,13 +1,14 @@
 (ns sicp.chapter-2.part-5.book-2-5-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-5.book-2-5 :refer [add
-                                                    div
-                                                    install-rational-package
-                                                    install-scheme-number-package
-                                                    make-rational
-                                                    make-scheme-number
-                                                    mul
-                                                    sub]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-5.book-2-5 :refer [add
+                                            div
+                                            install-rational-package
+                                            install-scheme-number-package
+                                            make-rational
+                                            make-scheme-number
+                                            mul
+                                            sub]]))
 
 (install-scheme-number-package)
 (install-rational-package)

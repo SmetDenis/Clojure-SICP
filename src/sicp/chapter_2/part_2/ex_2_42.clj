@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-42
-  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]
-            [sicp.misc :as m]))
+  (:require
+    [sicp.chapter-2.part-2.book-2-2 :as b22]
+    [sicp.misc :as m]))
 
 ; Exercise 2.42
 ;
@@ -59,14 +60,24 @@
 ; guaranteed safe with respect to each other.)
 
 ; Some utility functions
-(defn make-pos [row column] (m/pair row column))
-(defn pos-row [position] (m/car position))
-(defn pos-col [position] (m/cdr position))
+(defn make-pos
+  [row column]
+  (m/pair row column))
 
-(defn adjoin-position [row column queens]
+(defn pos-row
+  [position]
+  (m/car position))
+
+(defn pos-col
+  [position]
+  (m/cdr position))
+
+(defn adjoin-position
+  [row column queens]
   (m/append queens (list (make-pos row column))))           ; Important to add coords to the end of the list
 
-(defn attacks? [position-1 position-2]
+(defn attacks?
+  [position-1 position-2]
   (let [row-1 (pos-row position-1)
         col-1 (pos-col position-1)
         row-2 (pos-row position-2)
@@ -79,12 +90,15 @@
          (abs (- row-1 row-2))) true
       :else false)))
 
-(defn safe? [k positions]
+(defn safe?
+  [k positions]
   (let [kth-pos (nth positions (dec k))]
     (nil? (some (fn [pos] (attacks? kth-pos pos)) positions))))
 
-(defn queens [board-size]
-  (letfn [(queen-cols [k]
+(defn queens
+  [board-size]
+  (letfn [(queen-cols
+            [k]
             (if (= 0 k)
               (list nil)                                    ; It's `empty-board`
               (filter (fn [positions] (safe? k positions))

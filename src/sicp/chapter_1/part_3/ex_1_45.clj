@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-3.ex-1-45
-  (:require [sicp.chapter-1.part-3.book-1-3 :as b13]
-            [sicp.chapter-1.part-3.ex-1-43 :as ex-1-43]))
+  (:require
+    [sicp.chapter-1.part-3.book-1-3 :as b13]
+    [sicp.chapter-1.part-3.ex-1-43 :as ex-1-43]))
 
 ; Exercise 1.45
 ;
@@ -22,7 +23,8 @@
 
 ; Assume that any arithmetic operations you need are available as primitives.
 
-(defn nth-root [x n damps]
+(defn nth-root
+  [x n damps]
   (b13/fixed-point
     ((ex-1-43/repeated b13/average-damp damps)
      (fn [y] (/ x (Math/pow y (- n 1)))))
@@ -30,8 +32,10 @@
 
 ; The number of repetitions of the average moisture content
 ; can be calculated using the semi- and logarithmic basis 2
-(defn damp-number [n]
+(defn damp-number
+  [n]
   (int (Math/floor (/ (Math/log n) (Math/log 2)))))
 
-(defn nth-root-auto-damps [x n]
+(defn nth-root-auto-damps
+  [x n]
   (nth-root x n (damp-number n)))

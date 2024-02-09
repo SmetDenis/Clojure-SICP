@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-2.ex-1-23
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 1.23
 ; The smallest-divisor procedure shown at the start of this section does lots of needless testing:
@@ -21,7 +22,8 @@
 ; Is this expectation confirmed? If not, what is the observed ratio of the speeds of the two algorithms,
 ; and how do you explain the fact that it is different from 2?
 
-(defn next-odd [x]
+(defn next-odd
+  [x]
   (if (= x 2) 3 (+ x 2)))
 
 (defn find-divisor
@@ -30,8 +32,10 @@
         (m/divides? test-divisor num) test-divisor
         :else (find-divisor num (next-odd test-divisor))))
 
-(defn smallest-divisor [num]
+(defn smallest-divisor
+  [num]
   (find-divisor num 2))
 
-(defn prime? [n]
+(defn prime?
+  [n]
   (= n (smallest-divisor n)))

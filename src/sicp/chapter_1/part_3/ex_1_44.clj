@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-3.ex-1-44
-  (:require [sicp.chapter-1.part-3.ex-1-43 :as ex-1-43]))
+  (:require
+    [sicp.chapter-1.part-3.ex-1-43 :as ex-1-43]))
 
 ; Exercise 1.44
 ; The idea of smoothing a function is an important concept in signal processing.
@@ -15,12 +16,15 @@
 ; Show how to generate the n-fold smoothed function of any given function
 ; using smooth and repeated from Exercise 1.43.
 
-(defn smooth [func]
+(defn smooth
+  [func]
   (let [dx 0.001]
-    (fn [x] (/ (+ (func (- x dx))
-                  (func x)
-                  (func (+ x dx)))
-               3))))
+    (fn [x]
+      (/ (+ (func (- x dx))
+            (func x)
+            (func (+ x dx)))
+         3))))
 
-(defn n-fold [func times]
+(defn n-fold
+  [func times]
   ((ex-1-43/repeated smooth times) func))

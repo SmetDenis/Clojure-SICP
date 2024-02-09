@@ -1,12 +1,17 @@
 (ns sicp.chapter-2.part-1.ex-2-03-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.ex-2-02 :as ex-2-02]
-            [sicp.chapter-2.part-1.ex-2-03 :as ex-2-03]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.ex-2-02 :as ex-2-02]
+    [sicp.chapter-2.part-1.ex-2-03 :as ex-2-03]))
 
-(def seg-width (ex-2-02/make-segment (ex-2-02/make-point 0 0)
-                                     (ex-2-02/make-point 5 12)))
-(def seg-height (ex-2-02/make-segment (ex-2-02/make-point 1 1)
-                                      (ex-2-02/make-point 4 5)))
+(def seg-width
+  (ex-2-02/make-segment (ex-2-02/make-point 0 0)
+                        (ex-2-02/make-point 5 12)))
+
+(def seg-height
+  (ex-2-02/make-segment (ex-2-02/make-point 1 1)
+                        (ex-2-02/make-point 4 5)))
+
 (def rectangle (ex-2-03/make-rectangle seg-width seg-height))
 
 (deftest length-segment-test

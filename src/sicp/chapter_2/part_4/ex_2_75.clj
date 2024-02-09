@@ -5,7 +5,8 @@
 ; Implement the constructor make-from-mag-ang in message-passing style.
 ; This procedure should be analogous to the make-from-real-imag procedure given above.
 
-(defn make-from-mag-ang [r a]
+(defn make-from-mag-ang
+  [r a]
   (fn [op]
     (cond
       (= op :real-part) (* r (Math/cos a))

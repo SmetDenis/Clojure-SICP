@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-3.ex-2-53
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]
-            [sicp.misc :as m]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]
+    [sicp.misc :as m]))
 
 ; Exercise 2.53
 ;
@@ -14,7 +15,8 @@
 ; (memq 'red '((red shoes) (blue socks)))
 ; (memq 'red '(red shoes blue socks))
 
-(defn print-vars []
+(defn print-vars
+  []
   [(list 'a 'b 'c)                                          ; (a b c)
    (list (list 'george))                                    ; ((george))
    (m/cdr '((x1 x2) (y1 y2)))                               ; (y1 y2)

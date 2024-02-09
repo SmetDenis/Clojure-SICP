@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-41-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-41 :refer [duplets find-triplets triplets]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-41 :refer [duplets find-triplets triplets]]))
 
 (deftest duplets-test
   (is (= '((1 1)) (duplets 1)))

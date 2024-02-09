@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-32
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.32
 ;
@@ -18,7 +19,8 @@
 ;       (let ((rest (subsets (cdr s))))
 ;         (append rest (map ⟨??⟩ rest)))))
 
-(defn subsets [s]
+(defn subsets
+  [s]
   (if (empty? s)
     (list '())
     (let [rest (subsets (rest s))]

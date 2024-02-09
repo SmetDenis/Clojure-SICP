@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-3.ex-2-61-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-61 :refer [adjoin-set-sorted]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-61 :refer [adjoin-set-sorted]]))
 
 (deftest adjoin-set-sorted-test
   (is (= '(1) (adjoin-set-sorted 1 '())))

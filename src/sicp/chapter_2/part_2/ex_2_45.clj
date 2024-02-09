@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-45
-  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]))
+  (:require
+    [sicp.chapter-2.part-2.book-2-2 :as b22]))
 
 ; Exercise 2.45
 ;
@@ -11,7 +12,8 @@
 ;
 ; produces procedures right-split and up-split with the same behaviors as the ones already defined.
 
-(defn split [primary secondary]
+(defn split
+  [primary secondary]
   (fn [painter n]
     (if (= n 0)
       painter

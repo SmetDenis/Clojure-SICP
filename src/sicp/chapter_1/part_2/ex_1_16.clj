@@ -22,5 +22,6 @@
         (even? n) (fast-expt (* b b) (/ n 2) product)
         :else (fast-expt b (- n 1) (* product b))))
 
-(defn expt [b n]
+(defn expt
+  [b n]
   (fast-expt b n 1))

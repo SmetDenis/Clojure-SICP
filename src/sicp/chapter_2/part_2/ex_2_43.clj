@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-43
-  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]
-            [sicp.chapter-2.part-2.ex-2-42 :as ex-2-42]))
+  (:require
+    [sicp.chapter-2.part-2.book-2-2 :as b22]
+    [sicp.chapter-2.part-2.ex-2-42 :as ex-2-42]))
 
 ; Exercise 2.43
 ;
@@ -22,8 +23,10 @@
 ; Estimate how long it will take Louis’s program to solve the eight-queens puzzle,
 ; assuming that the program in Exercise 2.42 solves the puzzle in time T.
 
-(defn queens-2-42 [board-size]
-  (letfn [(queen-cols [k]
+(defn queens-2-42
+  [board-size]
+  (letfn [(queen-cols
+            [k]
             (if (= 0 k)
               (list nil)
               (filter (fn [positions] (ex-2-42/safe? k positions))
@@ -34,13 +37,17 @@
                               (queen-cols (- k 1))))))]
     (queen-cols board-size)))
 
-(defn queens-2-43 [board-size]
-  (letfn [(queen-cols [k]
+(defn queens-2-43
+  [board-size]
+  (letfn [(queen-cols
+            [k]
             (if (= 0 k)
               (list nil)
               (filter (fn [positions] (ex-2-42/safe? k positions))
-                      (mapcat (fn [new-row]                 ; diff 1
-                                (map (fn [rest-of-queens]   ; diff 1
+                      (mapcat (fn [new-row]
+                                ; diff 1
+                                (map (fn [rest-of-queens]
+                                       ; diff 1
                                        (ex-2-42/adjoin-position new-row k rest-of-queens))
                                      (queen-cols (- k 1)))) ; diff 2
                               (b22/enumerate-interval 1 board-size)))))] ; diff 2

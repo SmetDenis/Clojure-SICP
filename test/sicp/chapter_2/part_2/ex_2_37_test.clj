@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-37-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-37 :refer [dot-product matrix-*-matrix matrix-*-vector transpose]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-37 :refer [dot-product matrix-*-matrix matrix-*-vector transpose]]))
 
 (deftest dot-product-test
   (is (= (+ 1 4) (dot-product '(1 2) '(1 2))))

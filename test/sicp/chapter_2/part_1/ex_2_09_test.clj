@@ -1,9 +1,10 @@
 (ns sicp.chapter-2.part-1.ex-2-09-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.book-2-1 :as b21]
-            [sicp.chapter-2.part-1.ex-2-07 :as ex-2-07]
-            [sicp.chapter-2.part-1.ex-2-08 :as ex-2-08]
-            [sicp.chapter-2.part-1.ex-2-09 :refer [radius]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.book-2-1 :as b21]
+    [sicp.chapter-2.part-1.ex-2-07 :as ex-2-07]
+    [sicp.chapter-2.part-1.ex-2-08 :as ex-2-08]
+    [sicp.chapter-2.part-1.ex-2-09 :refer [radius]]))
 
 (def interval-1 (ex-2-07/make-interval 20 30))
 (def interval-2 (ex-2-07/make-interval 60 100))

@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-18-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-18 :refer [list-reverse]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-18 :refer [list-reverse]]))
 
 (deftest list-reverse-test
   (is (= '() (list-reverse nil)))

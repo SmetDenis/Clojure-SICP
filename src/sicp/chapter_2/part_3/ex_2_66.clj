@@ -1,12 +1,14 @@
 (ns sicp.chapter-2.part-3.ex-2-66
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]))
 
 ; Exercise 2.66
 ;
 ; Implement the lookup procedure for the case where the set of records is structured as
 ; a binary tree, ordered by the numerical values of the keys.
 
-(defn lookup-tree [given-key set-of-records]
+(defn lookup-tree
+  [given-key set-of-records]
   (if (empty? set-of-records)
     false
     (let [parent (b23/entry set-of-records)]

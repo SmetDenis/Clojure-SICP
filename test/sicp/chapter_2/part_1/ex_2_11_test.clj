@@ -1,11 +1,12 @@
 (ns sicp.chapter-2.part-1.ex-2-11-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.ex-2-11 :refer [center
-                                                   interval-case
-                                                   make-center-width
-                                                   mul-interval
-                                                   width]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.ex-2-11 :refer [center
+                                           interval-case
+                                           make-center-width
+                                           mul-interval
+                                           width]]
+    [sicp.misc :as m]))
 
 (def interval (m/make-interval 95 105))
 

@@ -1,12 +1,13 @@
 (ns sicp.chapter-2.part-2.ex-2-42-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-42 :refer [adjoin-position
-                                                   attacks?
-                                                   make-pos
-                                                   pos-col
-                                                   pos-row
-                                                   queens
-                                                   safe?]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-42 :refer [adjoin-position
+                                           attacks?
+                                           make-pos
+                                           pos-col
+                                           pos-row
+                                           queens
+                                           safe?]]))
 
 (deftest make-pos-test
   (is (= '(1 2) (make-pos 1 2))))

@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-1.ex-2-09
-  (:require [sicp.chapter-2.part-1.ex-2-07 :as ex-2-07]))
+  (:require
+    [sicp.chapter-2.part-1.ex-2-07 :as ex-2-07]))
 
 ; Exercise 2.9
 ; The width of an interval is half of the difference between its upper and lower bounds.
@@ -11,6 +12,7 @@
 ; only of the widths of the intervals being added (or subtracted).
 ; Give examples to show that this is not true for multiplication or division.
 
-(defn radius [interval]
+(defn radius
+  [interval]
   (/ (- (ex-2-07/upper-bound interval)
         (ex-2-07/lower-bound interval)) 2))

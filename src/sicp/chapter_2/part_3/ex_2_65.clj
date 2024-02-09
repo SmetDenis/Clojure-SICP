@@ -1,12 +1,14 @@
 (ns sicp.chapter-2.part-3.ex-2-65
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]))
 
 ; Exercise 2.65
 ;
 ; Use the results of Exercise 2.63 and Exercise 2.64 to give Θ(n)
 ; implementations of union-set and intersection-set for sets implemented as (balanced) binary trees.
 
-(defn union-set-tree [tree1 tree2]
+(defn union-set-tree
+  [tree1 tree2]
   (cond
     (empty? tree1) tree2
     (empty? tree2) tree1
@@ -27,7 +29,8 @@
                                    (union-set-tree tree1-left tree2)
                                    tree1-right)))))
 
-(defn intersection-set-tree [tree1 tree2]
+(defn intersection-set-tree
+  [tree1 tree2]
   (cond
     (empty? tree1) '()
     (empty? tree2) '()

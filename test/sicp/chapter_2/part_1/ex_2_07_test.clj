@@ -1,7 +1,8 @@
 (ns sicp.chapter-2.part-1.ex-2-07-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.book-2-1 :as b21]
-            [sicp.chapter-2.part-1.ex-2-07 :refer [lower-bound make-interval upper-bound]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.book-2-1 :as b21]
+    [sicp.chapter-2.part-1.ex-2-07 :refer [lower-bound make-interval upper-bound]]))
 
 (def interval-1 (make-interval 1 2))
 (def interval-2 (make-interval 4 5))

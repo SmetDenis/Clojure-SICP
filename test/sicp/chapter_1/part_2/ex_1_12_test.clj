@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-2.ex-1-12-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-2.ex-1-12 :refer [pascal]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-2.ex-1-12 :refer [pascal]]))
 
 (deftest pascal-test
   (is (= 1 (pascal 1 1)))

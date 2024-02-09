@@ -1,7 +1,8 @@
 (ns sicp.chapter-2.part-1.ex-2-10-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.ex-2-10 :refer [div-interval]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.ex-2-10 :refer [div-interval]]
+    [sicp.misc :as m]))
 
 (deftest div-interval-test
   (is (= [-1.5 -0.5]

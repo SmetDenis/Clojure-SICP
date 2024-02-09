@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-29
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.29
 ;
@@ -38,27 +39,50 @@
 ; How much do you need to change your programs to convert to the new representation?
 
 ; Solution
-(defn make-mobile [left right] (m/pair left right))
-(defn make-branch [length structure] (m/pair length structure))
-(defn left-branch [mobile] (m/car mobile))
-(defn right-branch [mobile] (m/cdr mobile))
-(defn branch-length [branch] (m/car branch))
-(defn branch-structure [branch] (m/cdr branch))
-(defn branch-has-structure? [branch] (m/pair? (branch-structure branch)))
+(defn make-mobile
+  [left right]
+  (m/pair left right))
 
-(defn total-weight [mobile]
+(defn make-branch
+  [length structure]
+  (m/pair length structure))
+
+(defn left-branch
+  [mobile]
+  (m/car mobile))
+
+(defn right-branch
+  [mobile]
+  (m/cdr mobile))
+
+(defn branch-length
+  [branch]
+  (m/car branch))
+
+(defn branch-structure
+  [branch]
+  (m/cdr branch))
+
+(defn branch-has-structure?
+  [branch]
+  (m/pair? (branch-structure branch)))
+
+(defn total-weight
+  [mobile]
   (cond
     (m/leaf? mobile) 0
     (m/leaf? (branch-structure mobile)) (branch-structure mobile)
     :else (+ (total-weight (left-branch mobile))
              (total-weight (right-branch mobile)))))
 
-(defn branch-moment [branch]
+(defn branch-moment
+  [branch]
   (if (branch-has-structure? branch)
     (* (branch-length branch) (total-weight (branch-structure branch)))
     (* (branch-length branch) (branch-structure branch))))
 
-(defn mobile-balanced? [mobile]
+(defn mobile-balanced?
+  [mobile]
   (let [left  (left-branch mobile)
         right (right-branch mobile)]
     (and (= (branch-moment left) (branch-moment right))

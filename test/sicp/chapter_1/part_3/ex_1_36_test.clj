@@ -1,7 +1,8 @@
 (ns sicp.chapter-1.part-3.ex-1-36-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-36 :refer [fixed-point-print]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-36 :refer [fixed-point-print]]
+    [sicp.misc :as m]))
 
 (def print-logs false)
 

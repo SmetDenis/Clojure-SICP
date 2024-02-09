@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-1.ex-2-02-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.ex-2-02 :as ex-2-02]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.ex-2-02 :as ex-2-02]))
 
 (def point-1 (ex-2-02/make-point 1 2))
 (def point-2 (ex-2-02/make-point 3 4))

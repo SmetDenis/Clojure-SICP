@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-3.ex-2-62-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-62 :refer [union-set-sorted]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-62 :refer [union-set-sorted]]))
 
 (deftest union-set-sorted-test
   (is (= '() (union-set-sorted '() '())))

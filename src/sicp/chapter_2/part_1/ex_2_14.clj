@@ -8,4 +8,3 @@
 ; You will get the most insight by using intervals whose width is a small percentage
 ; of the center value. Examine the results of the computation in center-percent form
 ; (see Exercise 2.12).
-

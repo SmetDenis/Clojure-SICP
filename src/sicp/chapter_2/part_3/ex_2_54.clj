@@ -19,7 +19,8 @@
 ; symbols are eq?, or if they are both lists such that (car a) is equal? to (car b) and (cdr a)
 ; is equal? to (cdr b). Using this idea, implement equal? as a procedure.
 
-(defn equal? [a b]
+(defn equal?
+  [a b]
   (cond
     (and (symbol? a) (symbol? b)) (= a b)
     (and (list? a) (list? b))

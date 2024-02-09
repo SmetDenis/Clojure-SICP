@@ -77,9 +77,13 @@ jobs:
           cli: 'latest'
           bb: 'latest'
           cljfmt: 'latest'
+          cljstyle: 'latest'
 
       - name: 👍 cljfmt
-        run: bb lint:check
+        run: bb style:cljfmt
+
+      - name: 👍 cljstyle
+        run: bb style:cljstyle
 
 
   experimental:
