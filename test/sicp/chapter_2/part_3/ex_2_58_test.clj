@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-3.ex-2-58-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-58 :refer [deriv]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-58 :refer [deriv]]))
 
 (deftest deriv-test
   (is (= '((x * y) + (y * (x + 3)))                         ; (+ (* x y) (* y (+ x 3)))

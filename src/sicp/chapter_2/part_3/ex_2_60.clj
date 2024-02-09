@@ -14,18 +14,21 @@
 ; you would use this representation in preference to the non-duplicate one?)
 
 ; No change to element-of-set?
-(defn element-of-set? [x set]
+(defn element-of-set?
+  [x set]
   (cond
     (empty? set) false
     (= x (first set)) true
     :else (element-of-set? x (rest set))))
 
 ; No checks for duplicates in adjoin-set. It has complexity O(n)
-(defn adjoin-set [x set]
+(defn adjoin-set
+  [x set]
   (cons x set))
 
 ; No checks for duplicates in intersection-set. No visible reasons
-(defn intersection-set [set1 set2]
+(defn intersection-set
+  [set1 set2]
   (cond
     (or (empty? set1) (empty? set2)) '()
     (element-of-set? (first set1) set2)
@@ -34,5 +37,6 @@
 
 ; No checks for duplicates in union-set
 ; Complexity is O(n) instede of O(n^2)
-(defn union-set [set1 set2]
+(defn union-set
+  [set1 set2]
   (concat set1 set2))

@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-1.ex-1-08
-  (:require [sicp.chapter-1.part-1.book-1-1 :as b11]))
+  (:require
+    [sicp.chapter-1.part-1.book-1-1 :as b11]))
 
 ; Exercise 1.8
 ; Newton’s method for cube roots is based on the fact that if y

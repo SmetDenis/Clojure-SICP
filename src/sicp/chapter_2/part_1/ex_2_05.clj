@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-1.ex-2-05
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.5
 ;
@@ -9,17 +10,20 @@
 ;
 ; Give the corresponding definitions of the procedures cons, car, and cdr.
 
-(defn pair [x y]
+(defn pair
+  [x y]
   (* (Math/pow 2 x)
      (Math/pow 3 y)))
 
-(defn car [z]
+(defn car
+  [z]
   (loop [x z count 0 divisor 2]
     (if (m/divides? divisor x)
       (recur (/ x divisor) (inc count) divisor)
       count)))
 
-(defn cdr [z]
+(defn cdr
+  [z]
   (loop [x z count 0 divisor 3]
     (if (m/divides? divisor x)
       (recur (/ x divisor) (inc count) divisor)

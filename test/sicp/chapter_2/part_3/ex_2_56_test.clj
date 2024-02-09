@@ -1,10 +1,11 @@
 (ns sicp.chapter-2.part-3.ex-2-56-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-56 :refer [base
-                                                   deriv
-                                                   exponent
-                                                   exponentiation?
-                                                   make-exponentiation]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-56 :refer [base
+                                           deriv
+                                           exponent
+                                           exponentiation?
+                                           make-exponentiation]]))
 
 (deftest exponentiation?-test
   (is (= true (exponentiation? '(** 1 1))))

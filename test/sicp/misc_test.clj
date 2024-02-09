@@ -1,9 +1,9 @@
 (ns sicp.misc-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.misc :as m]))
 
-(comment "Chapter #1")
-; The Elements of Programming ----------------------------------------------------------------------
+(comment "Chapter #1 The Elements of Programming -------------------------------------------------")
 
 (deftest error-test
   (try
@@ -94,8 +94,7 @@
   (is (= 10.55 (m/round-to-dec 10.55 2)))
   (is (= 11.0 (m/round-to-dec 10.55 0))))
 
-(comment "Chapter #2")
-; Introduction to Data Abstraction -----------------------------------------------------------------
+(comment "Chapter #2 Introduction to Data Abstraction --------------------------------------------")
 
 (deftest pair-test
   (is (= '(1 2) (m/pair 1 2)))

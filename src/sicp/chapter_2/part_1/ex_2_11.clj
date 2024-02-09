@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-1.ex-2-11
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.11
 ; In passing, Ben also cryptically comments: “By testing the signs of the endpoints
@@ -34,23 +35,28 @@
 ; Engineers usually specify percentage tolerances on the parameters of devices,
 ; as in the resistor specifications given earlier.
 
-(defn make-center-width [c w]
+(defn make-center-width
+  [c w]
   (m/make-interval (- c w) (+ c w)))
 
-(defn center [i]
+(defn center
+  [i]
   (/ (+ (m/lower-bound i) (m/upper-bound i)) 2.0))
 
-(defn width [i]
+(defn width
+  [i]
   (/ (- (m/upper-bound i) (m/lower-bound i)) 2.0))
 
 ; Solution
 
-(defn interval-case [low high]
+(defn interval-case
+  [low high]
   (cond (and (< low 0) (< high 0)) -1
         (and (< low 0) (> high 0)) 0
         :else 1))
 
-(defn mul-interval [i1 i2]
+(defn mul-interval
+  [i1 i2]
   (let [i1-lo   (m/lower-bound i1)
         i1-hi   (m/upper-bound i1)
         i2-lo   (m/lower-bound i2)

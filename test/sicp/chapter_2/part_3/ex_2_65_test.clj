@@ -1,8 +1,9 @@
 (ns sicp.chapter-2.part-3.ex-2-65-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-63 :refer [tree->list-2]]
-            [sicp.chapter-2.part-3.ex-2-64 :refer [list->tree]]
-            [sicp.chapter-2.part-3.ex-2-65 :refer [intersection-set-tree union-set-tree]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-63 :refer [tree->list-2]]
+    [sicp.chapter-2.part-3.ex-2-64 :refer [list->tree]]
+    [sicp.chapter-2.part-3.ex-2-65 :refer [intersection-set-tree union-set-tree]]))
 
 (def tree1 (list->tree '(1 2 3)))
 (def tree2 (list->tree '(1 2 4)))

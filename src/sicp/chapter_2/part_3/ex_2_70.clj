@@ -27,15 +27,17 @@
 ; How many bits are required for the encoding? What is the smallest number of bits that would be
 ; needed to encode this song if we used a fixed-length code for the eight-symbol alphabet?
 
-(def abc '((:a 2) (:na 16)
+(def abc
+  '((:a 2) (:na 16)
            (:boom 1) (:Sha 3)
            (:Get 2) (:yip 9)
            (:job 2) (:Wah 1)))
 
-(def song '(:Get :a :job
-             :Sha :na :na :na :na :na :na :na :na
-             :Get :a :job
-             :Sha :na :na :na :na :na :na :na :na
-             :Wah :yip :yip :yip :yip
-             :yip :yip :yip :yip :yip
-             :Sha :boom))
+(def song
+  '(:Get :a :job
+         :Sha :na :na :na :na :na :na :na :na
+         :Get :a :job
+         :Sha :na :na :na :na :na :na :na :na
+         :Wah :yip :yip :yip :yip
+         :yip :yip :yip :yip :yip
+         :Sha :boom))

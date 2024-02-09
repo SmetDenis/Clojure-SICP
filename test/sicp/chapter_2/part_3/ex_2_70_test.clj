@@ -1,8 +1,9 @@
 (ns sicp.chapter-2.part-3.ex-2-70-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-68 :as ex-2-68]
-            [sicp.chapter-2.part-3.ex-2-69 :as ex-2-69]
-            [sicp.chapter-2.part-3.ex-2-70 :refer [abc song]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-68 :as ex-2-68]
+    [sicp.chapter-2.part-3.ex-2-69 :as ex-2-69]
+    [sicp.chapter-2.part-3.ex-2-70 :refer [abc song]]))
 
 (deftest abc-test
   (is (= '[[:leaf :na 16]
@@ -42,10 +43,10 @@
 
 (deftest song-encode-test
   (is (= '(1 1 1 1 1 1 1 0 0 1 1 1 1 0 1 1 1
-            0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0
-            0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 0
-            0 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1
-            0 1 0 1 0 1 0 1 1 1 0 1 1 0 1 1)
+             0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0
+             0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 0
+             0 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1
+             0 1 0 1 0 1 0 1 1 1 0 1 1 0 1 1)
          (ex-2-68/encode song (ex-2-69/generate-huffman-tree abc))))
   ; (~11 bytes) 84 bits insted of 124 charates OR 992 bits!
   ; 992/84 = ~11.8 times smaller

@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-3.ex-2-57
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]))
 
 ; Exercise 2.57
 ;
@@ -14,27 +15,34 @@
 ; For example, the addend of a sum would be the first term, and the augend would be the sum
 ; of the rest of the terms.
 
-(defn augend [s] (reduce + (drop 2 s)))
-(defn make-sum [& args]
+(defn augend
+  [s]
+  (reduce + (drop 2 s)))
+
+(defn make-sum
+  [& args]
   (cond
     (empty? args) 0
     (= (count args) 1) (first args)
     (every? number? args) (reduce + args)
     :else (cons '+ args)))
 
-(defn multiplicand [s]
+(defn multiplicand
+  [s]
   (let [last-items (drop 2 s)]
     (cond (every? number? last-items) (reduce * last-items)
           :else (cons '* last-items))))
 
-(defn make-product [& args]
+(defn make-product
+  [& args]
   (cond
     (empty? args) 0
     (= (count args) 1) (first args)
     (every? number? args) (reduce * args)
     :else (cons '* args)))
 
-(defn deriv [exp var]
+(defn deriv
+  [exp var]
   (cond
     (number? exp) 0
     (b23/variable? exp) (if (b23/same-variable? exp var) 1 0)

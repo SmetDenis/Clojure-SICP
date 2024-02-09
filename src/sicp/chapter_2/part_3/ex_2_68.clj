@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-3.ex-2-68
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]))
 
 ; Exercise 2.68
 ;
@@ -20,7 +21,8 @@
 ; you obtained in Exercise 2.67 with the sample tree and seeing whether it is the same as the
 ; original sample message.
 
-(defn encode-symbol [symbol tree]
+(defn encode-symbol
+  [symbol tree]
   (cond (empty? tree) '()
         (b23/leaf? tree) '()
         (= symbol (b23/symbols tree)) '()
@@ -33,7 +35,8 @@
                     (cons 1 (encode-symbol symbol right-branch)))
                   (throw (Exception. (str "Symbol not found in tree " symbol)))))))
 
-(defn encode [message tree]
+(defn encode
+  [message tree]
   (if (empty? message)
     '()
     (concat

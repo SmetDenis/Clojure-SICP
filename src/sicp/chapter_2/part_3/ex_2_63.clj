@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-3.ex-2-63
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]))
 
 ; Exercise 2.63
 ;
@@ -27,7 +28,8 @@
 ;                 result-list)))))
 ;   (copy-to-list tree '()))
 
-(defn tree->list-1 [tree]
+(defn tree->list-1
+  [tree]
   (if (empty? tree)
     '()
     (concat
@@ -35,8 +37,10 @@
       (cons (b23/entry tree)
             (tree->list-1 (b23/right-branch tree))))))
 
-(defn tree->list-2 [tree]
-  (letfn [(copy-to-list [tree result-list]
+(defn tree->list-2
+  [tree]
+  (letfn [(copy-to-list
+            [tree result-list]
             (if (empty? tree)
               result-list
               (copy-to-list

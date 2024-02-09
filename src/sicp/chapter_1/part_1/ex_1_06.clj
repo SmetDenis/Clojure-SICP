@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-1.ex-1-06
-  (:require [sicp.chapter-1.part-1.book-1-1 :as b11]))
+  (:require
+    [sicp.chapter-1.part-1.book-1-1 :as b11]))
 
 ; Exercise 1.6
 ; Alyssa P. Hacker doesn’t see why if needs to be provided as a special form.

@@ -8,5 +8,6 @@
 ; ((compose square inc) 6)
 ; 49
 
-(defn compose [f g]
+(defn compose
+  [f g]
   (fn [x] (f (g x))))

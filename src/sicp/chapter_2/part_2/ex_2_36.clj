@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-36
-  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]
-            [sicp.misc :as m]))
+  (:require
+    [sicp.chapter-2.part-2.book-2-2 :as b22]
+    [sicp.misc :as m]))
 
 ; Exercise 2.36
 ;
@@ -21,7 +22,8 @@
 ;            (accumulate-n op init ⟨??⟩))))
 ;
 
-(defn accumulate-n [op init seqs]
+(defn accumulate-n
+  [op init seqs]
   (if (nil? (m/car seqs))
     nil
     (cons (b22/accumulate op init (map m/car seqs))

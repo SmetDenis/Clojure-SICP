@@ -1,7 +1,8 @@
 (ns sicp.chapter-1.part-3.ex-1-38-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-38 :refer [euler-fraction]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-38 :refer [euler-fraction]]
+    [sicp.misc :as m]))
 
 (def e-2 (- Math/E 2))                                      ; 0.7182818284590451
 (def precision 0.000001)

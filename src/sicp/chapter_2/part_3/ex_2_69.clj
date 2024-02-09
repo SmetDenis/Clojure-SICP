@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-3.ex-2-69
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]))
 
 ; Exercise 2.69
 ;
@@ -21,7 +22,8 @@
 ;
 ; You can take significant advantage of the fact that we are using an ordered set representation.)
 
-(defn successive-merge [leaf-set]
+(defn successive-merge
+  [leaf-set]
   (if (= (count leaf-set) 1)
     (first leaf-set)
     (let [first  (first leaf-set)
@@ -31,5 +33,6 @@
                           (b23/make-code-tree first second)
                           rest)))))
 
-(defn generate-huffman-tree [pairs]
+(defn generate-huffman-tree
+  [pairs]
   (successive-merge (b23/make-leaf-set pairs)))

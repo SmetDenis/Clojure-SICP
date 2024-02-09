@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-3.ex-1-39-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-39 :refer [tan-cf]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-39 :refer [tan-cf]]))
 
 (def angle (/ Math/PI 3))
 

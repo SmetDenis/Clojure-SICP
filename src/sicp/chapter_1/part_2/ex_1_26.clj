@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-2.ex-1-26
-  (:require [sicp.misc :refer [square]]))
+  (:require
+    [sicp.misc :refer [square]]))
 
 ; Exercise 1.26
 ; Louis Reasoner is having great difficulty doing Exercise 1.24.

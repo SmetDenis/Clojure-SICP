@@ -9,5 +9,6 @@
 ;
 ; (((double (double double)) inc) 5)
 
-(defn double-fn [f]
+(defn double-fn
+  [f]
   (fn [x] (f (f x))))

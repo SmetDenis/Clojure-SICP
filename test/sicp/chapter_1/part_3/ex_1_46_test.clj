@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-3.ex-1-46-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-46 :refer [fixed-point-improved sqrt-improved]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-46 :refer [fixed-point-improved sqrt-improved]]))
 
 (deftest sqrt-improved-test
   (is (= 1.7321428571428572 (sqrt-improved 3 1.0)))

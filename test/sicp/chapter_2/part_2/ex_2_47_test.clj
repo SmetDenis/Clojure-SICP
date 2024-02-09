@@ -1,12 +1,14 @@
 (ns sicp.chapter-2.part-2.ex-2-47-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-46 :as ex-2-46]
-            [sicp.chapter-2.part-2.ex-2-47 :refer [edge1-frame
-                                                   edge2-frame
-                                                   edge2-frame-2
-                                                   make-frame
-                                                   make-frame-2
-                                                   origin-frame]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-46 :as ex-2-46]
+    [sicp.chapter-2.part-2.ex-2-47 :refer [edge1-frame
+                                           edge2-frame
+                                           edge2-frame-2
+                                           make-frame
+                                           make-frame-2
+                                           origin-frame]]))
+
 (def vec-1 (ex-2-46/make-vect 0 0))
 (def vec-2 (ex-2-46/make-vect 0.1 0.2))
 (def vec-3 (ex-2-46/make-vect 0.5 0.75))

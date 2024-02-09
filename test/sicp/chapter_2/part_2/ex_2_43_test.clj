@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-43-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-43 :refer [queens-2-42 queens-2-43]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-43 :refer [queens-2-42 queens-2-43]]))
 
 (deftest queens-2-42-test
   (is (= 10 (count (queens-2-42 5))))                ; Elapsed time: 6.745917 msecs

@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-48
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.48
 ;
@@ -10,11 +11,14 @@
 ; Use your vector representation from Exercise 2.46 to define a representation for segments
 ; with a constructor make-segment and selectors start-segment and end-segment.
 
-(defn make-segment [x y]
+(defn make-segment
+  [x y]
   (m/pair x y))
 
-(defn start-segment [vect]
+(defn start-segment
+  [vect]
   (m/car vect))
 
-(defn end-segment [vect]
+(defn end-segment
+  [vect]
   (m/cdr vect))

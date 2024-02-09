@@ -1,9 +1,9 @@
 (ns sicp.chapter-1.part-2.book-1-2-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-2.book-1-2 :as b12]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-2.book-1-2 :as b12]))
 
-(comment "1.2.1")
-; Linear Recursion and Iteration -------------------------------------------------------------------
+(comment "1.2.1 Linear Recursion and Iteration ---------------------------------------------------")
 
 (deftest factorial-test
   (is (= 1 (b12/factorial 1)))
@@ -21,8 +21,7 @@
   (is (= 120 (b12/factorial-iter 5)))
   (is (= 720 (b12/factorial-iter 6))))
 
-(comment "1.2.2")
-; Tree Recursion -----------------------------------------------------------------------------------
+(comment "1.2.2 Tree Recursion -------------------------------------------------------------------")
 
 (deftest fib-test
   (is (= 5 (b12/fib 5)))
@@ -40,12 +39,11 @@
   (is (= 50 (b12/count-change 50)))
   (is (= 292 (b12/count-change 100))))
 
-(comment "1.2.3")
-; Orders of Growth ---------------------------------------------------------------------------------
+(comment "1.2.3 Orders of Growth -----------------------------------------------------------------")
+
 ; There are no code examples for this part in the book :(
 
-(comment "1.2.4")
-; Exponentiation -----------------------------------------------------------------------------------
+(comment "1.2.4 Exponentiation -------------------------------------------------------------------")
 
 (deftest expt-test
   (is (= 1 (b12/expt 1 2)))
@@ -65,8 +63,7 @@
   (is (= false (b12/even?-alt 3)))
   (is (= true (b12/even?-alt 4))))
 
-(comment "1.2.5")
-; Greatest Common Divisors -------------------------------------------------------------------------
+(comment "1.2.5 Greatest Common Divisors ---------------------------------------------------------")
 
 (deftest gcd-test
   (is (= 8 (b12/gcd 56 48)))
@@ -78,8 +75,7 @@
   (is (= 21 (b12/gcd 21 21)))
   (is (= 1 (b12/gcd 17 19))))
 
-(comment "1.2.6")
-; Example: Testing for Primality -------------------------------------------------------------------
+(comment "1.2.6 Example: Testing for Primality ---------------------------------------------------")
 
 (deftest smallest-divisor-test
   (is (= 1 (b12/smallest-divisor 1)))

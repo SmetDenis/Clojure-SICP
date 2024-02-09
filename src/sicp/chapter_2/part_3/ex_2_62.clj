@@ -4,7 +4,8 @@
 ;
 ; Give a O(n) implementation of union-set for sets represented as ordered lists.
 
-(defn union-set-sorted [set1 set2]
+(defn union-set-sorted
+  [set1 set2]
   (cond (empty? set1) set2
         (empty? set2) set1
         :else (let [x1 (first set1) x2 (first set2)]

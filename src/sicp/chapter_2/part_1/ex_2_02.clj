@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-1.ex-2-02
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.2
 ; Consider the problem of representing line segments in a plane.
@@ -25,28 +26,36 @@
 ;   (display (y-point p))
 ;   (display ")"))
 
-(defn make-point [x y]
+(defn make-point
+  [x y]
   (m/pair x y))
 
-(defn x-point [point]
+(defn x-point
+  [point]
   (m/car point))
 
-(defn y-point [point]
+(defn y-point
+  [point]
   (m/cdr point))
 
-(defn print-point [point]
+(defn print-point
+  [point]
   (str "(" (x-point point) "," (y-point point) ")"))
 
-(defn make-segment [start end]
+(defn make-segment
+  [start end]
   (m/pair start end))
 
-(defn start-segment [segment]
+(defn start-segment
+  [segment]
   (m/car segment))
 
-(defn end-segment [segment]
+(defn end-segment
+  [segment]
   (m/cdr segment))
 
-(defn midpoint-segment [segment]
+(defn midpoint-segment
+  [segment]
   (make-point (m/average (x-point (start-segment segment))
                          (x-point (end-segment segment)))
               (m/average (y-point (start-segment segment))

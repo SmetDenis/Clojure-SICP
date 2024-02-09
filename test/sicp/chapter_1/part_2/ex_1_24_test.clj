@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-2.ex-1-24-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-2.ex-1-24 :refer [fast-prime? fermat-test]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-2.ex-1-24 :refer [fast-prime? fermat-test]]))
 
 (deftest fast-prime?-test
   (is (= false (fast-prime? 100 100))))

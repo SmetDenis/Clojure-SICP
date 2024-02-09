@@ -1,7 +1,8 @@
 (ns sicp.chapter-2.part-1.ex-2-13-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.ex-2-13 :refer [par1 par2]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.ex-2-13 :refer [par1 par2]]
+    [sicp.misc :as m]))
 
 ; Huge tolerance - ±0.5)
 (def i-01 (m/make-interval 1 2))

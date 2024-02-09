@@ -1,10 +1,10 @@
 (ns sicp.chapter-1.part-3.book-1-3-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.book-1-3 :as b13]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.book-1-3 :as b13]
+    [sicp.misc :as m]))
 
-(comment "1.3.1")
-; Procedures as Arguments --------------------------------------------------------------------------
+(comment "1.3.1 Procedures as Arguments ----------------------------------------------------------")
 
 (deftest sum-integers-test
   (is (= 0 (b13/sum-integers 0 0)))
@@ -54,8 +54,7 @@
   (is (= 0.24998750000000042 (b13/integral m/cube 0 1 0.01)))
   (is (= 0.249999875000001 (b13/integral m/cube 0 1 0.001))))
 
-(comment "1.3.2")
-; Constructing Procedures Using Lambda -------------------------------------------------------------
+(comment "1.3.2 Constructing Procedures Using Lambda ---------------------------------------------")
 
 (deftest pi-sum-lamda-test
   (is (= 0.3333333333333333 (b13/pi-sum-lamda 1 1)))
@@ -67,8 +66,7 @@
   (is (= 0.24998750000000042 (b13/integral-lamda m/cube 0 1 0.01)))
   (is (= 0.249999875000001 (b13/integral-lamda m/cube 0 1 0.001))))
 
-(comment "1.3.3")
-; Procedures as General Methods --------------------------------------------------------------------
+(comment "1.3.3 Procedures as General Methods ----------------------------------------------------")
 
 (deftest search-test
   (is (= 0 (b13/search m/cube -1 1)))
@@ -89,8 +87,7 @@
   (is (= 1.4142135623746899 (b13/sqrt 2)))
   (is (= 3.0 (b13/sqrt 9))))
 
-(comment "1.3.4")
-; Procedures as Returned Values --------------------------------------------------------------------
+(comment "1.3.4 Procedures as Returned Values ----------------------------------------------------")
 
 (deftest average-damp-test
   (is (= 55 ((b13/average-damp m/square) 10))))

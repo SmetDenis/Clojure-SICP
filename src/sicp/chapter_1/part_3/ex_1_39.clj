@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-3.ex-1-39
-  (:require [sicp.chapter-1.part-3.ex-1-37 :as ex-1-37]))
+  (:require
+    [sicp.chapter-1.part-3.ex-1-37 :as ex-1-37]))
 
 ; Exercise 1.39
 ; A continued fraction representation of the tangent function was published in 1770
@@ -8,10 +9,12 @@
 ; the tangent function based on Lambert’s formula.
 ; k specifies the number of terms to compute, as in Exercise 1.37.
 
-(defn tan-cf [x k]
+(defn tan-cf
+  [x k]
   (ex-1-37/cont-frac-iter
-    (fn [i] (if (= i 1)
-              x
-              (- (Math/pow x 2))))
+    (fn [i]
+      (if (= i 1)
+        x
+        (- (Math/pow x 2))))
     (fn [i] (- (* 2.0 i) 1))
     k))

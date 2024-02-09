@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-3.ex-1-43
-  (:require [sicp.chapter-1.part-3.ex-1-42 :as ex-1-42]))
+  (:require
+    [sicp.chapter-1.part-3.ex-1-42 :as ex-1-42]))
 
 ; Exercise 1.43
 ;
@@ -22,7 +23,8 @@
 (defn repeated
   [func times]
   (fn [x]
-    (letfn [(iter [i result]
+    (letfn [(iter
+              [i result]
               (if (= times i)
                 result
                 (iter (inc i) (func result))))]

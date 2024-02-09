@@ -1,7 +1,8 @@
 (ns sicp.chapter-2.part-1.ex-2-01-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.book-2-1 :as b21]
-            [sicp.chapter-2.part-1.ex-2-01 :refer [make-rat-2]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.book-2-1 :as b21]
+    [sicp.chapter-2.part-1.ex-2-01 :refer [make-rat-2]]))
 
 (deftest make-rat-2-test
   (is (= [1 1] (make-rat-2 1 1)))

@@ -33,11 +33,13 @@
                         q
                         (- count 1))))
 
-(defn fib [n]
+(defn fib
+  [n]
   (fib-iter 1 0 0 1 n))
 
 ; Solution
-(defn fib-iter-v2 [a b p q count]
+(defn fib-iter-v2
+  [a b p q count]
   (cond (= count 0) b
         (even? count) (fib-iter-v2 a
                                    b
@@ -50,5 +52,6 @@
                            q
                            (- count 1))))
 
-(defn fib-v2 [n]
+(defn fib-v2
+  [n]
   (fib-iter-v2 1 0 0 1 n))

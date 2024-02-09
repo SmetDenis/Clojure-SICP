@@ -1,11 +1,13 @@
 (ns sicp.chapter-2.part-2.ex-2-46-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-46 :refer [add-vect
-                                                   make-vect
-                                                   scale-vect
-                                                   sub-vect
-                                                   xcor-vect
-                                                   ycor-vect]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-46 :refer [add-vect
+                                           make-vect
+                                           scale-vect
+                                           sub-vect
+                                           xcor-vect
+                                           ycor-vect]]))
+
 (def vec-1 (make-vect 1 2))
 (def vec-2 (make-vect 3 4))
 

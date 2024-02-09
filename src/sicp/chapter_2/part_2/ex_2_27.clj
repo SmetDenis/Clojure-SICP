@@ -12,7 +12,8 @@
 ; (deep-reverse x)                                            ; ((4 3) (2 1))
 ;
 
-(defn deep-reverse [coll]
+(defn deep-reverse
+  [coll]
   (if (list? coll)
     (map deep-reverse (reverse coll))
     coll))

@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-3.ex-1-33
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 1.33
 ;
@@ -29,7 +30,8 @@
 
 (defn filtered-accumulate-iter
   [combiner null-value term a next-fn b filter?]
-  (letfn [(iter [a result]
+  (letfn [(iter
+            [a result]
             (if (> a b)
               result
               (iter (next-fn a)

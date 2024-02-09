@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-3.ex-2-53-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-53 :refer [print-vars]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-53 :refer [print-vars]]))
 
 (deftest print-vars-test
   (is (= ['(a b c)

@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-22
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.22
 ;
@@ -32,8 +33,10 @@
 ;
 ; This doesn’t work either. Explain.
 
-(defn square-list-1 [items]
-  (letfn [(iter [things answer]
+(defn square-list-1
+  [items]
+  (letfn [(iter
+            [things answer]
             (if (m/list-empty? things)
               answer
               (iter (m/cdr things)

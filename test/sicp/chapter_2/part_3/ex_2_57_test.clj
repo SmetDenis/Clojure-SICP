@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-3.ex-2-57-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-57 :refer [augend deriv make-product make-sum multiplicand]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-57 :refer [augend deriv make-product make-sum multiplicand]]))
 
 (deftest augend-test
   (is (= 5 (augend '(+ 1 2 3)))))

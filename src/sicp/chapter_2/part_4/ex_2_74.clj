@@ -26,16 +26,20 @@
 ; Explain how the individual divisions’ files should be structured.
 ; In particular, what type information must be supplied?
 
-(defn make-generic-employee-file [division employee-file]
+(defn make-generic-employee-file
+  [division employee-file]
   (cons division employee-file))
 
-(defn division [generic-employee-file]
+(defn division
+  [generic-employee-file]
   (first generic-employee-file))
 
-(defn employee-file [generic-employee-file]
+(defn employee-file
+  [generic-employee-file]
   (rest generic-employee-file))
 
-(defn get-record [employee-name generic-employee-file]
+(defn get-record
+  [employee-name generic-employee-file]
   ((get (division generic-employee-file) :get-record)
    employee-name
    (employee-file generic-employee-file)))
@@ -44,10 +48,12 @@
 ; given employee’s record from any division’s personnel file. How should the record be structured
 ; in order to make this operation work?
 
-(defn employee-record [generic-employee-record]
+(defn employee-record
+  [generic-employee-record]
   (println "Debug" generic-employee-record))
 
-(defn get-salary [generic-employee-record]
+(defn get-salary
+  [generic-employee-record]
   ((get (division generic-employee-record) :get-salary)
    (employee-record generic-employee-record)))
 
@@ -55,7 +61,8 @@
 ; divisions’ files for the record of a given employee and return the record. Assume that this
 ; procedure takes as arguments an employee’s name and a list of all the divisions’ files.
 
-(defn find-employee-record [employee-name generic-files]
+(defn find-employee-record
+  [employee-name generic-files]
   (if (empty? generic-files)
     (throw (Exception. "Record not found"))
     (let [record (get-record employee-name (first generic-files))]

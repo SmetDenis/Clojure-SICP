@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-1.ex-2-06-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.ex-2-06 :as ex-2-06]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.ex-2-06 :as ex-2-06]))
 
 (def f (fn [x] x))
 (def placeholder (rand-int 100))                            ; Hackish to execute test cases

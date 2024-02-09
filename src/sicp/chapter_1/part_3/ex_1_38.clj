@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-3.ex-1-38
-  (:require [sicp.chapter-1.part-3.ex-1-37 :as ex-1-37]))
+  (:require
+    [sicp.chapter-1.part-3.ex-1-37 :as ex-1-37]))
 
 ; Exercise 1.38
 ; In 1737, the Swiss mathematician Leonhard Euler published a memoir De Fractionibus Continuis,
@@ -14,12 +15,14 @@
 ; i      = 1   2 3 4  5 6 7  8 9 10  11 12 13  14 15 16  17 18 19  20 21 22  23 24 25 26 27 28  29
 ; SpikeN =     0      1      2        3         4         5         6         7        8         9
 
-(defn euler-fraction [k]
+(defn euler-fraction
+  [k]
   (ex-1-37/cont-frac-iter
     (fn [_] 1.0)
-    (fn [i] (if (= i 1)
-              1
-              (if (> (rem (- i 2) 3) 0)
-                1                                           ; Each second and third values
-                (* 2 (+ (/ (- i 2) 3) 1)))))                ; 2 * ( ( (i-2)/3) + 1)
+    (fn [i]
+      (if (= i 1)
+        1
+        (if (> (rem (- i 2) 3) 0)
+          1                                           ; Each second and third values
+          (* 2 (+ (/ (- i 2) 3) 1)))))                ; 2 * ( ( (i-2)/3) + 1)
     k))

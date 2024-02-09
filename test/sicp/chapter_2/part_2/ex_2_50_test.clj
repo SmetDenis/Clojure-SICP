@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-50-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-50 :refer [flip-horiz rotate-180-cc rotate-270-cc]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-50 :refer [flip-horiz rotate-180-cc rotate-270-cc]]))
 
 ; I don't know to test it properly...
 

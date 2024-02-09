@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-2.ex-1-18
-  (:require [sicp.chapter-1.part-2.ex-1-16 :refer [expt]]))
+  (:require
+    [sicp.chapter-1.part-2.ex-1-16 :refer [expt]]))
 
 ; Exercise 1.18
 ; Using the results of Exercise 1.16 and Exercise 1.17, devise a procedure that generates an iterative
@@ -17,5 +18,6 @@
                             product
                             (+ counter 1))))
 
-(defn mult [a b]
+(defn mult
+  [a b]
   (fast-mult-v2 a b 0 0))

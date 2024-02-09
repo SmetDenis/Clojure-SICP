@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-45-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-45 :refer [right-split up-split]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-45 :refer [right-split up-split]]))
 
 ; I can't cover it with real unit tests. :(
 

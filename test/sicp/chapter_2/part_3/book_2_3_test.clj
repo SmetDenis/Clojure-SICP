@@ -1,45 +1,43 @@
 (ns sicp.chapter-2.part-3.book-2-3-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.book-2-3 :refer [adjoin-set
-                                                    adjoin-set-h
-                                                    deriv
-                                                    element-of-set-sorted?
-                                                    element-of-set-tree?
-                                                    element-of-set?
-                                                    entry
-                                                    huffman-tree
-                                                    huffman-tree-as-list
-                                                    intersection-set
-                                                    intersection-set-sorted
-                                                    leaf?
-                                                    left-branch
-                                                    left-branch-h
-                                                    lookup
-                                                    make-code-tree
-                                                    make-leaf
-                                                    make-leaf-set
-                                                    make-tree
-                                                    memq
-                                                    right-branch
-                                                    right-branch-h
-                                                    symbol-leaf
-                                                    symbols
-                                                    weight
-                                                    weight-leaf]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.book-2-3 :refer [adjoin-set
+                                            adjoin-set-h
+                                            deriv
+                                            element-of-set-sorted?
+                                            element-of-set-tree?
+                                            element-of-set?
+                                            entry
+                                            huffman-tree
+                                            huffman-tree-as-list
+                                            intersection-set
+                                            intersection-set-sorted
+                                            leaf?
+                                            left-branch
+                                            left-branch-h
+                                            lookup
+                                            make-code-tree
+                                            make-leaf
+                                            make-leaf-set
+                                            make-tree
+                                            memq
+                                            right-branch
+                                            right-branch-h
+                                            symbol-leaf
+                                            symbols
+                                            weight
+                                            weight-leaf]]))
 
-(comment "2.3")
-; symbolic data ------------------------------------------------------------------------------------
+(comment "2.3 Symbolic data ----------------------------------------------------------------------")
 
-(comment "2.3.1")
-; quotation ----------------------------------------------------------------------------------------
+(comment "2.3.1 Quotation ------------------------------------------------------------------------")
 
 (deftest memq-test
   (is (= false (memq 'apple '(pear banana prune))))
   (is (= '(pear banana prune) (memq 'pear '(pear banana prune))))
   (is (= '(apple pear) (memq 'apple '(x (apple sauce) y apple pear)))))
 
-(comment "2.3.2")
-; example: symbolic differentiation ----------------------------------------------------------------
+(comment "2.3.2 Example: symbolic differentiation ------------------------------------------------")
 
 (deftest deriv-test
   (is (= 1 (deriv '(+ x 3) 'x)))
@@ -47,8 +45,7 @@
   (is (= '(+ (* x y) (* y (+ x 3)))
          (deriv '(* (* x y) (+ x 3)) 'x))))
 
-(comment "2.3.3")
-; example: representing sets -----------------------------------------------------------------------
+(comment "2.3.3 Example: representing sets -------------------------------------------------------")
 
 (deftest element-of-set?-test
   (is (= true (element-of-set? 1 '(1 2 3))))
@@ -118,8 +115,7 @@
     (is (= '{:key 3 :value "C"} (lookup 3 records)))
     (is (= false (lookup 4 records)))))
 
-(comment "2.3.4")
-; Example: Huffman Encoding Trees ------------------------------------------------------------------
+(comment "2.3.4 Example: Huffman Encoding Trees --------------------------------------------------")
 
 (def sample-tree
   (make-code-tree
