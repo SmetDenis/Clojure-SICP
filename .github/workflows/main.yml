@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  lein:
-    name: Leiningen
+  tests:
+    name: Unit tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,25 +26,43 @@ jobs:
           cli: 'latest'
           lein: 'latest'
           bb: 'latest'
-          cljfmt: 'latest'
-          clj-kondo: 'latest'
 
       - name: Unit tests
         run: lein test
 
-      - name: Codestyle - cljfmt
-        run: bb lint:check
+      - name: Unit tests (bb + test-runner)
+        run: bb test
 
-      - name: Linter - eastwood
+  linters:
+    name: Linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '8'
+
+      - name: Install Clojure tools
+        uses: DeLaGuardo/setup-clojure@12.4
+        with:
+          cli: 'latest'
+          lein: 'latest'
+          bb: 'latest'
+          clj-kondo: 'latest'
+
+      - name: Eastwood
         run: bb lint:eastwood
 
-      - name: Linter - kondo
+      - name: Kondo
         run: bb lint:kondo
 
-  deps-edn-and-bb:
-    name: deps.edn with bb
+  codestyle:
+    name: Codestyle
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -61,10 +79,6 @@ jobs:
           cli: 'latest'
           bb: 'latest'
           cljfmt: 'latest'
-          clj-kondo: 'latest'
 
-      - name: Codestyle
-        run: bb lint
-
-      - name: Unit tests
-        run: bb test
+      - name: cljfmt
+        run: bb lint:check
