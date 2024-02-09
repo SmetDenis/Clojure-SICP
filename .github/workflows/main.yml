@@ -30,7 +30,7 @@ jobs:
         run: lein test
 
   tests-experimental:
-    name: Unit tests (experimental)
+    name: Unit tests - experimental
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
