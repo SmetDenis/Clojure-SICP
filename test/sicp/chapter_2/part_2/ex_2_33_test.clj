@@ -1,7 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-33-test
   (:require
     [clojure.test :refer [deftest is]]
-    [sicp.chapter-2.part-2.ex-2-33 :refer [my-map my-length my-append]]))
+    [sicp.chapter-2.part-2.ex-2-33 :refer [my-append my-length my-map]]))
 
 (deftest my-map-test
   (is (= '(1 2 3) (my-map inc '(0 1 2)))))

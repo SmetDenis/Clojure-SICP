@@ -307,7 +307,6 @@
     1 1 1                                                  ; C
     0))                                                    ; A
 (def huffman-message-encoded '(:A :D :A :B :B :C :A))
-
 (def huffman-A '(0))
 (def huffman-B '(1 0))
 (def huffman-C '(1 1 1))

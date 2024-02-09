@@ -17,8 +17,8 @@
   (fn [painter n]
     (if (= n 0)
       painter
-      (let [smaller ((split primary secondary) painter (dec n))
-            primary-split (primary painter smaller)
+      (let [smaller         ((split primary secondary) painter (dec n))
+            primary-split   (primary painter smaller)
             secondary-split (secondary smaller smaller)]
         (primary primary-split secondary-split)))))
 

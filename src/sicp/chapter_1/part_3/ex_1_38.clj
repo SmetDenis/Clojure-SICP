@@ -23,6 +23,6 @@
       (if (= i 1)
         1
         (if (> (rem (- i 2) 3) 0)
-          1                                           ; Each second and third values
-          (* 2 (+ (/ (- i 2) 3) 1)))))                ; 2 * ( ( (i-2)/3) + 1)
+          1                                                 ; Each second and third values
+          (* 2 (+ (/ (- i 2) 3) 1)))))                      ; 2 * ( ( (i-2)/3) + 1)
     k))
