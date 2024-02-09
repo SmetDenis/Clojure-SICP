@@ -8,7 +8,7 @@ on:
 
 jobs:
   tests:
-    name: Unit tests
+    name: Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,7 +26,7 @@ jobs:
           cli: 'latest'
           lein: 'latest'
 
-      - name: Unit tests
+      - name: 🧪 Unit tests
         run: lein test
 
   tests-experimental:
@@ -48,7 +48,7 @@ jobs:
           cli: 'latest'
           bb: 'latest'
 
-      - name: Unit tests (bb + test-runner)
+      - name: 🧪 Unit tests (bb + test-runner)
         run: bb test
 
   linters:
@@ -72,10 +72,10 @@ jobs:
           bb: 'latest'
           clj-kondo: 'latest'
 
-      - name: Eastwood
+      - name: 👍 Eastwood
         run: bb lint:eastwood
 
-      - name: Kondo
+      - name: 👍 Kondo
         run: bb lint:kondo
 
   codestyle:
@@ -98,5 +98,5 @@ jobs:
           bb: 'latest'
           cljfmt: 'latest'
 
-      - name: cljfmt
+      - name: 👍 cljfmt
         run: bb lint:check
