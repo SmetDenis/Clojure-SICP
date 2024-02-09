@@ -9,9 +9,7 @@
 
 (defn div-interval
   [interval-1 interval-2]
-  (if (< (* (m/lower-bound interval-2)
-            (m/upper-bound interval-2))
-         0)
+  (if (neg? (* (m/lower-bound interval-2) (m/upper-bound interval-2)))
     (m/error "interval-2 is spanning zero")
     (m/mul-interval
       interval-1

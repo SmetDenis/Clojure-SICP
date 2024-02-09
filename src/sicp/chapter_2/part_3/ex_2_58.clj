@@ -30,15 +30,13 @@
 
 (defn augend
   [e]
-  (if (not (nil? (nth e 3 nil)))
-    (drop 2 e)
-    (nth e 2)))
+  (if-not (nil? (nth e 3 nil)) (drop 2 e) (nth e 2)))
 
 (defn make-sum
   [a1 a2]
   (cond
-    (= a1 0) a2
-    (= a2 0) a1
+    (zero? a1) a2
+    (zero? a2) a1
     (and (number? a1) (number? a2)) (+ a1 a2)
     :else (list a1 '+ a2)))
 
@@ -52,9 +50,7 @@
 
 (defn multiplicand
   [e]
-  (if (not (nil? (nth e 3 nil)))
-    (drop 2 e)
-    (nth e 2)))
+  (if-not (nil? (nth e 3 nil)) (drop 2 e) (nth e 2)))
 
 (defn make-product
   [m1 m2]

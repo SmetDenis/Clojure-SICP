@@ -49,8 +49,8 @@
 (defn make-sum
   [a1 a2]
   (cond
-    (= a1 0) a2
-    (= a2 0) a1
+    (zero? a1) a2
+    (zero? a2) a1
     (and (number? a1) (number? a2)) (+ a1 a2)
     :else (list '+ a1 a2)))
 
@@ -242,7 +242,7 @@
 (defn choose-branch
   [bit branch]
   (cond
-    (= bit 0) (left-branch-h branch)
+    (zero? bit) (left-branch-h branch)
     (= bit 1) (right-branch-h branch)
     :else (throw (Exception. (str "bad bit: CHOOSE-BRANCH " bit)))))
 

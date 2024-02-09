@@ -15,7 +15,7 @@
 (defn split
   [primary secondary]
   (fn [painter n]
-    (if (= n 0)
+    (if (zero? n)
       painter
       (let [smaller         ((split primary secondary) painter (dec n))
             primary-split   (primary painter smaller)
