@@ -10,7 +10,7 @@
 
 (defn test_1_5
   [x y]
-  (if (= x 0) 0 y))
+  (if (zero? x) 0 y))
 
 ; Then he evaluates the expression
 ; (test_1_5 0 p)
