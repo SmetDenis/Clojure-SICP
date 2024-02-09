@@ -8,6 +8,7 @@
   :test-paths ["test"]
   :main ^:skip-aot sicp
   :target-path "build/%s"
+  :plugins [[jonase/eastwood "1.4.2"]]
   :profiles {:dev      {:dependencies [[jonase/eastwood "1.4.2"]]}
              :test     {:main-opts ["-m" "cognitect.test-runner"]}
              :eastwood {:main-opts ["-m" "eastwood.lint" {}]}
