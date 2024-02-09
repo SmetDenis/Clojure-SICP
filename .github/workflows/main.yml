@@ -8,6 +8,7 @@ on:
 
 jobs:
   deps-edn:
+    name: deps.edn
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +36,7 @@ jobs:
         run: bb test
 
   lein:
+    name: Leiningen
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
