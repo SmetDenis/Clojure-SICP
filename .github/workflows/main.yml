@@ -77,6 +77,7 @@ jobs:
           cli: 'latest'
           bb: 'latest'
           cljfmt: 'latest'
+          cljstyle: 'latest'
 
       - name: 👍 cljfmt
         run: bb style:cljfmt
