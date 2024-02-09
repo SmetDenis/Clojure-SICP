@@ -29,27 +29,6 @@ jobs:
       - name: 🧪 Unit tests
         run: lein test
 
-  tests-experimental:
-    name: Unit tests - experimental
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Prepare Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: '8'
-
-      - name: Install Clojure tools
-        uses: DeLaGuardo/setup-clojure@12.4
-        with:
-          cli: 'latest'
-          bb: 'latest'
-
-      - name: 🧪 Unit tests (bb + test-runner)
-        run: bb test
 
   linters:
     name: Linters
@@ -78,6 +57,7 @@ jobs:
       - name: 👍 Kondo
         run: bb lint:kondo
 
+
   codestyle:
     name: Codestyle
     runs-on: ubuntu-latest
@@ -100,3 +80,26 @@ jobs:
 
       - name: 👍 cljfmt
         run: bb lint:check
+
+
+  experimental:
+    name: Experimental
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '8'
+
+      - name: Install Clojure tools
+        uses: DeLaGuardo/setup-clojure@12.4
+        with:
+          cli: 'latest'
+          bb: 'latest'
+
+      - name: 🧪 Unit tests (bb + test-runner)
+        run: bb test
