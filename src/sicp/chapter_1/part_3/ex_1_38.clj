@@ -22,7 +22,7 @@
     (fn [i]
       (if (= i 1)
         1
-        (if (> (rem (- i 2) 3) 0)
+        (if (pos? (rem (- i 2) 3))
           1                                                 ; Each second and third values
-          (* 2 (+ (/ (- i 2) 3) 1)))))                      ; 2 * ( ( (i-2)/3) + 1)
+          (* 2 (inc (/ (- i 2) 3))))))                      ; 2 * ( ( (i-2)/3) + 1)
     k))

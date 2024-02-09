@@ -34,4 +34,4 @@
   [func times]
   (if (= 1 times)
     func
-    (ex-1-42/compose func (repeated func (- times 1)))))
+    (ex-1-42/compose func (repeated func (dec times)))))

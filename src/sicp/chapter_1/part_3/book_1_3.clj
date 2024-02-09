@@ -15,14 +15,14 @@
   [a b]
   (if (> a b)
     0
-    (+ a (sum-integers (+ a 1) b))))
+    (+ a (sum-integers (inc a) b))))
 
 (defn sum-cubes
   [a b]
   (if (> a b)
     0
     (+ (m/cube a)
-       (sum-cubes (+ a 1) b))))
+       (sum-cubes (inc a) b))))
 
 (defn pi-sum
   [a b]
@@ -75,12 +75,12 @@
             (+ (* x (m/square a))
                (* y b)
                (* a b)))]
-    (f-helper (+ 1 (* x y))
+    (f-helper (inc (* x y))
               (- 1 y))))
 
 (defn f-2
   [x y]
-  (let [a (+ 1 (* x y))
+  (let [a (inc (* x y))
         b (- 1 y)]
     (+ (* x (m/square a))
        (* y b)
