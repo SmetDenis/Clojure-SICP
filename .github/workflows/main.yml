@@ -29,7 +29,7 @@ jobs:
       - name: Cache Leiningen dependencies
         uses: actions/cache@v2
         with:
-          path: ~/.m2
+          path: ~/.lein
           key: ${{ runner.os }}-lein-${{ hashFiles('**/project.clj') }}
           restore-keys: ${{ runner.os }}-lein-
 
