@@ -48,11 +48,11 @@
 
 (defn positive?
   [x]
-  (> x 0))
+  (pos? x))
 
 (defn negative?
   [x]
-  (< x 0))
+  (neg? x))
 
 (defn gcd
   [a b]
@@ -183,7 +183,7 @@
 (defn length
   [lst]
   (if (seq lst)
-    (+ 1 (length (rest lst)))
+    (inc (length (rest lst)))
     0))
 
 (defn append

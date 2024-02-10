@@ -15,12 +15,10 @@
 
 (defn length-segment
   [segment]
-  (Math/sqrt (+ (Math/pow (- (ex-2-02/x-point (ex-2-02/start-segment segment))
-                             (ex-2-02/x-point (ex-2-02/end-segment segment)))
-                          2)
-                (Math/pow (- (ex-2-02/y-point (ex-2-02/start-segment segment))
-                             (ex-2-02/y-point (ex-2-02/end-segment segment)))
-                          2))))
+  (Math/hypot (- (ex-2-02/x-point (ex-2-02/start-segment segment))
+                 (ex-2-02/x-point (ex-2-02/end-segment segment)))
+              (- (ex-2-02/y-point (ex-2-02/start-segment segment))
+                 (ex-2-02/y-point (ex-2-02/end-segment segment)))))
 
 (defn make-rectangle
   [segment-width segment-height]

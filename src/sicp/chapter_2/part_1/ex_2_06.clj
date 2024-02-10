@@ -22,7 +22,7 @@
 ; (not in terms of repeated application of add-1).
 
 (def zero (fn [_] (fn [x] x)))
-(def one (fn [f] (fn [x] (f x))))
+(def one (fn [f] f))
 (def two (fn [f] (fn [x] (f (f x)))))
 
 (defn add-1

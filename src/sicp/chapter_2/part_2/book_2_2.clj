@@ -33,8 +33,8 @@
 (defn list-ref
   [lst index]
   (cond
-    (< index 0) nil
-    (= index 0) (first lst)
+    (neg? index) nil
+    (zero? index) (first lst)
     :else (list-ref (rest lst) (dec index))))
 
 (comment
@@ -45,7 +45,7 @@
   [items]
   (if (m/list-empty? items)
     0
-    (+ 1 (length-recursice (m/cdr items)))))
+    (inc (length-recursice (m/cdr items)))))
 
 (comment
   (length-recursice (list 1 3 5 7)))                        ; 4
@@ -53,7 +53,7 @@
 (defn length
   [list]
   (if (seq list)
-    (+ 1 (length (rest list)))
+    (inc (length (rest list)))
     0))
 
 (comment
@@ -71,21 +71,14 @@
 
 (defn scale-list
   [items factor]
-  (if (m/list-empty? items)
-    nil
-    (cons (* (m/car items) factor)
-          (scale-list (m/cdr items)
-                      factor))))
+  (when-not (m/list-empty? items) (cons (* (m/car items) factor) (scale-list (m/cdr items) factor))))
 
 (comment
   (scale-list (list 1 2 3 4 5) 10))                         ; (10 20 30 40 50)
 
 (defn my-map
   [proc items]
-  (if (m/list-empty? items)
-    nil
-    (cons (proc (m/car items))
-          (my-map proc (m/cdr items)))))
+  (when-not (m/list-empty? items) (cons (proc (m/car items)) (my-map proc (m/cdr items)))))
 
 (comment
   (my-map abs (list -10 2.5 -11.6 17))                      ; (10 2.5 11.6 17)
@@ -164,12 +157,7 @@
   [n]
   (letfn [(next
             [k]
-            (if (> k n)
-              nil
-              (let [f (fib k)]
-                (if (even? f)
-                  (cons f (next (inc k)))
-                  (next (inc k))))))]
+            (when-not (> k n) (let [f (fib k)] (if (even? f) (cons f (next (inc k))) (next (inc k))))))]
     (next 0)))
 
 (defn my-filter
@@ -189,9 +177,7 @@
 
 (defn enumerate-interval
   [low high]
-  (if (> low high)
-    nil
-    (cons low (enumerate-interval (+ low 1) high))))
+  (when-not (> low high) (cons low (enumerate-interval (inc low) high))))
 
 (defn enumerate-tree
   [tree]
@@ -245,7 +231,7 @@
   (accumulate append nil
               (map (fn [i]
                      (map (fn [j] (list i j))
-                          (enumerate-interval 1 (- i 1))))
+                          (enumerate-interval 1 (dec i))))
                    (enumerate-interval 1 6))))              ; (1 2 3 4 5 6)
 ; ((2 1) (3 1) (3 2) (4 1) (4 2) (4 3) (5 1) (5 2) (5 3) (5 4) (6 1) (6 2) (6 3) (6 4) (6 5))
 
@@ -269,12 +255,12 @@
        (filter prime-sum? (flatmap
                             (fn [i]
                               (map (fn [j] (list i j))
-                                   (enumerate-interval 1 (- i 1))))
+                                   (enumerate-interval 1 (dec i))))
                             (enumerate-interval 1 n)))))
 
 (defn my-remove
   [item sequence]
-  (filter (fn [x] (not (= x item))) sequence))
+  (filter (fn [x] (not= x item)) sequence))
 
 (defn permutations
   [s]
@@ -388,7 +374,7 @@
 
 (defn corner-split
   [painter n]
-  (if (= n 0)
+  (if (zero? n)
     painter
     (let [up           (corner-split painter (dec n))
           right        (corner-split painter (dec n))

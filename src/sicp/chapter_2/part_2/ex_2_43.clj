@@ -27,21 +27,21 @@
   [board-size]
   (letfn [(queen-cols
             [k]
-            (if (= 0 k)
+            (if (zero? k)
               (list nil)
               (filter (fn [positions] (ex-2-42/safe? k positions))
                       (mapcat (fn [rest-of-queens]
                                 (map (fn [new-row]
                                        (ex-2-42/adjoin-position new-row k rest-of-queens))
                                      (b22/enumerate-interval 1 board-size)))
-                              (queen-cols (- k 1))))))]
+                              (queen-cols (dec k))))))]
     (queen-cols board-size)))
 
 (defn queens-2-43
   [board-size]
   (letfn [(queen-cols
             [k]
-            (if (= 0 k)
+            (if (zero? k)
               (list nil)
               (filter (fn [positions] (ex-2-42/safe? k positions))
                       (mapcat (fn [new-row]
@@ -49,6 +49,6 @@
                                 (map (fn [rest-of-queens]
                                        ; diff 1
                                        (ex-2-42/adjoin-position new-row k rest-of-queens))
-                                     (queen-cols (- k 1)))) ; diff 2
+                                     (queen-cols (dec k)))) ; diff 2
                               (b22/enumerate-interval 1 board-size)))))] ; diff 2
     (queen-cols board-size)))

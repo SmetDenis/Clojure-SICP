@@ -66,9 +66,7 @@
   (if (empty? generic-files)
     (throw (Exception. "Record not found"))
     (let [record (get-record employee-name (first generic-files))]
-      (if record
-        record
-        (find-employee-record employee-name (rest generic-files))))))
+      (or record (find-employee-record employee-name (rest generic-files))))))
 
 ; When Insatiable takes over a new company, what changes must be made in order to incorporate the
 ; new personnel information into the central system?

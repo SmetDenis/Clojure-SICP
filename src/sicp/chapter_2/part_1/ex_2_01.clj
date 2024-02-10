@@ -11,8 +11,8 @@
 (defn make-rat-2
   [numer denom]
   (let [devider      (abs (m/gcd numer denom))
-        signed-numer (cond (and (< denom 0) (< numer 0)) (abs numer)
-                           (and (< denom 0) (> numer 0)) (- numer)
+        signed-numer (cond (and (neg? denom) (neg? numer)) (abs numer)
+                           (and (neg? denom) (pos? numer)) (- numer)
                            :else numer)
         signed-denom (abs denom)]
     (m/pair (/ signed-numer devider)
