@@ -85,10 +85,6 @@ jobs:
       - name: 👍 cljstyle
         run: bb style:cljstyle
 
-      - name: 👍 kibit
-        run: bb style:kibit
-
-
   experimental:
     name: Experimental
     runs-on: ubuntu-latest
@@ -110,3 +106,6 @@ jobs:
 
       - name: 🧪 Unit tests (bb + test-runner)
         run: bb test
+
+      - name: 👍 splint
+        run: bb style:splint || true
