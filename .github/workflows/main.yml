@@ -48,13 +48,6 @@ jobs:
           cli: 'latest'
           lein: 'latest'
 
-      - name: Cache Leiningen dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-lein-${{ hashFiles('**/project.clj') }}
-          restore-keys: ${{ runner.os }}-lein-
-
       - name: 🧪 Generate coverage report
         run: lein cloverage --lcov
 
