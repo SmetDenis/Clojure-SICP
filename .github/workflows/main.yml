@@ -85,6 +85,9 @@ jobs:
       - name: 👍 cljstyle
         run: bb style:cljstyle
 
+      - name: 👍 kibit
+        run: bb style:kibit
+
 
   experimental:
     name: Experimental
