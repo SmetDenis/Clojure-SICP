@@ -8,15 +8,15 @@
 
 (defn fast-mult-v2
   [a b product counter]
-  (cond (zero? a) product
+  (cond (= a 0) product
         (= (mod a 2) 1) (fast-mult-v2 (/ a 2)
                                       b
                                       (+ product (* (expt 2 counter) b))
-                                      (inc counter))
+                                      (+ counter 1))
         :else (fast-mult-v2 (/ a 2)
                             b
                             product
-                            (inc counter))))
+                            (+ counter 1))))
 
 (defn mult
   [a b]

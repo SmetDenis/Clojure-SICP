@@ -18,5 +18,5 @@
   (if (or (= col 1) (= col row))
     1
     (+
-      (pascal (dec row) (dec col))
-      (pascal (dec row) col))))
+      (pascal (- row 1) (- col 1))
+      (pascal (- row 1) col))))

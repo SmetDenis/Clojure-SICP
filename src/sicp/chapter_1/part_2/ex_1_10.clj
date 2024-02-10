@@ -4,11 +4,11 @@
 ; The following procedure computes a mathematical function called Ackermann’s function.
 (defn A
   [x y]
-  (cond (zero? y) 0
-        (zero? x) (* 2 y)
+  (cond (= y 0) 0
+        (= x 0) (* 2 y)
         (= y 1) 2
-        :else (A (dec x)
-                 (A x (dec y)))))
+        :else (A (- x 1)
+                 (A x (- y 1)))))
 
 ; What are the values of the following expressions?
 (A 1 10)

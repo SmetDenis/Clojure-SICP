@@ -20,7 +20,7 @@
 
 (defn fib-iter
   [a b p q count]
-  (cond (zero? count) b
+  (cond (= count 0) b
         (even? count)
         (fib-iter a
                   b
@@ -31,7 +31,7 @@
                         (+ (* b p) (* a q))
                         p
                         q
-                        (dec count))))
+                        (- count 1))))
 
 (defn fib
   [n]
@@ -40,7 +40,7 @@
 ; Solution
 (defn fib-iter-v2
   [a b p q count]
-  (cond (zero? count) b
+  (cond (= count 0) b
         (even? count) (fib-iter-v2 a
                                    b
                                    (+ (* p p) (* q q))      ; <--
@@ -50,7 +50,7 @@
                            (+ (* b p) (* a q))
                            p
                            q
-                           (dec count))))
+                           (- count 1))))
 
 (defn fib-v2
   [n]

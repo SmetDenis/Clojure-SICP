@@ -6,13 +6,13 @@
 
 (defn plus
   [a b]
-  (if (zero? a)
+  (if (= a 0)
     b
     (inc (+ (dec a) b))))                                   ; linear recursive
 
 (defn plus-v2
   [a b]
-  (if (zero? a)
+  (if (= a 0)
     b
     (+ (dec a) (inc b))))                                   ; linear iteration
 

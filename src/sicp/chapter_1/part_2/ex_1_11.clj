@@ -12,18 +12,18 @@
   "Recursive process"
   [n]
   (cond (< n 3) n
-        :else (+ (f (dec n))
+        :else (+ (f (- n 1))
                  (* 2 (f (- n 2)))
                  (* 3 (f (- n 3))))))
 
 (defn f-v2-iter
   [a b c count]
-  (if (zero? count)
+  (if (= count 0)
     c
     (f-v2-iter b
                c
                (+ c (* 2 b) (* 3 a))
-               (dec count))))
+               (- count 1))))
 
 (defn f-v2
   "Iterative process"
