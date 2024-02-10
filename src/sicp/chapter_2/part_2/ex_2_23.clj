@@ -30,4 +30,4 @@
       (for-each proc (m/cdr items)))))
 
 (comment
-  (for-each #(println %) (list 57 321 88)))
+  (for-each println (list 57 321 88)))

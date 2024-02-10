@@ -28,7 +28,7 @@
 (defn make-exponentiation
   [base exponent]
   (cond
-    (= exponent 0) 1.0
+    (zero? exponent) 1.0
     (and (= exponent 1) (number? base)) (float base)
     (and (number? base) (number? exponent)) (Math/pow base exponent)
     :else (list '** base exponent)))

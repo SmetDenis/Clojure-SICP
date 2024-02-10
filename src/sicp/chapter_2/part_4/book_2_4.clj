@@ -15,8 +15,7 @@
 
 (defn magnitude-Ben
   [z]
-  (Math/sqrt (+ (Math/pow (real-part-Ben z) 2)
-                (Math/pow (imag-part-Ben z) 2))))
+  (Math/hypot (real-part-Ben z) (imag-part-Ben z)))
 
 (defn angle-v1
   [z]
@@ -73,7 +72,7 @@
 
 (defn make-from-real-imag-Alyssa
   [x y]
-  [(Math/sqrt (+ (Math/pow x 2) (Math/pow y 2)))
+  [(Math/hypot x y)
    (Math/atan2 y x)])
 
 (defn make-from-mag-ang-Alyssa
@@ -120,8 +119,7 @@
 
 (defn magnitude-rectangular
   [z]
-  (Math/sqrt (+ (Math/pow (real-part-rectangular z) 2)
-                (Math/pow (imag-part-rectangular z) 2))))
+  (Math/hypot (real-part-rectangular z) (imag-part-rectangular z)))
 
 (defn angle-rectangular
   [z]
@@ -156,7 +154,7 @@
 (defn make-from-real-imag-polar
   [x y]
   (attach-tag :polar
-              [(Math/sqrt (+ (Math/pow x 2) (Math/pow y 2)))
+              [(Math/hypot x y)
                (Math/atan2 y x)]))
 
 (defn make-from-mag-ang-polar

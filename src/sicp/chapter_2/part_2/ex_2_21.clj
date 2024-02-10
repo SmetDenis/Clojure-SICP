@@ -22,8 +22,7 @@
 
 (defn square-list-1
   [items]
-  (if (m/list-empty? items)
-    nil
+  (when-not (m/list-empty? items)
     (cons (* (m/car items) (m/car items))
           (square-list-1 (m/cdr items)))))
 

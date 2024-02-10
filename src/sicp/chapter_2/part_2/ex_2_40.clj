@@ -14,7 +14,7 @@
   (b22/flatmap
     (fn [i]
       (map (fn [j] (list i j))
-           (b22/enumerate-interval 1 (- i 1))))
+           (b22/enumerate-interval 1 (dec i))))
     (b22/enumerate-interval 1 n)))
 
 (defn prime-sum-pairs
