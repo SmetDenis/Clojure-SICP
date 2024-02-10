@@ -37,7 +37,7 @@ jobs:
         run: lein test
 
   tests-coverage:
-    name: Test Coverge
+    name: Tests - Coverge
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -65,7 +65,7 @@ jobs:
       - name: 🧪 Generate coverage report
         run: lein cloverage --lcov
 
-      - name: 🧪 Coveralls
+      - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           path-to-lcov: ./target/coverage/lcov.info
