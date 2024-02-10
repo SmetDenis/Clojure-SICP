@@ -27,7 +27,7 @@
   [x n damps]
   (b13/fixed-point
     ((ex-1-43/repeated b13/average-damp damps)
-     (fn [y] (/ x (Math/pow y (dec n)))))
+     (fn [y] (/ x (Math/pow y (- n 1)))))
     1.0))
 
 ; The number of repetitions of the average moisture content

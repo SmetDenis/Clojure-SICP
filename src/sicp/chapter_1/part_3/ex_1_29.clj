@@ -21,7 +21,7 @@
   (let [h      (/ (- b a) n)
         yk     (fn [k] (f (+ a (* k h))))
         term-k (fn [k]
-                 (* (cond (zero? k) 1
+                 (* (cond (= 0 k) 1
                           (= n k) 1
                           (even? k) 2
                           :else 4)
