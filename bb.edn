@@ -1,16 +1,22 @@
-{:tasks {test               (shell "clojure -X:test")
-         lint               (do (run 'style:cljfmt)
-                                (run 'style:cljstyle)
-                                (run 'lint:eastwood)
-                                (run 'lint:kondo))
-         style:fix          (do (run 'style:fix:cljfmt)
-                                (run 'style:fix:cljstyle))
-         style:cljfmt       (shell "cljfmt check")
-         style:cljstyle     (shell "cljstyle check")
-         style:fix:cljfmt   (shell "cljfmt fix")
-         style:fix:cljstyle (shell "cljstyle fix")
-         lint:eastwood      (shell "clojure -M:test:eastwood")
-         lint:kondo         (shell "clj-kondo --lint test src")
-         pre-push           (do (run 'style:fix)
-                                (run 'test)
-                                (run 'lint))}}
+{:tasks {test           (shell "clojure -X:test")
+         ; Check style
+         style:cljfmt   (shell "cljfmt check")
+         style:cljstyle (shell "cljstyle check")
+         style:splint   (shell "lein splint ./src ./test")
+         lint           (do (run 'style:splint)
+                            (run 'style:cljfmt)
+                            (run 'style:cljstyle)
+                            (run 'lint:eastwood)
+                            (run 'lint:kondo))
+         ; Autofix style
+         fix:cljfmt     (shell "cljfmt fix")
+         fix:cljstyle   (shell "cljstyle fix")
+         fix            (do (run 'fix:cljfmt)
+                            (run 'fix:cljstyle))
+         ; Linters
+         lint:eastwood  (shell "clojure -M:test:eastwood")
+         lint:kondo     (shell "clj-kondo --lint test src")
+         ; Local development
+         pre-push       (do (run 'fix)
+                            (run 'lint)
+                            (run 'test))}}
