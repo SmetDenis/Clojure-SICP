@@ -58,10 +58,10 @@
   (is (= 59049 (b12/expt-2 3 10))))
 
 (deftest even?-alt-test
-  (is (= false (b12/even?-alt 1)))
-  (is (= true (b12/even?-alt 2)))
-  (is (= false (b12/even?-alt 3)))
-  (is (= true (b12/even?-alt 4))))
+  (is (false? (b12/even?-alt 1)))
+  (is (true? (b12/even?-alt 2)))
+  (is (false? (b12/even?-alt 3)))
+  (is (true? (b12/even?-alt 4))))
 
 (comment "1.2.5 Greatest Common Divisors ---------------------------------------------------------")
 
@@ -71,7 +71,7 @@
   (is (= 12 (b12/gcd 36 48)))
   (is (= 5 (b12/gcd 5 0)))
   (is (= 5 (b12/gcd 0 5)))
-  (is (= 0 (b12/gcd 0 0)))
+  (is (zero? (b12/gcd 0 0)))
   (is (= 21 (b12/gcd 21 21)))
   (is (= 1 (b12/gcd 17 19))))
 
@@ -85,15 +85,15 @@
   (is (= 7 (b12/smallest-divisor 1001))))
 
 (deftest prime?-test
-  (is (= true (b12/prime? 7)))
-  (is (= false (b12/prime? 21))))
+  (is (true? (b12/prime? 7)))
+  (is (false? (b12/prime? 21))))
 
 (deftest expmod-test
   (is (= 1 (b12/expmod 3 0 5)))
   (is (= 1 (b12/expmod 3 4 2)))
   (is (= 81 (b12/expmod 3 4 100)))
   (is (= 16 (b12/expmod 2 4 20)))
-  (is (= 0 (b12/expmod 2 3 4)))
+  (is (zero? (b12/expmod 2 3 4)))
   (is (= 7 (b12/expmod 5 2 9))))
 
 (deftest fermat-test-test

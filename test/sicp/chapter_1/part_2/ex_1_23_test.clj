@@ -27,15 +27,15 @@
 
 (deftest prime?-test
   ; Prime
-  (is (= true (prime? 1)))
-  (is (= true (prime? 2)))
-  (is (= true (prime? 3)))
-  (is (= true (prime? 5)))
-  (is (= true (prime? 7)))
-  (is (= true (prime? 11)))
-  (is (= true (prime? 23)))
+  (is (true? (prime? 1)))
+  (is (true? (prime? 2)))
+  (is (true? (prime? 3)))
+  (is (true? (prime? 5)))
+  (is (true? (prime? 7)))
+  (is (true? (prime? 11)))
+  (is (true? (prime? 23)))
   ; Not prime
-  (is (= false (prime? 4)))
-  (is (= false (prime? 6)))
-  (is (= false (prime? 8)))
-  (is (= false (prime? 20))))
+  (is (false? (prime? 4)))
+  (is (false? (prime? 6)))
+  (is (false? (prime? 8)))
+  (is (false? (prime? 20))))

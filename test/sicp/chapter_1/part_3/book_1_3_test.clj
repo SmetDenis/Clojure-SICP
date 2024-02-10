@@ -7,7 +7,7 @@
 (comment "1.3.1 Procedures as Arguments ----------------------------------------------------------")
 
 (deftest sum-integers-test
-  (is (= 0 (b13/sum-integers 0 0)))
+  (is (zero? (b13/sum-integers 0 0)))
   (is (= 1 (b13/sum-integers 1 1)))
   (is (= 3 (b13/sum-integers 1 2)))
   (is (= 6 (b13/sum-integers 1 3)))
@@ -15,7 +15,7 @@
   (is (= 15 (b13/sum-integers 1 5))))
 
 (deftest sum-cubes-test
-  (is (= 0 (b13/sum-cubes 0 0)))
+  (is (zero? (b13/sum-cubes 0 0)))
   (is (= 1 (b13/sum-cubes 1 1)))
   (is (= 9 (b13/sum-cubes 1 2)))
   (is (= 36 (b13/sum-cubes 1 3)))
@@ -69,8 +69,8 @@
 (comment "1.3.3 Procedures as General Methods ----------------------------------------------------")
 
 (deftest search-test
-  (is (= 0 (b13/search m/cube -1 1)))
-  (is (= 0 (b13/search m/cube -9 9)))
+  (is (zero? (b13/search m/cube -1 1)))
+  (is (zero? (b13/search m/cube -9 9)))
   (is (= 1/16384 (b13/search m/cube -1 9))))
 
 (deftest half-interval-method-test

@@ -19,28 +19,28 @@
 
 (deftest abs-1-test
   (is (= 1 (b11/abs-1 1)))
-  (is (= 0 (b11/abs-1 0)))
+  (is (zero? (b11/abs-1 0)))
   (is (= 1 (b11/abs-1 -1))))
 
 (deftest abs-2-test
   (is (= 1 (b11/abs-2 1)))
-  (is (= 0 (b11/abs-2 0)))
+  (is (zero? (b11/abs-2 0)))
   (is (= 1 (b11/abs-2 -1))))
 
 (deftest abs-3-test
   (is (= 1 (b11/abs-3 1)))
-  (is (= 0 (b11/abs-3 0)))
+  (is (zero? (b11/abs-3 0)))
   (is (= 1 (b11/abs-3 -1))))
 
 (deftest >=-1-test
-  (is (= false (b11/>=-1 1 2)))
-  (is (= true (b11/>=-1 1 1)))
-  (is (= true (b11/>=-1 2 1))))
+  (is (false? (b11/>=-1 1 2)))
+  (is (true? (b11/>=-1 1 1)))
+  (is (true? (b11/>=-1 2 1))))
 
 (deftest >=-2-test
-  (is (= false (b11/>=-2 1 2)))
-  (is (= true (b11/>=-2 1 1)))
-  (is (= true (b11/>=-2 2 1))))
+  (is (false? (b11/>=-2 1 2)))
+  (is (true? (b11/>=-2 1 1)))
+  (is (true? (b11/>=-2 2 1))))
 
 (comment "1.1.7 Example: Square Roots by Newton’s Method -----------------------------------------")
 
