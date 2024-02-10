@@ -56,15 +56,15 @@ jobs:
           restore-keys: ${{ runner.os }}-lein-
 
       - name: 🧪 Generate coverage report
-        run: lein cloverage --codecov
+        run: lein cloverage --lcov
 
-      - name: Coveralls
+      - name: 🧪 Coveralls
         uses: coverallsapp/github-action@master
         with:
+          path-to-lcov: ./target/coverage/lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./target/coverage/codecov.json
-          flag-name: run-${{ github.run_number }}
-          parallel: false
+        if: success()
+        continue-on-error: true
 
 
   linters:
