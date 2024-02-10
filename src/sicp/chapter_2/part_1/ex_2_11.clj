@@ -51,8 +51,8 @@
 
 (defn interval-case
   [low high]
-  (cond (and (< low 0) (< high 0)) -1
-        (and (< low 0) (> high 0)) 0
+  (cond (and (neg? low) (neg? high)) -1
+        (and (neg? low) (pos? high)) 0
         :else 1))
 
 (defn mul-interval
@@ -68,21 +68,21 @@
                        ; - - - -
                        (= i2-case -1) (m/make-interval (* i1-hi i2-hi) (* i1-lo i2-lo))
                        ; - - - +
-                       (= i2-case 0) (m/make-interval (* i1-lo i2-hi) (* i1-lo i2-lo))
+                       (zero? i2-case) (m/make-interval (* i1-lo i2-hi) (* i1-lo i2-lo))
                        ; - - + +
                        :else (m/make-interval (* i1-lo i2-hi) (* i1-hi i2-lo)))
-      (= i1-case 0) (cond
-                      ; - + - -
-                      (= i2-case -1) (m/make-interval (* i1-hi i2-lo) (* i1-lo i2-lo))
-                      ; - + - +
-                      (= i2-case 0) (m/make-interval (min (* i1-lo i2-hi) (* i1-hi i2-lo))
-                                                     (max (* i1-lo i2-lo) (* i1-hi i2-hi)))
-                      ; - + + +
-                      :else (m/make-interval (* i1-lo i2-hi) (* i1-hi i2-hi)))
+      (zero? i1-case) (cond
+                        ; - + - -
+                        (= i2-case -1) (m/make-interval (* i1-hi i2-lo) (* i1-lo i2-lo))
+                        ; - + - +
+                        (zero? i2-case) (m/make-interval (min (* i1-lo i2-hi) (* i1-hi i2-lo))
+                                                         (max (* i1-lo i2-lo) (* i1-hi i2-hi)))
+                        ; - + + +
+                        :else (m/make-interval (* i1-lo i2-hi) (* i1-hi i2-hi)))
       :else (cond
               ; + + - -
               (= i2-case -1) (m/make-interval (* i1-hi i2-lo) (* i1-lo i2-hi))
               ; + + - +
-              (= i2-case 0) (m/make-interval (* i1-hi i2-lo) (* i1-hi i2-hi))
+              (zero? i2-case) (m/make-interval (* i1-hi i2-lo) (* i1-hi i2-hi))
               ; + + + +
               :else (m/make-interval (* i1-lo i2-lo) (* i1-hi i2-hi))))))

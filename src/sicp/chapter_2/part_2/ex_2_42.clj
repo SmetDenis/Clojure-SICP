@@ -99,12 +99,12 @@
   [board-size]
   (letfn [(queen-cols
             [k]
-            (if (= 0 k)
+            (if (zero? k)
               (list nil)                                    ; It's `empty-board`
               (filter (fn [positions] (safe? k positions))
                       (mapcat (fn [rest-of-queens]
                                 (map (fn [new-row]
                                        (adjoin-position new-row k rest-of-queens))
                                      (b22/enumerate-interval 1 board-size)))
-                              (queen-cols (- k 1))))))]
+                              (queen-cols (dec k))))))]
     (queen-cols board-size)))

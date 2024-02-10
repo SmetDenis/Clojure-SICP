@@ -94,7 +94,7 @@
   [x y]
   (let [dispatch (fn [m]
                    (cond
-                     (= m 0) x
+                     (zero? m) x
                      (= m 1) y
                      :else (throw (Exception. "Argument not 0 or 1: CONS"))))]
     dispatch))

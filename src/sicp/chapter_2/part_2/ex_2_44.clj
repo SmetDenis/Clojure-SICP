@@ -10,7 +10,7 @@
 (defn up-split
   [painter n]
   ; Just a potential solution...
-  (if (= n 0)
+  (if (zero? n)
     painter
     (let [down (up-split painter (dec n))
           up   (up-split painter (dec n))]

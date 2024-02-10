@@ -45,13 +45,13 @@
 
 (defn partial-tree
   [elts n]
-  (if (= n 0)
+  (if (zero? n)
     (list '() elts)
-    (let [left-size      (quot (- n 1) 2)
+    (let [left-size      (quot (dec n) 2)
           left-result    (partial-tree elts left-size)
           left-tree      (first left-result)
           non-left-elts  (second left-result)
-          right-size     (- n (+ left-size 1))
+          right-size     (- n (inc left-size))
           this-entry     (first non-left-elts)
           right-result   (partial-tree (rest non-left-elts) right-size)
           right-tree     (first right-result)
