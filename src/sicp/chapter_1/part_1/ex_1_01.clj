@@ -6,12 +6,12 @@
 ; Assume that the sequence is to be evaluated in the order in which it is presented.
 
 (+ 5 3 4)                                                   ; 12
-(dec 9)                                                     ; 8
+(- 9 1)                                                     ; 8
 (/ 6 2)                                                     ; 3
 (+ (* 2 4) (- 4 6))                                         ; 6
 
 (def a 3)                                                   ; #'sicp.chapter-1.ex-1-1/a
-(def b (inc a))                                             ; #'sicp.chapter-1.ex-1-1/b
+(def b (+ a 1))                                             ; #'sicp.chapter-1.ex-1-1/b
 (+ a b (* a b))                                             ; 19
 (= a b)                                                     ; false
 
@@ -26,4 +26,4 @@
 (* (cond (> a b) a
          (< a b) b
          :else -1)
-   (inc a))                                                 ; 16
+   (+ a 1))                                                 ; 16

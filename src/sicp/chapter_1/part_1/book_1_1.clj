@@ -7,11 +7,16 @@
 (* 5 99)                                                    ; 495
 (/ 10 5)                                                    ; 2
 (+ 2.7 10)                                                  ; 12.7
+
 (+ 21 35 12 7)                                              ; 75
 (* 25 4 12)                                                 ; 1200
 (+ (* 3 5) (- 10 6))                                        ; 19
-(+ (* 3 (+ (* 2 4) 3 5)) (- 10 7) 6)                        ; 57
-(+ (* 3 (+ (* 2 4) 3 5)) (- 10 7) 6)                        ; 57
+(+ (* 3 (+ (* 2 4) (+ 3 5))) (+ (- 10 7) 6))                ; 57
+(+ (* 3
+      (+ (* 2 4)
+         (+ 3 5)))
+   (+ (- 10 7)
+      6))                                                   ; 57
 
 (comment "1.1.2 Naming and the Environment -------------------------------------------------------")
 
@@ -20,7 +25,7 @@
 
 (def pi 3.14159)
 (def radius 10)
-(* pi radius radius)                                        ; 314.159
+(* pi (* radius radius))                                    ; 314.159
 (def circumference (* 2 pi radius))                         ; 62.8318
 
 (comment "1.1.3 Evaluating Combinations ----------------------------------------------------------")
@@ -45,23 +50,23 @@
 
 (defn f
   [a]
-  (sum-of-squares (inc a) (* a 2)))
+  (sum-of-squares (+ a 1) (* a 2)))
 
 (f 5)                                                       ; 136
 
 (comment "1.1.5 The Substitution Model for Procedure Application ---------------------------------")
 
 (f 5)                                                       ; 136
-(sum-of-squares (inc 5) (* 5 2))                            ; 136
+(sum-of-squares (+ 5 1) (* 5 2))                            ; 136
 (+ (square 6) (square 10))                                  ; 136
 (+ (* 6 6) (* 10 10))                                       ; 136
 (+ 36 100)                                                  ; 136
 
-(sum-of-squares (inc 5) (* 5 2))                            ; 136
-(+ (square (inc 5))
+(sum-of-squares (+ 5 1) (* 5 2))                            ; 136
+(+ (square (+ 5 1))
    (square (* 5 2)))                                        ; 136
-(+ (* (inc 5) (inc 5))
-   (* (* 5 2) 5 2))                                         ; 136
+(+ (* (+ 5 1) (+ 5 1))
+   (* (* 5 2) (* 5 2)))                                     ; 136
 
 (comment "1.1.6 Conditional Expressions and Predicates -------------------------------------------")
 
@@ -75,18 +80,18 @@
 ; Renamed `abs` => `abs-x` due to Clojure conflit names
 (defn abs-1
   [x]
-  (cond (pos? x) x
-        (zero? x) 0
-        (neg? x) (- x)))
+  (cond (> x 0) x
+        (= x 0) 0
+        (< x 0) (- x)))
 
 (defn abs-2
   [x]
-  (cond (neg? x) (- x)
+  (cond (< x 0) (- x)
         :else x))
 
 (defn abs-3
   [x]
-  (if (neg? x)
+  (if (< x 0)
     (- x)
     x))
 
