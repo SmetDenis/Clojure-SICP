@@ -29,6 +29,43 @@ jobs:
       - name: 🧪 Unit tests
         run: lein test
 
+  tests-coverage:
+    name: Test Coverge
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '8'
+
+      - name: Install Clojure tools
+        uses: DeLaGuardo/setup-clojure@12.4
+        with:
+          cli: 'latest'
+          lein: 'latest'
+
+      - name: Cache Leiningen dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-lein-${{ hashFiles('**/project.clj') }}
+          restore-keys: ${{ runner.os }}-lein-
+
+      - name: 🧪 Generate coverage report
+        run: lein cloverage --codecov
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./target/coverage/codecov.json
+          flag-name: run-${{ github.run_number }}
+          parallel: false
+
 
   linters:
     name: Linters
