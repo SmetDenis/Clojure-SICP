@@ -1,4 +1,4 @@
-{:tasks {test           (shell "lein test")
+{:tasks {test           (shell "clojure -X:test")
          ; Check style
          style:cljfmt   (shell "cljfmt check")
          style:cljstyle (shell "cljstyle check")
@@ -14,7 +14,7 @@
          fix            (do (run 'fix:cljfmt)
                             (run 'fix:cljstyle))
          ; Linters
-         lint:eastwood  (shell "lein eastwood")
+         lint:eastwood  (shell "clojure -M:test:eastwood")
          lint:kondo     (shell "clj-kondo --lint test src")
          ; Local development
          pre-push       (do (run 'fix)
