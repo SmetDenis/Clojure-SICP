@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-4.book-2-4-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-4.book-2-4 :as b24]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-4.book-2-4 :as b24]))
 
 (def angle-60 (/ Math/PI 3))
 (def radius 2.0)
