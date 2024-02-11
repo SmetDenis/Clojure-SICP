@@ -30,7 +30,7 @@ jobs:
         run: lein test
 
   tests-coverage:
-    name: Test Coverge
+    name: Tests - Coverge
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
