@@ -6,10 +6,9 @@
 (comment "Chapter #1 The Elements of Programming -------------------------------------------------")
 
 (deftest error-test
-  (try
-    (m/error "123")
-    (catch Exception e
-      (is (= (.getMessage e) "123")))))
+  (is (= true (m/is-exception? (m/error "123"))))
+  (is (= true (m/is-exception? (m/error "123") "123")))
+  (is (= true (m/is-exception? (m/error "123") "123"))))
 
 (deftest square-test
   (is (= 4 (m/square 2)))

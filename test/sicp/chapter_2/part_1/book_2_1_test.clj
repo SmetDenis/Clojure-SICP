@@ -1,7 +1,8 @@
 (ns sicp.chapter-2.part-1.book-2-1-test
   (:require
     [clojure.test :refer [deftest is]]
-    [sicp.chapter-2.part-1.book-2-1 :as b21]))
+    [sicp.chapter-2.part-1.book-2-1 :as b21]
+    [sicp.misc :as m]))
 
 (comment "2 Building Abstractions with Data ------------------------------------------------------")
 
@@ -75,4 +76,5 @@
 
 (deftest pair-alt-test
   (is (= 1 (b21/car-alt (b21/pair-alt 1 2))))
-  (is (= 2 (b21/cdr-alt (b21/pair-alt 1 2)))))
+  (is (= 2 (b21/cdr-alt (b21/pair-alt 1 2))))
+  (is (= true (m/is-exception? ((b21/pair-alt 1 2) 2) "Argument not 0 or 1: CONS"))))

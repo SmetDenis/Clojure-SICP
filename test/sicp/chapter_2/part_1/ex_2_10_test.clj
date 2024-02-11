@@ -5,12 +5,5 @@
     [sicp.misc :as m]))
 
 (deftest div-interval-test
-  (is (= [-1.5 -0.5]
-         (div-interval (m/make-interval 10 15) (m/make-interval -10 -20)))))
-
-(deftest exception-with-message-test
-  (try
-    (div-interval (m/make-interval 1 2) (m/make-interval -1 2))
-    (is false "Exception not thrown")
-    (catch Exception e
-      (is (= (.getMessage e) "interval-2 is spanning zero")))))
+  (is (= [-1.5 -0.5] (div-interval (m/make-interval 10 15) (m/make-interval -10 -20))))
+  (is (= true (m/is-exception? (div-interval (m/make-interval 1 2) (m/make-interval -1 2)) "Interval-2 is spanning zero"))))

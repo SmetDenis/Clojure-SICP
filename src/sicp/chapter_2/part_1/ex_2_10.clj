@@ -12,7 +12,7 @@
   (if (< (* (m/lower-bound interval-2)
             (m/upper-bound interval-2))
          0)
-    (m/error "interval-2 is spanning zero")
+    (m/error "Interval-2 is spanning zero")
     (m/mul-interval
       interval-1
       (m/make-interval (/ 1.0 (m/lower-bound interval-2))

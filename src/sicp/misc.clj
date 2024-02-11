@@ -1,4 +1,6 @@
-(ns sicp.misc)
+(ns sicp.misc
+  (:require
+    [clojure.test :refer [is]]))
 
 (comment "Chapter #1 The Elements of Programming -------------------------------------------------")
 
@@ -191,3 +193,16 @@
   (if (empty? list1)
     (if (empty? list2) '() list2)
     (cons (first list1) (append (rest list1) list2))))
+
+(defmacro is-exception?
+  [test-code & [expected-message]]
+  `(try
+     (do
+       ~test-code
+       (is false "Execution of the code expects any type of exception to be thrown"))
+     (catch Exception exception#
+       (cond
+         (not (nil? ~expected-message)) (is (= (.getMessage exception#) ~expected-message)
+                                            (str "Expected message: " ~expected-message ", but got: " (.getMessage exception#)))
+         ; For valid test cases, the expected exception type and message should be nil
+         :else true))))

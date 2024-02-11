@@ -175,9 +175,8 @@
 (defn my-filter
   [predicate sequence]
   (cond (m/list-empty? sequence) nil
-        (predicate (m/car sequence))
-        (cons (m/car sequence)
-              (my-filter predicate (m/cdr sequence)))
+        (predicate (m/car sequence)) (cons (m/car sequence)
+                                           (my-filter predicate (m/cdr sequence)))
         :else (my-filter predicate (m/cdr sequence))))
 
 (defn accumulate

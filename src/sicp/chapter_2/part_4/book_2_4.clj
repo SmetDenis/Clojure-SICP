@@ -4,81 +4,81 @@
 
 (comment "2.4.1 Representations for Complex Numbers ----------------------------------------------")
 
-; Ben's way
-(defn real-part-Ben
+; Ben's way ----------------------------------------------------------------------------------------
+(defn Ben-real-part
   [z]
-  (first z))
+  (float (first z)))
 
-(defn imag-part-Ben
+(defn Ben-imag-part
   [z]
-  (second z))
+  (float (second z)))
 
-(defn magnitude-Ben
+(defn Ben-magnitude
   [z]
-  (Math/sqrt (+ (Math/pow (real-part-Ben z) 2)
-                (Math/pow (imag-part-Ben z) 2))))
+  (Math/sqrt (+ (Math/pow (Ben-real-part z) 2)
+                (Math/pow (Ben-imag-part z) 2))))
 
-(defn angle-v1
+(defn Ben-angle
   [z]
-  (Math/atan2 (imag-part-Ben z) (real-part-Ben z)))
+  (Math/atan2 (Ben-imag-part z) (Ben-real-part z)))
 
-(defn make-from-real-imag-Ben
-  ([x y] [x y])
-  ([z] [(real-part-Ben z) (imag-part-Ben z)]))
+(defn Ben-make-from-real-imag
+  ([x y] [(float x) (float y)])
+  ([z] [(Ben-real-part z) (Ben-imag-part z)]))
 
-(defn make-from-mag-ang-Ben
+(defn Ben-make-from-mag-ang
   ([r a] [(* r (Math/cos a)) (* r (Math/sin a))])
-  ([z] [(magnitude-Ben z) (angle-v1 z)]))
+  ([z] [(Ben-magnitude z) (Ben-angle z)]))
 
-(defn add-complex-Ben
+(defn Ben-add-complex
   [z1 z2]
-  (make-from-real-imag-Ben
-    (+ (real-part-Ben z1) (real-part-Ben z2))
-    (+ (imag-part-Ben z1) (imag-part-Ben z2))))
+  (Ben-make-from-real-imag
+    (+ (Ben-real-part z1) (Ben-real-part z2))
+    (+ (Ben-imag-part z1) (Ben-imag-part z2))))
 
-(defn sub-complex-Ben
+(defn Ben-sub-complex
   [z1 z2]
-  (make-from-real-imag-Ben
-    (- (real-part-Ben z1) (real-part-Ben z2))
-    (- (imag-part-Ben z1) (imag-part-Ben z2))))
+  (Ben-make-from-real-imag
+    (- (Ben-real-part z1) (Ben-real-part z2))
+    (- (Ben-imag-part z1) (Ben-imag-part z2))))
 
-(defn mul-complex-Ben
+(defn Ben-mul-complex
   [z1 z2]
-  (make-from-mag-ang-Ben
-    (* (magnitude-Ben z1) (magnitude-Ben z2))
-    (+ (angle-v1 z1) (angle-v1 z2))))
+  (Ben-make-from-mag-ang
+    (* (Ben-magnitude z1) (Ben-magnitude z2))
+    (+ (Ben-angle z1) (Ben-angle z2))))
 
-(defn div-complex-Ben
+(defn Ben-div-complex
   [z1 z2]
-  (make-from-mag-ang-Ben
-    (/ (magnitude-Ben z1) (magnitude-Ben z2))
-    (- (angle-v1 z1) (angle-v1 z2))))
+  (Ben-make-from-mag-ang
+    (/ (Ben-magnitude z1) (Ben-magnitude z2))
+    (- (Ben-angle z1) (Ben-angle z2))))
 
-; Alyssa's way
-(defn magnitude-Alyssa
+; Alyssa's way -------------------------------------------------------------------------------------
+(defn Alyssa-magnitude
   [z]
   (first z))
 
-(defn angle-Alyssa
+(defn Alyssa-angle
   [z]
   (second z))
 
-(defn real-part-Alyssa
+(defn Alyssa-real-part
   [z]
-  (* (magnitude-Alyssa z) (Math/cos (angle-Alyssa z))))
+  (* (Alyssa-magnitude z) (Math/cos (Alyssa-angle z))))
 
-(defn imag-part-Alyssa
+(defn Alyssa-imag-part
   [z]
-  (* (magnitude-Alyssa z) (Math/sin (angle-Alyssa z))))
+  (* (Alyssa-magnitude z) (Math/sin (Alyssa-angle z))))
 
-(defn make-from-real-imag-Alyssa
+(defn Alyssa-make-from-real-imag
   [x y]
   [(Math/sqrt (+ (Math/pow x 2) (Math/pow y 2)))
    (Math/atan2 y x)])
 
-(defn make-from-mag-ang-Alyssa
+(defn Alyssa-make-from-mag-ang
   [r a]
-  [r a])
+  [(float r) (float a)])
 
 (comment "2.4.2")
 
