@@ -14,7 +14,7 @@
                             (run 'fix:cljstyle))
          ; Linters
          lint:eastwood  (shell "clojure -M:test:eastwood")
-         lint:kondo     (shell "clj-kondo --parallel --lint test src")
+         lint:kondo     (shell "clj-kondo --parallel --fail-level warning --lint test src")
          ; Local development
          pre-push       (do (run 'fix)
                             (run 'lint)
