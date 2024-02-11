@@ -10,9 +10,7 @@
   (is (= b23/huffman-B (encode-symbol :B b23/huffman-tree)))
   (is (= b23/huffman-C (encode-symbol :C b23/huffman-tree)))
   (is (= b23/huffman-D (encode-symbol :D b23/huffman-tree)))
-  (is (m/is-exception?
-        (encode-symbol :Z b23/huffman-tree)
-        "Symbol not found in tree :Z")))
+  (is (= true (m/is-exception? (encode-symbol :Z b23/huffman-tree) "Symbol not found in tree :Z"))))
 
 (deftest encode-test
   (is (= '(0                                                ; A

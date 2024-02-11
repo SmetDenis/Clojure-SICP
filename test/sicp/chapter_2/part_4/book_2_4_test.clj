@@ -129,6 +129,4 @@
   (is (= y ((b24/make-from-real-imag x y) :imag-part)))
   (is (= radius ((b24/make-from-real-imag x y) :magnitude)))
   (is (= angle-60 ((b24/make-from-real-imag x y) :angle)))
-  (is (m/is-exception?
-        ((b24/make-from-real-imag x y) :undefined)
-        "Unknown op: MAKE-FROM-REAL-IMAG :undefined")))
+  (is (= true (m/is-exception? ((b24/make-from-real-imag x y) :undefined) "Unknown op: MAKE-FROM-REAL-IMAG :undefined"))))
