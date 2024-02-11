@@ -39,4 +39,3 @@
 
 (deftest apply-generic-test
   (is (= true (m/is-exception? ((b25/apply-generic :undefined 1 2)) "No method for: :undefined"))))
-

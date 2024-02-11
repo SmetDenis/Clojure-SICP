@@ -203,6 +203,6 @@
      (catch Exception exception#
        (cond
          (not (nil? ~expected-message)) (is (= (.getMessage exception#) ~expected-message)
-                                          (str "Expected message: " ~expected-message ", but got: " (.getMessage exception#)))
+                                            (str "Expected message: " ~expected-message ", but got: " (.getMessage exception#)))
          ; For valid test cases, the expected exception type and message should be nil
          :else true))))
