@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-4.ex-2-73
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]))
 
 ; Exercise 2.73
 ;
@@ -58,7 +59,18 @@
 ; ((get (operator exp) 'deriv)
 ;   (operands exp) var)
 
-(defn deriv [exp var]
+(def derivations (atom {}))
+
+(defn put-op
+  [op method deriv-fn]
+  (swap! derivations assoc-in [op method] deriv-fn))
+
+(defn get-op
+  [op method]
+  (get-in @derivations [op method]))
+
+(defn deriv
+  [exp var]
   (cond
     (number? exp) 0
     (b23/variable? exp) (if (b23/same-variable? exp var) 1 0)
@@ -72,14 +84,20 @@
     ; ⟨more rules can be added here⟩
     :else (throw (Exception. (str "unknown expression type: DERIV " exp)))))
 
-(defn operator [exp] (first exp))
-(defn operands [exp] (rest exp))
+(defn operator
+  [exp]
+  (first exp))
 
-(defn deriv-v2 [exp var]
+(defn operands
+  [exp]
+  (rest exp))
+
+(defn deriv-v2
+  [exp var]
   (cond
     (number? exp) 0
     (b23/variable? exp) (if (b23/same-variable? exp var) 1 0)
-    :else ((get :deriv (operator exp))
+    :else ((get-op :deriv (operator exp))
            (operands exp)
            var)))
 
@@ -88,29 +106,31 @@
 ; Sorry, I'm lazy and took examples of code here and rewrite it to Clojure
 ; https://github.com/ivanjovanovic/sicp/blob/master/2.4/e-2.73.scm
 
-(defn put [param1 param2 deriver]                           ;  Just for linter
-  (println param1 param2 deriver))
-
 (defn make-sum
   ([a b] (list '+ a b))
   ([a b c] (list '+ a b c)))
 
-(defn make-product [m1 m2]
+(defn make-product
+  [m1 m2]
   (list '* m1 m2))
 
-(defn install-sum-derivation []
+(defn install-sum-derivation
+  []
   (letfn [(addend [operands] (first operands))
           (augend [operands] (second operands))
-          (derive-sum [operands var]
+          (derive-sum
+            [operands var]
             (make-sum (deriv (addend operands) var)
                       (deriv (augend operands) var)))]
     ; and methods for putting the thing in the table
-    (put '+ 'deriv derive-sum)))
+    (put-op '+ :deriv derive-sum)))
 
-(defn install-product-derivation []
+(defn install-product-derivation
+  []
   (letfn [(multiplier [operands] (first operands))
           (multiplicand [operands] (second operands))
-          (derive-product [operands var]
+          (derive-product
+            [operands var]
             (make-sum
               (make-product (multiplier operands)
                             (deriv (multiplicand operands) var))
@@ -118,15 +138,17 @@
                             (multiplicand operands))
               var))]
     ; put that into table
-    (put '* 'deriv derive-product)))
+    (put-op '* :deriv derive-product)))
 
-(defn install-exponent-derivation []
+(defn install-exponent-derivation
+  []
   (letfn [(power [operands] (second operands))
           (base [operands] (first operands))
           (make-exponent [b p] (list '** b p))
-          (derive-exponent [operands var]
+          (derive-exponent
+            [operands var]
             (make-product
               (make-product (power operands)
                             (make-exponent (base operands) (dec (power operands))))
               (deriv (base operands) var)))]
-    (put '** 'deriv derive-exponent)))
+    (put-op '** :deriv derive-exponent)))

@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-23
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.23
 ;
@@ -20,7 +21,8 @@
 ; The value returned by the call to for-each (not illustrated above) can
 ; be something arbitrary, such as true. Give an implementation of for-each.
 
-(defn for-each [proc items]
+(defn for-each
+  [proc items]
   (if (m/list-empty? items)
     true
     (do

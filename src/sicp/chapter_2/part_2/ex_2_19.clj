@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-19
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.19
 ; Consider the change-counting program of 1.2.2.
@@ -27,7 +28,7 @@
 ; To do this will require changing the program cc somewhat.
 ; It will still have the same form, but it will access its second argument differently, as follows:
 ;
-;(define (cc amount coin-values)
+; (define (cc amount coin-values)
 ;  (cond ((= amount 0)
 ;         1)
 ;        ((or (< amount 0)
@@ -47,16 +48,20 @@
 ; in terms of primitive operations on list structures.
 ; Does the order of the list coin-values affect the answer produced by cc? Why or why not?
 
-(defn no-more? [coin-values]
+(defn no-more?
+  [coin-values]
   (m/list-empty? coin-values))
 
-(defn except-first-denomination [coin-values]
+(defn except-first-denomination
+  [coin-values]
   (m/cdr coin-values))
 
-(defn first-denomination [coin-values]
+(defn first-denomination
+  [coin-values]
   (m/car coin-values))
 
-(defn cc [amount coin-values]
+(defn cc
+  [amount coin-values]
   (cond (= amount 0) 1
         (or (< amount 0)
             (no-more? coin-values)) 0

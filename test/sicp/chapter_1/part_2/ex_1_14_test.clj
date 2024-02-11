@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-2.ex-1-14-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-2.ex-1-14 :refer [money-change]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-2.ex-1-14 :refer [money-change]]))
 
 (deftest count-change-test
   (is (= 1 (money-change 1)))

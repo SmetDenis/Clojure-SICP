@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-27-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-27 :refer [deep-reverse]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-27 :refer [deep-reverse]]))
 
 (deftest deep-reverse-test
   (is (= '((4 3) (2 1)) (deep-reverse '((1 2) (3 4)))))

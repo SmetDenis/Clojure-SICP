@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-1.ex-2-13
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.13
 ; Show that under the assumption of small percentage tolerances there is a simple formula for
@@ -34,11 +35,13 @@
 ; Lem complains that Alyssa’s program gives different answers for the two ways of computing.
 ; This is a serious complaint.
 
-(defn par1 [r1 r2]
+(defn par1
+  [r1 r2]
   (m/div-interval (m/mul-interval r1 r2)
                   (m/add-interval r1 r2)))
 
-(defn par2 [r1 r2]
+(defn par2
+  [r1 r2]
   (let [one (m/make-interval 1 1)]
     (m/div-interval one (m/add-interval
                           (m/div-interval one r1)

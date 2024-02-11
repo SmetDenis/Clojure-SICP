@@ -1,9 +1,12 @@
 (ns sicp.chapter-2.part-3.ex-2-63-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.book-2-3 :as b23]
-            [sicp.chapter-2.part-3.ex-2-63 :refer [tree->list-1 tree->list-2]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.book-2-3 :as b23]
+    [sicp.chapter-2.part-3.ex-2-63 :refer [tree->list-1 tree->list-2]]))
 
-(defn tree-empty [x] (b23/make-tree x '() '()))
+(defn tree-empty
+  [x]
+  (b23/make-tree x '() '()))
 
 ; (7 (3 (1 () ()) (5 () ())) (9 () (11)))
 (def tree1

@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-2.ex-1-23-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-2.ex-1-23 :refer [find-divisor next-odd prime? smallest-divisor]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-2.ex-1-23 :refer [find-divisor next-odd prime? smallest-divisor]]))
 
 (deftest next-odd-test
   (is (= 3 (next-odd 1)))

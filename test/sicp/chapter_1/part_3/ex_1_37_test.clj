@@ -1,7 +1,8 @@
 (ns sicp.chapter-1.part-3.ex-1-37-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-37 :refer [cont-frac cont-frac-iter]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-37 :refer [cont-frac cont-frac-iter]]
+    [sicp.misc :as m]))
 
 ; See https://en.wikipedia.org/wiki/Golden_ratio
 (def invert-psi (/ 1 1.618033988749894))                    ; 0.6180339887498948
@@ -9,7 +10,8 @@
 
 ; 1. Recursive process -----------------------------------------------------------------------------
 ; Moving from 1 => k
-(defn frac-wrap [k precision]
+(defn frac-wrap
+  [k precision]
   (m/close-enough? invert-psi
                    (cont-frac (fn [_] 1.0) (fn [_] 1.0) k)
                    precision))
@@ -27,7 +29,8 @@
 
 ; 2. Iterative process -----------------------------------------------------------------------------
 ; Moving from k => 1. So wie have +1 iteration
-(defn frac-iter-wrap [k precision]
+(defn frac-iter-wrap
+  [k precision]
   (m/close-enough? invert-psi
                    (cont-frac-iter (fn [_] 1.0) (fn [_] 1.0) k)
                    precision))

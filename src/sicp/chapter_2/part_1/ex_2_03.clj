@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-1.ex-2-03
-  (:require [sicp.chapter-2.part-1.ex-2-02 :as ex-2-02]
-            [sicp.misc :as m]))
+  (:require
+    [sicp.chapter-2.part-1.ex-2-02 :as ex-2-02]
+    [sicp.misc :as m]))
 
 ; Exercise 2.3
 ; Implement a representation for rectangles in a plane.
@@ -12,7 +13,8 @@
 ; Can you design your system with suitable abstraction barriers,
 ; so that the same perimeter and area procedures will work using either representation?
 
-(defn length-segment [segment]
+(defn length-segment
+  [segment]
   (Math/sqrt (+ (Math/pow (- (ex-2-02/x-point (ex-2-02/start-segment segment))
                              (ex-2-02/x-point (ex-2-02/end-segment segment)))
                           2)
@@ -20,19 +22,24 @@
                              (ex-2-02/y-point (ex-2-02/end-segment segment)))
                           2))))
 
-(defn make-rectangle [segment-width segment-height]
+(defn make-rectangle
+  [segment-width segment-height]
   (m/pair segment-width segment-height))
 
-(defn side-width-rectangle [rectangle]
+(defn side-width-rectangle
+  [rectangle]
   (m/car rectangle))
 
-(defn side-height-rectangle [rectangle]
+(defn side-height-rectangle
+  [rectangle]
   (m/cdr rectangle))
 
-(defn area-rectangle [rectangle]
+(defn area-rectangle
+  [rectangle]
   (* (length-segment (side-width-rectangle rectangle))
      (length-segment (side-height-rectangle rectangle))))
 
-(defn perimeter-rectangle [rectangle]
+(defn perimeter-rectangle
+  [rectangle]
   (* 2 (+ (length-segment (side-width-rectangle rectangle))
           (length-segment (side-height-rectangle rectangle)))))

@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-49-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-49 :refer [outline-painter x-painter diamond-painter]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-49 :refer [diamond-painter outline-painter x-painter]]))
 
 ; I don't know to test it properly...
 

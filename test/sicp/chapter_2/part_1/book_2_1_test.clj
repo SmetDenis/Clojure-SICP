@@ -1,15 +1,15 @@
 (ns sicp.chapter-2.part-1.book-2-1-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-1.book-2-1 :as b21]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-1.book-2-1 :as b21]
+    [sicp.misc :as m]))
 
-(comment "2")
-; Building Abstractions with Data ------------------------------------------------------------------
+(comment "2 Building Abstractions with Data ------------------------------------------------------")
 
 (deftest linear-combination-test
   (is (= 11 (b21/linear-combination 1 2 3 4))))
 
-(comment "2.1.1")
-; Example: Arithmetic Operations for Rational Numbers ----------------------------------------------
+(comment "2.1.1 Example: Arithmetic Operations for Rational Numbers ------------------------------")
 
 (def one-half (b21/make-rat 1 2))
 (def one-third (b21/make-rat 1 3))
@@ -51,8 +51,7 @@
   (is (= "1/2" (b21/print-rat one-half)))
   (is (= "1/3" (b21/print-rat one-third))))
 
-(comment "2.1.2")
-; Abstraction Barriers -----------------------------------------------------------------------------
+(comment "2.1.2 Abstraction Barriers -------------------------------------------------------------")
 
 (def one-half-alt (b21/make-rat-alt 1 2))
 (def one-third-alt (b21/make-rat-alt 1 3))
@@ -73,9 +72,9 @@
   (is (= 3 (b21/denom-alt one-third-alt)))
   (is (= 4 (b21/denom-alt no-optimal-alt))))
 
-(comment "2.1.3")
-; What Is Meant by Data? ---------------------------------------------------------------------------
+(comment "2.1.3 What Is Meant by Data? -----------------------------------------------------------")
 
 (deftest pair-alt-test
   (is (= 1 (b21/car-alt (b21/pair-alt 1 2))))
-  (is (= 2 (b21/cdr-alt (b21/pair-alt 1 2)))))
+  (is (= 2 (b21/cdr-alt (b21/pair-alt 1 2))))
+  (is (= true (m/is-exception? ((b21/pair-alt 1 2) 2) "Argument not 0 or 1: CONS"))))

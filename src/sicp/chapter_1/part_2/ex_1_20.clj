@@ -11,7 +11,8 @@
 ; How many remainder operations are actually performed in the normal-order evaluation of (gcd 206 40)?
 ; In the applicative-order evaluation?
 
-(defn gcd [a b]
+(defn gcd
+  [a b]
   (if (= b 0)
     a
     (gcd b (mod a b))))

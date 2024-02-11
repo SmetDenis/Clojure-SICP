@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-3.ex-1-35-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-35 :refer [gorlden-ration]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-35 :refer [gorlden-ration]]))
 
 (deftest gorlden-ration-test
   (is (= 1.6180327868852458 (gorlden-ration 2)))

@@ -1,5 +1,6 @@
 (ns sicp.chapter-1.part-3.ex-1-46
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 1.46
 
@@ -25,12 +26,13 @@
       guess
       ((iterative-improve enough? func-improver) (func-improver guess)))))
 
-(defn sqrt-improved [x first-guess]
+(defn sqrt-improved
+  [x first-guess]
   (let [is-enough? (fn [guess] (< (abs (- (* guess guess) x)) 0.001))
         improver   (fn [guess] (m/average guess (/ x guess)))]
     ((iterative-improve is-enough? improver) first-guess)))
 
-;(defn fixed-point-iter
+; (defn fixed-point-iter
 ;  [func-improver guess]
 ;  (letfn [(close-enough? [guess]
 ;            (< (abs (- guess (func-improver guess))) 0.001))

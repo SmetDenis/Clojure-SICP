@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-2.ex-1-16-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-2.ex-1-16 :refer [expt]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-2.ex-1-16 :refer [expt]]))
 
 (deftest expt-test
   (is (= 1 (expt 1 2)))

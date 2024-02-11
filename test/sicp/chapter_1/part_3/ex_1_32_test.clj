@@ -1,9 +1,10 @@
 (ns sicp.chapter-1.part-3.ex-1-32-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-32 :refer [accumulate
-                                                   accumulate-iter
-                                                   factorial
-                                                   factorial-iter]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-32 :refer [accumulate
+                                           accumulate-iter
+                                           factorial
+                                           factorial-iter]]))
 
 (deftest accumulate-test
   (is (= 55 (accumulate + 0 identity 1 inc 10)))

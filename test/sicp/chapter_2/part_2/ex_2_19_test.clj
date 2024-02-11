@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-19-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-19 :refer [cc]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-19 :refer [cc]]))
 
 (deftest cc-test
   (is (= 1 (cc 100 '(1))))

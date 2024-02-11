@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-3.ex-2-58
-  (:require [sicp.chapter-2.part-3.book-2-3 :as b23]))
+  (:require
+    [sicp.chapter-2.part-3.book-2-3 :as b23]))
 
 ; Exercise 2.58
 ;
@@ -19,35 +20,52 @@
 ; is done before addition. Can you design appropriate predicates, selectors, and constructors
 ; for this notation such that our derivative program still works?
 
-(defn sum? [x] (and (sequential? x) (= (second x) '+)))
-(defn addend [s] (first s))
-(defn augend [e]
+(defn sum?
+  [x]
+  (and (sequential? x) (= (second x) '+)))
+
+(defn addend
+  [s]
+  (first s))
+
+(defn augend
+  [e]
   (if (not (nil? (nth e 3 nil)))
     (drop 2 e)
     (nth e 2)))
 
-(defn make-sum [a1 a2]
+(defn make-sum
+  [a1 a2]
   (cond
     (= a1 0) a2
     (= a2 0) a1
     (and (number? a1) (number? a2)) (+ a1 a2)
     :else (list a1 '+ a2)))
 
-(defn product? [x] (and (sequential? x) (= (second x) '*)))
-(defn multiplier [p] (first p))
-(defn multiplicand [e]
+(defn product?
+  [x]
+  (and (sequential? x) (= (second x) '*)))
+
+(defn multiplier
+  [p]
+  (first p))
+
+(defn multiplicand
+  [e]
   (if (not (nil? (nth e 3 nil)))
     (drop 2 e)
     (nth e 2)))
 
-(defn make-product [m1 m2]
+(defn make-product
+  [m1 m2]
   (cond (or (b23/=number? m1 0) (b23/=number? m2 0)) 0
         (b23/=number? m1 1) m2
         (b23/=number? m2 1) m1
         (and (number? m1) (number? m2)) (* m1 m2)
         :else (list m1 '* m2)))
 
-(defn deriv [exp var]
+(defn deriv
+  [exp var]
   (cond
     (number? exp) 0
     (b23/variable? exp) (if (b23/same-variable? exp var) 1 0)

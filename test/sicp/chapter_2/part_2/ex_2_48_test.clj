@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-48-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-48 :refer [end-segment make-segment start-segment]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-48 :refer [end-segment make-segment start-segment]]))
 
 (def seg-1 (make-segment 1 2))
 (def seg-2 (make-segment 3 4))

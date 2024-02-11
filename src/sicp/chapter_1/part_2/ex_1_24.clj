@@ -12,10 +12,12 @@
 ; TODO: Improve benchmarking
 ; TODO: Improve add transparent solution
 
-(defn expmod [base exp m]
+(defn expmod
+  [base exp m]
   (mod (Math/pow base exp) m))
 
-(defn fermat-test [n]
+(defn fermat-test
+  [n]
   (let [try-it (fn [a] (= (expmod a n n) a))
         a      (rand-int (dec n))]
     (try-it (inc a))))

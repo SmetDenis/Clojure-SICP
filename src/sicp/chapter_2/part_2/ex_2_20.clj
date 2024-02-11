@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-20
-  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]
-            [sicp.misc :as m]))
+  (:require
+    [sicp.chapter-2.part-2.book-2-2 :as b22]
+    [sicp.misc :as m]))
 
 ; Exercise 2.20
 ;
@@ -37,8 +38,10 @@
 ; (same-parity 2 3 4 5 6 7)
 ; (2 4 6)
 
-(defn same-parity [base & check-list]
-  (letfn [(iter [rest result]
+(defn same-parity
+  [base & check-list]
+  (letfn [(iter
+            [rest result]
             (if (m/list-empty? rest)
               result
               (if (= (mod (m/car rest) 2) (mod base 2))

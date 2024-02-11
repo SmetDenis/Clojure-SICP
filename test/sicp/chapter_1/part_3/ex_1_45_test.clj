@@ -1,6 +1,7 @@
 (ns sicp.chapter-1.part-3.ex-1-45-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-45 :refer [damp-number nth-root nth-root-auto-damps]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-45 :refer [damp-number nth-root nth-root-auto-damps]]))
 
 (deftest nth-root-test
   (is (= 2.0000000000039666 (nth-root 256 8 3))))

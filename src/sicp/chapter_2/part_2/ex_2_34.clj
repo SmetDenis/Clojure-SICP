@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-34
-  (:require [sicp.chapter-2.part-2.book-2-2 :as b22]))
+  (:require
+    [sicp.chapter-2.part-2.book-2-2 :as b22]))
 
 ; Exercise 2.34
 ;
@@ -27,7 +28,8 @@
 ;
 ; (horner-eval 2 (list 1 3 0 5 0 1))
 
-(defn horner-eval [x coefficient-sequence]
+(defn horner-eval
+  [x coefficient-sequence]
   (b22/accumulate
     (fn [this-coeff higher-terms] (+ (* higher-terms x) this-coeff))
     0

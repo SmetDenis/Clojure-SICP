@@ -11,7 +11,8 @@
 ; What happens if we (perversely) ask the interpreter to evaluate the combination (f f)?
 ; Explain.
 
-(defn f [g]
+(defn f
+  [g]
   (g 2))
 
 ; (f f)

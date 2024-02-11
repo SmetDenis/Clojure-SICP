@@ -13,11 +13,14 @@
 ; What is the corresponding definition of cdr?
 ; (Hint: To verify that this works, make use of the substitution model of 1.1.5.)
 
-(defn pair [x y]
+(defn pair
+  [x y]
   (fn [m] (m x y)))
 
-(defn car [z]
+(defn car
+  [z]
   (z (fn [p _] p)))
 
-(defn cdr [z]
+(defn cdr
+  [z]
   (z (fn [_ q] q)))

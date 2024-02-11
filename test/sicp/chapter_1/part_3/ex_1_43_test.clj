@@ -1,7 +1,8 @@
 (ns sicp.chapter-1.part-3.ex-1-43-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-43 :refer [repeated repeated-compose]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-43 :refer [repeated repeated-compose]]
+    [sicp.misc :as m]))
 
 (deftest repeated-test
   (is (= (m/square 5)

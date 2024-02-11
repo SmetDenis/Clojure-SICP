@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-25-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.misc :refer [car cdr]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.misc :refer [car cdr]]))
 
 (deftest list-test
   (is (= 7

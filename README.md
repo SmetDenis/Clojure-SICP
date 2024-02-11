@@ -1,6 +1,7 @@
 # Solving exercises from SICP with Clojure
 
 [![Clojure CI](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/SmetDenis/Clojure-Sicp/actions/workflows/main.yml)
+[![Coverage Status](https://coveralls.io/repos/github/SmetDenis/Clojure-SICP/badge.svg?branch=main)](https://coveralls.io/github/SmetDenis/Clojure-SICP?branch=main)
 ![Progress](https://progress-bar.dev/123/?scale=356&title=Solved&width=500&suffix=)
 
 SICP (Structure and Interpretation of Computer Programs) is the book of Harold Abelson and Gerald

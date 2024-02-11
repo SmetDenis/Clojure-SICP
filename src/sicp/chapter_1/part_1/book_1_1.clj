@@ -1,7 +1,6 @@
 (ns sicp.chapter-1.part-1.book-1-1)
 
-(comment "1.1.1")
-; Expressions --------------------------------------------------------------------------------------
+(comment "1.1.1 Expressions ----------------------------------------------------------------------")
 
 (+ 137 349)                                                 ; 486
 (- 1000 334)                                                ; 666
@@ -19,8 +18,7 @@
    (+ (- 10 7)
       6))                                                   ; 57
 
-(comment "1.1.2")
-; Naming and the Environment -----------------------------------------------------------------------
+(comment "1.1.2 Naming and the Environment -------------------------------------------------------")
 
 (def size 2)
 (* 5 size)                                                  ; 10
@@ -30,33 +28,33 @@
 (* pi (* radius radius))                                    ; 314.159
 (def circumference (* 2 pi radius))                         ; 62.8318
 
-(comment "1.1.3")
-; Evaluating Combinations --------------------------------------------------------------------------
+(comment "1.1.3 Evaluating Combinations ----------------------------------------------------------")
 
 (* (+ 2 (* 4 6)) (+ 3 5 7))                                 ; 390
 
-(comment "1.1.4")
-; Compound Procedures ------------------------------------------------------------------------------
+(comment "1.1.4 Compound Procedures --------------------------------------------------------------")
 
-(defn square [x]
+(defn square
+  [x]
   (* x x))
 
 (square 21)                                                 ; 441
 (square (+ 2 5))                                            ; 49
 (square (square 3))                                         ; 81
 
-(defn sum-of-squares [x y]
+(defn sum-of-squares
+  [x y]
   (+ (square x) (square y)))
 
 (sum-of-squares 3 4)                                        ; 25
 
-(defn f [a]
+(defn f
+  [a]
   (sum-of-squares (+ a 1) (* a 2)))
 
 (f 5)                                                       ; 136
 
-(comment "1.1.5")
-; The Substitution Model for Procedure Application -------------------------------------------------
+(comment "1.1.5 The Substitution Model for Procedure Application ---------------------------------")
 
 (f 5)                                                       ; 136
 (sum-of-squares (+ 5 1) (* 5 2))                            ; 136
@@ -70,8 +68,8 @@
 (+ (* (+ 5 1) (+ 5 1))
    (* (* 5 2) (* 5 2)))                                     ; 136
 
-(comment "1.1.6")
-; Conditional Expressions and Predicates -----------------------------------------------------------
+(comment "1.1.6 Conditional Expressions and Predicates -------------------------------------------")
+
 ; Exercises:
 ; * 1.1
 ; * 1.2
@@ -86,36 +84,43 @@
         (= x 0) 0
         (< x 0) (- x)))
 
-(defn abs-2 [x]
+(defn abs-2
+  [x]
   (cond (< x 0) (- x)
         :else x))
 
-(defn abs-3 [x]
+(defn abs-3
+  [x]
   (if (< x 0)
     (- x)
     x))
 
 ; Renamed due to Clojure conflit names
-(defn >=-1 [x y]
+(defn >=-1
+  [x y]
   (or (> x y) (= x y)))
 
-(defn >=-2 [x y]
+(defn >=-2
+  [x y]
   (not (< x y)))
 
-(comment "1.1.7")
-; Example: Square Roots by Newton’s Method ---------------------------------------------------------
+(comment "1.1.7 Example: Square Roots by Newton’s Method -----------------------------------------")
+
 ; Exercises:
 ; * 1.6
 ; * 1.7
 ; * 1.8
 
-(defn average [x y]
+(defn average
+  [x y]
   (/ (+ x y) 2))
 
-(defn improve [guess x]
+(defn improve
+  [guess x]
   (average guess (/ x guess)))
 
-(defn good-enough? [guess x]
+(defn good-enough?
+  [guess x]
   (< (abs (- (square guess) x)) 0.001))
 
 (defn sqrt-iter
@@ -124,19 +129,22 @@
     guess
     (sqrt-iter (improve guess x) x)))
 
-(defn sqrt [x]
+(defn sqrt
+  [x]
   (sqrt-iter 1.0 x))
 
-(comment "1.1.8")
-; Procedures as Black-Box Abstractions -------------------------------------------------------------
+(comment "1.1.8 Procedures as Black-Box Abstractions ---------------------------------------------")
 
-(defn square-alt [x]
+(defn square-alt
+  [x]
   (Math/exp (double (Math/log x))))
 
-(defn sqrt-alt [x]
+(defn sqrt-alt
+  [x]
   (letfn [(good-enough? [guess x] (< (abs (- (* guess guess) x)) 0.001))
           (improve [guess x] (/ (+ guess (/ x guess)) 2))
-          (sqrt-iter [guess x]
+          (sqrt-iter
+            [guess x]
             (if (good-enough? guess x)
               guess
               (sqrt-iter (improve guess x) x)))]

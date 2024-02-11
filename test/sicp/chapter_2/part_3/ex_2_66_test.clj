@@ -1,7 +1,8 @@
 (ns sicp.chapter-2.part-3.ex-2-66-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-3.ex-2-64 :refer [list->tree]]
-            [sicp.chapter-2.part-3.ex-2-66 :refer [lookup-tree]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-3.ex-2-64 :refer [list->tree]]
+    [sicp.chapter-2.part-3.ex-2-66 :refer [lookup-tree]]))
 
 (def tree (list->tree (range 10)))
 

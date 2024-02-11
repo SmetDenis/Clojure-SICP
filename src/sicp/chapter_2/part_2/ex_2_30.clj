@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-30
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.30
 ;
@@ -16,13 +17,15 @@
 ; Define square-tree both directly (i.e., without using any higher-order procedures)
 ; and also by using map and recursion.
 
-(defn square-tree [tree]
+(defn square-tree
+  [tree]
   (cond (m/list-empty? tree) nil
         (m/leaf? tree) (m/square tree)
         :else (cons (square-tree (first tree))
                     (square-tree (rest tree)))))
 
-(defn square-tree-map [tree]
+(defn square-tree-map
+  [tree]
   (map (fn [sub-tree]
          (if (list? sub-tree)
            (square-tree-map sub-tree)

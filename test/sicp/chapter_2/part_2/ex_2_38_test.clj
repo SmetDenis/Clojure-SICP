@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-2.ex-2-38-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-38 :refer [fold-left fold-right]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-38 :refer [fold-left fold-right]]))
 
 (deftest fold-right-test
   (is (= 3/2 (fold-right / 1 (list 1 2 3))))

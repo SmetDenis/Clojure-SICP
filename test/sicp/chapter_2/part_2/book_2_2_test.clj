@@ -1,28 +1,32 @@
 (ns sicp.chapter-2.part-2.book-2-2-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.book-2-2 :refer [accumulate
-                                                    append
-                                                    count-leaves
-                                                    enumerate-interval
-                                                    enumerate-tree
-                                                    even-fibs
-                                                    even-fibs-v2
-                                                    flatmap
-                                                    length
-                                                    length-recursice
-                                                    length-tree
-                                                    list-fib-squares
-                                                    list-ref
-                                                    make-pair-sum
-                                                    my-map
-                                                    permutations
-                                                    prime-sum-pairs
-                                                    prime-sum?
-                                                    product-of-squares-of-odd-elements
-                                                    scale-tree
-                                                    scale-tree-v0
-                                                    sum-odd-squares
-                                                    sum-odd-squares-v2]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.book-2-2 :refer [accumulate
+                                            append
+                                            count-leaves
+                                            enumerate-interval
+                                            enumerate-tree
+                                            even-fibs
+                                            even-fibs-v2
+                                            flatmap
+                                            length
+                                            length-recursice
+                                            length-tree
+                                            list-fib-squares
+                                            list-ref
+                                            make-pair-sum
+                                            my-map
+                                            permutations
+                                            prime-sum-pairs
+                                            prime-sum?
+                                            product-of-squares-of-odd-elements
+                                            scale-list
+                                            scale-list-2
+                                            my-filter
+                                            scale-tree
+                                            scale-tree-v0
+                                            sum-odd-squares
+                                            sum-odd-squares-v2]]))
 
 (deftest list-ref-test
   (is (= nil (list-ref '(1 4 9 16 25) -1)))
@@ -56,6 +60,14 @@
   (is (= '(1 4 9 16 25) (append '(1 4 9 16 25) '())))
   (is (= '(1 4 9 16 25 3 2 1) (append '(1 4 9 16 25) '(3 2 1)))))
 
+(deftest scale-list-test
+  (is (= '(2 4 6 8 10) (scale-list '(1 2 3 4 5) 2)))
+  (is (= '(10 20 30 40 50) (scale-list '(1 2 3 4 5) 10))))
+
+(deftest scale-list-2-test
+  (is (= '(2 4 6 8 10) (scale-list-2 '(1 2 3 4 5) 2)))
+  (is (= '(10 20 30 40 50) (scale-list-2 '(1 2 3 4 5) 10))))
+
 (deftest my-map-test
   ; Custom
   (is (= '(10 2.5 11.6 17) (my-map abs (list -10 2.5 -11.6 17))))
@@ -64,8 +76,7 @@
   (is (= '(10 2.5 11.6 17) (map abs (list -10 2.5 -11.6 17))))
   (is (= '(1 4 9 16) (map #(* % %) (list 1 2 3 4)))))
 
-(comment "2.2.2")
-; Hierarchical Structures --------------------------------------------------------------------------
+(comment "2.2.2 Hierarchical Structures ----------------------------------------------------------")
 
 (def tree (cons (list 1 2) (list 3 4)))                     ; ((1 2) 3 4)
 (def tree-2 (list tree tree))                               ; (((1 2) 3 4) ((1 2) 3 4))
@@ -88,8 +99,7 @@
 (deftest scale-tree-test
   (is (= '(10 (20 (30 40) 50) (60 70)) (scale-tree '(1 (2 (3 4) 5) (6 7)) 10))))
 
-(comment "2.2.3")
-; Sequences as Conventional Interfaces -------------------------------------------------------------
+(comment "2.2.3 Sequences as Conventional Interfaces ---------------------------------------------")
 
 (deftest sum-odd-squares-test
   (is (= 84 (sum-odd-squares '(1 (2 (3 4) 5) (6 7))))))
@@ -98,7 +108,9 @@
   (is (= '(0 2 8 34) (even-fibs 10))))
 
 (deftest my-filter-test
-  (is (= '(1 3 5) (filter odd? '(1 2 3 4 5)))))
+  (is (= '(1 3 5) (filter odd? '(1 2 3 4 5))))
+  (is (= '(1 3 5) (my-filter odd? '(1 2 3 4 5))))
+  (is (= '(2 4) (my-filter even? '(1 2 3 4 5)))))
 
 (deftest accumulate-test
   (is (= 15 (accumulate + 0 '(1 2 3 4 5))))
@@ -153,6 +165,6 @@
            (3 1 2)
            (3 2 1)) (permutations '(1 2 3)))))
 
-(comment "2.2.4")
-; Example: A Picture Language ----------------------------------------------------------------------
+(comment "2.2.4 Example: A Picture Language ------------------------------------------------------")
+
 ; No tests

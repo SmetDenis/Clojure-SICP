@@ -1,6 +1,7 @@
 (ns sicp.chapter-2.part-1.ex-2-14-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.misc :as m]))
 
 ; Huge tolerance - ±0.5)
 (def a-wide (m/make-interval 1 2))

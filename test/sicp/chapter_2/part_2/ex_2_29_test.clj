@@ -1,14 +1,15 @@
 (ns sicp.chapter-2.part-2.ex-2-29-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-2.part-2.ex-2-29 :refer [branch-has-structure?
-                                                   branch-moment
-                                                   branch-structure
-                                                   left-branch
-                                                   make-branch
-                                                   make-mobile
-                                                   mobile-balanced?
-                                                   right-branch
-                                                   total-weight]]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-2.part-2.ex-2-29 :refer [branch-has-structure?
+                                           branch-moment
+                                           branch-structure
+                                           left-branch
+                                           make-branch
+                                           make-mobile
+                                           mobile-balanced?
+                                           right-branch
+                                           total-weight]]))
 
 (def mobile-balanced (make-mobile (make-branch 5 2) (make-branch 1 10)))
 

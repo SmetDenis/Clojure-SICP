@@ -1,10 +1,11 @@
 (ns sicp.chapter-1.part-3.ex-1-33-test
-  (:require [clojure.test :refer [deftest is]]
-            [sicp.chapter-1.part-3.ex-1-33 :refer [filtered-accumulate
-                                                   filtered-accumulate-iter
-                                                   product-of-primes
-                                                   sum-of-primes]]
-            [sicp.misc :as m]))
+  (:require
+    [clojure.test :refer [deftest is]]
+    [sicp.chapter-1.part-3.ex-1-33 :refer [filtered-accumulate
+                                           filtered-accumulate-iter
+                                           product-of-primes
+                                           sum-of-primes]]
+    [sicp.misc :as m]))
 
 (deftest filtered-accumulate-test
   (is (= 1061 (filtered-accumulate + 0 identity 1 inc 100 m/prime?)))

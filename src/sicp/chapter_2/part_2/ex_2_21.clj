@@ -1,5 +1,6 @@
 (ns sicp.chapter-2.part-2.ex-2-21
-  (:require [sicp.misc :as m]))
+  (:require
+    [sicp.misc :as m]))
 
 ; Exercise 2.21
 ;
@@ -19,11 +20,13 @@
 ; (define (square-list items)
 ;   (map ⟨??⟩ ⟨??⟩))
 
-(defn square-list-1 [items]
+(defn square-list-1
+  [items]
   (if (m/list-empty? items)
     nil
     (cons (* (m/car items) (m/car items))
           (square-list-1 (m/cdr items)))))
 
-(defn square-list-2 [items]
+(defn square-list-2
+  [items]
   (map #(* % %) items))
