@@ -20,6 +20,9 @@
                                             prime-sum-pairs
                                             prime-sum?
                                             product-of-squares-of-odd-elements
+                                            scale-list
+                                            scale-list-2
+                                            my-filter
                                             scale-tree
                                             scale-tree-v0
                                             sum-odd-squares
@@ -56,6 +59,14 @@
   (is (= '(1 2) (append '(1) '(2))))
   (is (= '(1 4 9 16 25) (append '(1 4 9 16 25) '())))
   (is (= '(1 4 9 16 25 3 2 1) (append '(1 4 9 16 25) '(3 2 1)))))
+
+(deftest scale-list-test
+  (is (= '(2 4 6 8 10) (scale-list '(1 2 3 4 5) 2)))
+  (is (= '(10 20 30 40 50) (scale-list '(1 2 3 4 5) 10))))
+
+(deftest scale-list-2-test
+  (is (= '(2 4 6 8 10) (scale-list-2 '(1 2 3 4 5) 2)))
+  (is (= '(10 20 30 40 50) (scale-list-2 '(1 2 3 4 5) 10))))
 
 (deftest my-map-test
   ; Custom
@@ -97,7 +108,9 @@
   (is (= '(0 2 8 34) (even-fibs 10))))
 
 (deftest my-filter-test
-  (is (= '(1 3 5) (filter odd? '(1 2 3 4 5)))))
+  (is (= '(1 3 5) (filter odd? '(1 2 3 4 5))))
+  (is (= '(1 3 5) (my-filter odd? '(1 2 3 4 5))))
+  (is (= '(2 4) (my-filter even? '(1 2 3 4 5)))))
 
 (deftest accumulate-test
   (is (= 15 (accumulate + 0 '(1 2 3 4 5))))

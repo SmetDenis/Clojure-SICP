@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part-1.ex-1-8-test
+(ns sicp.chapter-1.part-1.ex-1-08-test
   (:require
     [clojure.test :refer [deftest is]]
     [sicp.chapter-1.part-1.ex-1-08 :refer [cube-root-iter]]))

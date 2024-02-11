@@ -54,6 +54,16 @@
   (is (= 0.24998750000000042 (b13/integral m/cube 0 1 0.01)))
   (is (= 0.249999875000001 (b13/integral m/cube 0 1 0.001))))
 
+(deftest f-1-test
+  (is (= 4 (b13/f-1 1 2)))
+  (is (= 603 (b13/f-1 2 10)))
+  (is (= 178 (b13/f-1 2 5))))
+
+(deftest f-2-test
+  (is (= 4 (b13/f-2 1 2)))
+  (is (= 603 (b13/f-1 2 10)))
+  (is (= 178 (b13/f-2 2 5))))
+
 (comment "1.3.2 Constructing Procedures Using Lambda ---------------------------------------------")
 
 (deftest pi-sum-lamda-test
@@ -76,7 +86,11 @@
 (deftest half-interval-method-test
   (is (= 6.103515625E-5 (b13/half-interval-method m/cube -1.0 9.0)))
   (is (= 3.14111328125 (b13/half-interval-method #(Math/sin %) 2.0 4.0)))
-  (is (= 1.89306640625 (b13/half-interval-method #(- (m/cube %) (* 2 %) 3) 1.0 2.0))))
+  (is (= 1.89306640625 (b13/half-interval-method #(- (m/cube %) (* 2 %) 3) 1.0 2.0)))
+  (is (thrown-with-msg?
+        Exception
+        #"Values are not of opposite sign 1 1"
+        (b13/half-interval-method m/cube 1 1))))
 
 (deftest fixed-point-test
   (is (= 0.7390822985224024 (b13/fixed-point #(Math/cos %) -1.0)))

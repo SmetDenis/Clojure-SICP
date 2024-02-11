@@ -31,7 +31,13 @@
 (def i-+ (m/make-interval -1 1))
 (def i-- (m/make-interval -1 -1))
 
+(def j++ (m/make-interval 2 2))
+(def j+- (m/make-interval 2 -2))
+(def j-+ (m/make-interval -2 2))
+(def j-- (m/make-interval -2 -2))
+
 (deftest mul-interval-test
+  ; i
   (is (= [1 1] (mul-interval i++ i++)))
   (is (= [1 -1] (mul-interval i++ i+-)))
   (is (= [-1 -1] (mul-interval i++ i--)))
@@ -39,7 +45,16 @@
   (is (= [1 1] (mul-interval i-- i--)))
   (is (= [-1 1] (mul-interval i-+ i-+)))
   (is (= [1 1] (mul-interval i+- i+-)))
-  (is (= [1 -1] (mul-interval i+- i-+))))
+  (is (= [1 -1] (mul-interval i+- i-+)))
+  ; j
+  (is (= [4 4] (mul-interval j++ j++)))
+  (is (= [4 -4] (mul-interval j++ j+-)))
+  (is (= [-4 -4] (mul-interval j++ j--)))
+  (is (= [4 -4] (mul-interval j+- j--)))
+  (is (= [4 4] (mul-interval j-- j--)))
+  (is (= [-2 2] (mul-interval i-+ j-+)))
+  (is (= [4 4] (mul-interval j+- j+-)))
+  (is (= [4 -4] (mul-interval j+- j-+))))
 
 (deftest mul-interval-old-test
   (is (= [1 1] (m/mul-interval i++ i++)))

@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part-1.ex-1-3-test
+(ns sicp.chapter-1.part-1.ex-1-03-test
   (:require
     [clojure.test :refer [deftest is]]
     [sicp.chapter-1.part-1.ex-1-03 :refer [sum-larger-numbers-square]]))

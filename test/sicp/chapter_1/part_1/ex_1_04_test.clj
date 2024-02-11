@@ -1,4 +1,4 @@
-(ns sicp.chapter-1.part-1.ex-1-4-test
+(ns sicp.chapter-1.part-1.ex-1-04-test
   (:require
     [clojure.test :refer [deftest is]]
     [sicp.chapter-1.part-1.ex-1-04 :refer [a-plus-abs-b]]))

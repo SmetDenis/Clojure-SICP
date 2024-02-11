@@ -75,4 +75,8 @@
 
 (deftest pair-alt-test
   (is (= 1 (b21/car-alt (b21/pair-alt 1 2))))
-  (is (= 2 (b21/cdr-alt (b21/pair-alt 1 2)))))
+  (is (= 2 (b21/cdr-alt (b21/pair-alt 1 2))))
+  (is (thrown-with-msg?
+        Exception
+        #"Argument not 0 or 1: CONS"
+        ((b21/pair-alt 1 2) 2))))
