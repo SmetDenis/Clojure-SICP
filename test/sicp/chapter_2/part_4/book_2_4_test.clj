@@ -1,7 +1,8 @@
 (ns sicp.chapter-2.part-4.book-2-4-test
   (:require
     [clojure.test :refer [deftest is]]
-    [sicp.chapter-2.part-4.book-2-4 :as b24]))
+    [sicp.chapter-2.part-4.book-2-4 :as b24]
+    [sicp.misc :as m]))
 
 (def angle-60 (/ Math/PI 3))
 (def radius 2.0)
@@ -127,4 +128,7 @@
   (is (= x ((b24/make-from-real-imag x y) :real-part)))
   (is (= y ((b24/make-from-real-imag x y) :imag-part)))
   (is (= radius ((b24/make-from-real-imag x y) :magnitude)))
-  (is (= angle-60 ((b24/make-from-real-imag x y) :angle))))
+  (is (= angle-60 ((b24/make-from-real-imag x y) :angle)))
+  (is (m/is-exception?
+        ((b24/make-from-real-imag x y) :undefined)
+        "Unknown op: MAKE-FROM-REAL-IMAG :undefined")))

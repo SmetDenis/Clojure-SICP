@@ -87,10 +87,9 @@
   (is (= 6.103515625E-5 (b13/half-interval-method m/cube -1.0 9.0)))
   (is (= 3.14111328125 (b13/half-interval-method #(Math/sin %) 2.0 4.0)))
   (is (= 1.89306640625 (b13/half-interval-method #(- (m/cube %) (* 2 %) 3) 1.0 2.0)))
-  (is (thrown-with-msg?
-        Exception
-        #"Values are not of opposite sign 1 1"
-        (b13/half-interval-method m/cube 1 1))))
+  (is (m/is-exception?
+        (b13/half-interval-method m/cube 1 1)
+        "Values are not of opposite sign 1 1")))
 
 (deftest fixed-point-test
   (is (= 0.7390822985224024 (b13/fixed-point #(Math/cos %) -1.0)))
