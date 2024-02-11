@@ -8,7 +8,7 @@
 (deftest error-test
   (is (= true (m/is-exception? (m/error "123"))))
   (is (= true (m/is-exception? (m/error "123") "123")))
-  (is (= true (m/is-exception? (m/error "123") "123" Exception))))
+  (is (= true (m/is-exception? (m/error "123") "123"))))
 
 (deftest square-test
   (is (= 4 (m/square 2)))

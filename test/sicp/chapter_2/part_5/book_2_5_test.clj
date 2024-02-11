@@ -1,7 +1,12 @@
 (ns sicp.chapter-2.part-5.book-2-5-test
   (:require
     [clojure.test :refer [deftest is]]
-    [sicp.chapter-2.part-5.book-2-5 :as b25]))
+    [sicp.chapter-2.part-5.book-2-5 :as b25]
+    [sicp.misc :as m]))
+
+(b25/install-scheme-number-package)
+(b25/install-rational-package)
+(b25/install-complex-package)
 
 (deftest install-test
   (is (= :done (b25/install-scheme-number-package)))
@@ -31,3 +36,7 @@
   (is (= (b25/make-scheme-number 1/2) (b25/div (b25/make-scheme-number 3) (b25/make-scheme-number 6))))
   (is (= (b25/make-rational 1 1) (b25/div (b25/make-rational 2 1) (b25/make-rational 2 1))))
   (is (= (b25/make-rational 2 1) (b25/div (b25/make-rational 2 3) (b25/make-rational 1 3)))))
+
+(deftest apply-generic-test
+  (is (= true (m/is-exception? ((b25/apply-generic :undefined 1 2)) "No method for: :undefined"))))
+

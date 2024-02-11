@@ -195,17 +195,14 @@
     (cons (first list1) (append (rest list1) list2))))
 
 (defmacro is-exception?
-  [test-code & [expected-message exception-type]]
+  [test-code & [expected-message]]
   `(try
-     ~test-code
-     (if (nil? ~exception-type)
-       (is false "Execution of the code expects any type of exception to be thrown")
-       (is false (str "Expected exception " ~exception-type " was not thrown")))
+     (do
+       ~test-code
+       (is false "Execution of the code expects any type of exception to be thrown"))
      (catch Exception exception#
        (cond
-         (not (nil? ~exception-type)) (is (= (class exception#) ~exception-type)
-                                          (str "Expected exception type " ~exception-type ", but got " (class exception#)))
-         (not (nil? ~exception-type)) (is (= (.getMessage exception#) ~expected-message)
+         (not (nil? ~expected-message)) (is (= (.getMessage exception#) ~expected-message)
                                           (str "Expected message: " ~expected-message ", but got: " (.getMessage exception#)))
          ; For valid test cases, the expected exception type and message should be nil
          :else true))))

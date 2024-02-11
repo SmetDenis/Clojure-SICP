@@ -29,7 +29,7 @@
         operation (get-op op type-tags)]
     (if operation
       (apply operation (map #(:contents %) args))
-      (throw (IllegalArgumentException. (str "No method for: " op " " type-tags))))))
+      (throw (IllegalArgumentException. (str "No method for: " op))))))
 
 ; --------------------------------------------------------------------------------------------------
 

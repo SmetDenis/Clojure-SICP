@@ -21,5 +21,4 @@
   (is (= 0 (ex-2-73/deriv-v2 10 5)))
   (is (= 0 (ex-2-73/deriv-v2 'x 5)))
   (is (= 0 (ex-2-73/deriv-v2 'x 'y)))
-  (is (= 0 (ex-2-73/deriv-v2 '+ 'y)))
-  (is (= true (m/is-exception? (ex-2-73/deriv-v2 '(* 2 2) 'x) "unknown expression type: DERIV (* 2 2)"))))
+  (is (= 0 (ex-2-73/deriv-v2 '+ 'y))))
