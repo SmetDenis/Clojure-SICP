@@ -59,6 +59,16 @@
 ; ((get (operator exp) 'deriv)
 ;   (operands exp) var)
 
+(def derivations (atom {}))
+
+(defn put-op
+  [op method deriv-fn]
+  (swap! derivations assoc-in [op method] deriv-fn))
+
+(defn get-op
+  [op method]
+  (get-in @derivations [op method]))
+
 (defn deriv
   [exp var]
   (cond
@@ -87,7 +97,7 @@
   (cond
     (number? exp) 0
     (b23/variable? exp) (if (b23/same-variable? exp var) 1 0)
-    :else ((get :deriv (operator exp))
+    :else ((get-op :deriv (operator exp))
            (operands exp)
            var)))
 
@@ -95,11 +105,6 @@
 ; The exercise just to check understanding of abstruction.
 ; Sorry, I'm lazy and took examples of code here and rewrite it to Clojure
 ; https://github.com/ivanjovanovic/sicp/blob/master/2.4/e-2.73.scm
-
-(defn put
-  [param1 param2 deriver]
-  ;  Just for linter
-  (println param1 param2 deriver))
 
 (defn make-sum
   ([a b] (list '+ a b))
@@ -118,7 +123,7 @@
             (make-sum (deriv (addend operands) var)
                       (deriv (augend operands) var)))]
     ; and methods for putting the thing in the table
-    (put '+ 'deriv derive-sum)))
+    (put-op '+ :deriv derive-sum)))
 
 (defn install-product-derivation
   []
@@ -133,7 +138,7 @@
                             (multiplicand operands))
               var))]
     ; put that into table
-    (put '* 'deriv derive-product)))
+    (put-op '* :deriv derive-product)))
 
 (defn install-exponent-derivation
   []
@@ -146,4 +151,4 @@
               (make-product (power operands)
                             (make-exponent (base operands) (dec (power operands))))
               (deriv (base operands) var)))]
-    (put '** 'deriv derive-exponent)))
+    (put-op '** :deriv derive-exponent)))
