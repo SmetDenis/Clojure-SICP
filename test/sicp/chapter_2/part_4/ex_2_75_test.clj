@@ -1,6 +1,6 @@
 (ns sicp.chapter-2.part-4.ex-2-75-test
   (:require
-    [clojure.test :refer :all]
+    [clojure.test :refer [deftest is]]
     [sicp.chapter-2.part-4.ex-2-75 :refer [make-from-mag-ang]]
     [sicp.misc :as m]))
 
