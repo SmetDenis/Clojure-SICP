@@ -64,7 +64,6 @@ jobs:
           input-file: ./target/coverage/junit.xml
           input-format: junit
           output-file: ./build/junit.xml
-        if: success()
         continue-on-error: true
 
   linters:
