@@ -64,7 +64,6 @@ jobs:
         with:
           input-file: ./target/coverage/junit.xml
           input-format: junit
-          output-file: ./build/junit.xml
 
   linters:
     name: Linters
