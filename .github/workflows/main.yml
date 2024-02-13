@@ -49,7 +49,8 @@ jobs:
           lein: 'latest'
 
       - name: 🧪 Generate coverage report
-        run: lein cloverage --coveralls --junit || true
+        run: lein cloverage --coveralls --junit
+        continue-on-error: true
 
       - name: 🧪 Coveralls
         uses: coverallsapp/github-action@master
@@ -64,7 +65,6 @@ jobs:
           input-file: ./target/coverage/junit.xml
           input-format: junit
           output-file: ./build/junit.xml
-        continue-on-error: true
 
   linters:
     name: Linters
