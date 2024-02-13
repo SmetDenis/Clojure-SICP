@@ -103,24 +103,20 @@
           ; Internal procedures
           (add-complex
             [z1 z2]
-            (make-from-real-imag
-              (+ (b24/real-part z1) (b24/real-part z2))
-              (+ (b24/imag-part z1) (b24/imag-part z2))))
+            (make-from-real-imag (+ (b24/real-part z1) (b24/real-part z2))
+                                 (+ (b24/imag-part z1) (b24/imag-part z2))))
           (sub-complex
             [z1 z2]
-            (make-from-real-imag
-              (- (b24/real-part z1) (b24/real-part z2))
-              (- (b24/imag-part z1) (b24/imag-part z2))))
+            (make-from-real-imag (- (b24/real-part z1) (b24/real-part z2))
+                                 (- (b24/imag-part z1) (b24/imag-part z2))))
           (mul-complex
             [z1 z2]
-            (make-from-mag-ang
-              (* (b24/magnitude z1) (b24/magnitude z2))
-              (+ (b24/angle z1) (b24/angle z2))))
+            (make-from-mag-ang (* (b24/magnitude z1) (b24/magnitude z2))
+                               (+ (b24/angle z1) (b24/angle z2))))
           (div-complex
             [z1 z2]
-            (make-from-mag-ang
-              (/ (b24/magnitude z1) (b24/magnitude z2))
-              (- (b24/angle z1) (b24/angle z2))))
+            (make-from-mag-ang (/ (b24/magnitude z1) (b24/magnitude z2))
+                               (- (b24/angle z1) (b24/angle z2))))
           ; Interface to rest of the system
           (tag [z] (attach-tag :complex z))]
     ; Putting functions in a map or registry

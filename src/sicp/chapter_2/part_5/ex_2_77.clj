@@ -1,4 +1,6 @@
-(ns sicp.chapter-2.part-5.ex-2-77)
+(ns sicp.chapter-2.part-5.ex-2-77
+  (:require [sicp.chapter-2.part-4.book-2-4 :as b24]
+            [sicp.chapter-2.part-5.book-2-5 :as b25]))
 
 ; Exercise 2.77
 ;
@@ -15,3 +17,10 @@
 ; (put 'magnitude '(complex) magnitude)
 ; (put 'angle '(complex) angle)
 
+
+(b25/install-complex-package)
+(b25/put-op :real-part '(:complex) b24/real-part)
+(b25/put-op :imag-part '(:complex) b24/imag-part)
+(b25/put-op :magnitude '(:complex) b24/magnitude)
+(b25/put-op :angle '(:complex) b24/angle)
+(b24/magnitude (b25/make-complex-from-real-imag 3 4))
