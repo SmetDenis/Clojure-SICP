@@ -91,15 +91,15 @@
 
 (defn type-tag
   [datum]
-  (if (sequential? datum)
-    (first datum)
-    (throw (Exception. (str "Bad tagged datum: TYPE-TAG " datum)))))
+  (cond (sequential? datum) (first datum)
+        (map? datum) (get datum :tag)
+        :else (throw (Exception. (str "Bad tagged datum: TYPE-TAG " datum)))))
 
 (defn contents
   [datum]
-  (if (sequential? datum)
-    (rest datum)
-    (throw (Exception. (str "Bad tagged datum: CONTENTS " datum)))))
+  (cond (sequential? datum) (rest datum)
+        (map? datum) (get datum :contents)
+        :else (throw (Exception. (str "Bad tagged datum: CONTENTS " datum)))))
 
 (defn rectangular?
   [z]
@@ -215,6 +215,7 @@
 ; * 2.76
 
 (defn apply-generic
+  "Just a wrapper for the dispatch table. It's a bit more verbose than the original, I don't use it"
   [op & args]
   (let [type-tags (map type-tag args)
         proc      (get op type-tags)]

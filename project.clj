@@ -7,7 +7,7 @@
   :source-paths ["src"]
   :test-paths ["test"]
   :main ^:skip-aot sicp
-  :target-path "build/%s"
+  :target-path "target/%s"
   :plugins [[lein-cloverage "1.2.2"]]
   :profiles {:dev      {:dependencies [[org.clojure/clojure "1.11.1"]
                                        [io.github.noahtheduke/splint "1.12"]]}
